@@ -1,0 +1,22 @@
+{% sw_extends '@Storefront/storefront/page/checkout/summary/summary-position.html.twig' %}
+{% set promotions = summary.data.elements.promotions.elements %}
+{% set lineItems = summary.lineItems.elements %}
+{% set totalProductLineItems = lineItems|filter(item => item.type === 'product')|length %}
+
+{% set positionPrice = summary.price.positionPrice %}
+{% set totalDiscount = promotions|reduce((carry, item) => carry + item.price.totalPrice, 0) %}
+{% set subtotal = positionPrice + (totalDiscount * -1) %}
+
+{% block page_checkout_summary_position_label %}
+  <div class="label">
+    {{ 'checkout.summary.summaryPositionPrice'|trans({
+      '%count%': totalProductLineItems,
+    })|sw_sanitize }}
+  </div>
+{% endblock %}
+
+{% block page_checkout_summary_position_value %}
+  <div class="description">
+    {{ subtotal|currency }}{{ 'general.star'|trans|sw_sanitize }}
+  </div>
+{% endblock %}

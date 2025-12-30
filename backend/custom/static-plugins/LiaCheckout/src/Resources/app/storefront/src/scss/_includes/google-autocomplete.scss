@@ -1,0 +1,24 @@
+.pac-container {
+  box-shadow: 0 35px 25px 10px rgba(0, 0, 0, .15);
+  border: 2px solid $sw-border-color;
+  border-radius: 0 0 6px 6px;
+  border-top: 0;
+  transform: translateY(-5px);
+  &.pac-logo {
+    &:after {
+      display: none
+    }
+  }
+  .pac-item {
+    border-top: 1px solid $sw-border-color;
+    padding: 5px;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+    &:first-child {
+      border-top: 0;
+    }
+    &:hover {
+      background: rgba($sw-border-color, .25)
+    }
+  }
+}

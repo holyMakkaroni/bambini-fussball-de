@@ -1,0 +1,41 @@
+{% block lia_checkout_shipping %}
+  <div class="checkout-shipping">
+    {% block lia_checkout_shipping_headline %}
+      {% sw_include '@Storefront/storefront/page/checkout/components/_headline.html.twig' with {
+        headline: 'checkout.shipping.headline'|trans
+      } %}
+    {% endblock %}
+
+    {% if context.customer %}
+      <form id="changeShippingForm"
+            name="changeShippingForm"
+            action="{{ path('frontend.checkout.configure') }}"
+          {% if config('core.cart.shippingAjaxRefresh') %}
+            data-form-ajax-submit="true"
+            data-form-ajax-submit-options='{{ {submitOnChange: true,replaceSelectors: ['.kw-checkout-wrapper']}|json_encode }}'
+          {% else %}
+            data-form-auto-submit="true"
+            data-form-auto-submit-options='{{ {changeTriggerSelectors: ['.shipping-method-input']}|json_encode }}'
+          {% endif %}
+            method="post">
+
+        <input type="hidden" name="redirectTo" value="frontend.checkout.page">
+        <input type="hidden" name="redirectParameters" value="{{ {redirected: 0}|json_encode }}">
+
+        <div class="radio-selection">
+          {% for shipping in page.shippingMethods %}
+            <div {% if shipping.id is same as(context.shippingMethod.id) %}class="current-selected"{% endif %}>
+              {% sw_include '@Storefront/storefront/component/shipping/shipping-method.html.twig' %}
+            </div>
+          {% endfor %}
+        </div>
+      </form>
+    {% else %}
+      {% block lia_checkout_payment_unavailable %}
+        {% sw_include '@Storefront/storefront/page/checkout/components/_checkout_step_not_available.html.twig' with {
+          text: 'checkout.shipping.disabled'|trans
+        } %}
+      {% endblock %}
+    {% endif %}
+  </div>
+{% endblock %}

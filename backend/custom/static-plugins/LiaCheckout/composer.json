@@ -1,0 +1,47 @@
+{
+  "name": "lia/checkout",
+  "description": "Checkout",
+  "version": "1.0.0",
+  "type": "shopware-platform-plugin",
+  "license": "proprietary",
+  "autoload": {
+    "psr-4": {
+      "Lia\\Checkout\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "LivingActive",
+      "homepage": "https://www.livingactive.de"
+    }
+  ],
+  "require": {
+    "shopware/core": "~6.6"
+  },
+  "extra": {
+    "shopware-plugin-class": "Lia\\Checkout\\LiaCheckout",
+    "plugin-icon": "src/Resources/plugin.png",
+    "copyright": "(c) by LivingActive",
+    "label": {
+      "de-DE": "Checkout",
+      "en-GB": "Checkout"
+    },
+    "description": {
+      "de-DE": "One Page Checkout für Shopware 6",
+      "en-GB": "One Page Checkout for Shopware 6"
+    },
+    "manufacturerLink": {
+      "de-DE": "https://www.unique-web.de",
+      "en-GB": "https://www.unique-web.de"
+    },
+    "supportLink": {
+      "de-DE": "https://www.unique-web.de",
+      "en-GB": "https://www.unique-web.de"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "symfony/runtime": false
+    }
+  }
+}

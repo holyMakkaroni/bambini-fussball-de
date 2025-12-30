@@ -1,0 +1,19 @@
+.checkout-coupon {
+  margin: 20px 0;
+  .cart-add-promotion {
+    background: rgba($sw-color-brand-secondary, 0.1);
+    padding: 10px;
+    @include media-breakpoint-up(lg) {
+      padding: 20px;
+    }
+    .promotion-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      column-gap: 20px;
+      .form-control {
+        flex: 1;
+      }
+    }
+  }
+}

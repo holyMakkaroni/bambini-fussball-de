@@ -1,0 +1,42 @@
+{% sw_extends '@Storefront/storefront/component/line-item/type/product.html.twig' %}
+
+{% block component_line_item_type_product_row_inner %}
+  <div class="item product">
+    <div class="image">
+      {% sw_include '@Storefront/storefront/component/line-item/element/image.html.twig' %}
+    </div>
+    <div class="actions {% if showRemoveButton is not defined or showRemoveButton is false %}no-remove-action{% endif %}">
+      <div class="quantity">
+        {% sw_include '@Storefront/storefront/component/line-item/element/quantity.html.twig' with {
+          showQuantitySelect: showQuantitySelect
+        } %}
+      </div>
+      {% if showRemoveButton %}
+        {% if lineItem.removable and nestingLevel < 1 %}
+          {% sw_include '@Storefront/storefront/component/line-item/element/remove.html.twig' %}
+        {% endif %}
+      {% endif %}
+    </div>
+    <div class="description">
+      <div class="label">
+        {% sw_include '@Storefront/storefront/component/line-item/element/label.html.twig' %}
+      </div>
+      <div class="variant-options">
+        {% if lineItem.payload.options is not empty %}
+          {% block component_line_item_type_product_variant_characteristics %}
+            {% sw_include '@Storefront/storefront/component/line-item/element/variant-characteristics.html.twig' %}
+          {% endblock %}
+        {% endif %}
+      </div>
+    </div>
+    <div class="price">
+      {% if showTaxPrice %}
+        {% if context.salesChannel.taxCalculationType == 'horizontal' %}
+          {% sw_include '@Storefront/storefront/component/line-item/element/tax-price.html.twig' %}
+        {% endif %}
+      {% else %}
+        {% sw_include '@Storefront/storefront/component/line-item/element/total-price.html.twig' %}
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

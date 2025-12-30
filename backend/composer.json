@@ -1,0 +1,83 @@
+{
+  "license": "proprietary",
+  "type": "project",
+  "require": {
+    "shopware/core": "v6.6.10.4",
+    "shopware/administration": "*",
+    "shopware/storefront": "*",
+    "composer-runtime-api": "^2.0",
+    "symfony/flex": "~2",
+    "league/flysystem-async-aws-s3": "3.29.0",
+    "store.shopware.com/swagpaypal": "9.7.5",
+    "store.shopware.com/easycreditratenkauf": "3.1.1",
+    "store.shopware.com/wbmtagmanageranalytics": "6.06.09",
+    "payone-gmbh/shopware-6": "6.2.0",
+    "uniqueweb/headless": "1.0.4",
+    "lia/theme": "1.0.0",
+    "lia/algolia": "1.0.2",
+    "lia/seo-suite": "1.2.0",
+    "lia/checkout": "1.0.0"
+  },
+  "repositories": {
+    "shopware-packages": {
+      "type": "composer",
+      "url": "https://packages.shopware.com"
+    },
+    "0": {
+      "type": "path",
+      "url": "custom/plugins/*",
+      "options": {
+        "symlink": true
+      }
+    },
+    "1": {
+      "type": "path",
+      "url": "custom/plugins/*/packages/*",
+      "options": {
+        "symlink": true
+      }
+    },
+    "2": {
+      "type": "path",
+      "url": "custom/static-plugins/*",
+      "options": {
+        "symlink": true
+      }
+    },
+    "3": {
+      "type": "composer",
+      "url": "https://uniqueweb.repo.repman.io"
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "symfony/flex": true,
+      "symfony/runtime": true
+    },
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "scripts": {
+    "auto-scripts": {
+      "assets:install": "symfony-cmd"
+    },
+    "post-install-cmd": [
+      "@auto-scripts"
+    ],
+    "post-update-cmd": [
+      "@auto-scripts"
+    ]
+  },
+  "extra": {
+    "symfony": {
+      "allow-contrib": true,
+      "endpoint": [
+        "https://raw.githubusercontent.com/shopware/recipes/flex/main/index.json",
+        "flex://defaults"
+      ],
+      "docker": false
+    }
+  }
+}

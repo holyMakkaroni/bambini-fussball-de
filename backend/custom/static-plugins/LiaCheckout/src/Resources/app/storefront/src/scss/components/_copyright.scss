@@ -1,0 +1,30 @@
+.copyright-wrapper {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  gap: 15px;
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+    margin-top: 116px;
+    gap: 30px;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    li {
+      a {
+        color: $sw-text-color;
+        text-decoration: underline;
+        &:hover {
+          color: $sw-color-brand-primary;
+        }
+      }
+    }
+  }
+}

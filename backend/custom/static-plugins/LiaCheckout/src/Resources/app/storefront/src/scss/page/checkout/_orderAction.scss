@@ -1,0 +1,17 @@
+.checkout-order-action {
+  margin-top: 40px;
+  .checkout-order-tos {
+    margin: 14px 0;
+    font-size: 12px;
+    opacity: .5;
+    a {
+      color: $sw-text-color;
+    }
+  }
+  .checkout-order-action-mobile {
+    display: block;
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+}

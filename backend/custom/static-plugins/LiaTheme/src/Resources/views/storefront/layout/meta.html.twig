@@ -1,0 +1,16 @@
+{%sw_extends '@Storefront/storefront/layout/meta.html.twig' %}
+
+{% block layout_head_meta_tags_charset %}
+    {% if theme_config('cookieBotSettingsId') %}
+        <script id="Cookiebot" src="https://consent.cookiebot.eu/uc.js" data-cbid="{{ theme_config('cookieBotSettingsId') }}" type="text/javascript" async></script>
+    {% endif %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block layout_head_meta_tags_general %}
+    {{ parent() }}
+    {% if theme_config('googleSiteVerificationId') %}
+        <meta name="google-site-verification" content="{{ theme_config('googleSiteVerificationId') }}" />
+    {% endif %}
+{% endblock %}

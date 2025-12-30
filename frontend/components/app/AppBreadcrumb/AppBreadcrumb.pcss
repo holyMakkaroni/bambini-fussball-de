@@ -1,0 +1,29 @@
+.c-app-breadcrumb {
+  ol {
+    li {
+      @apply hidden text-xs md:flex items-center min-h-[22px];
+      span {
+        &.label {
+          @apply mt-0.5
+        }
+      }
+      a {
+        span {
+          &.label {
+            @apply text-xs underline decoration-1 decoration-current;
+          }
+        }
+      }
+      &.go-back {
+        @apply flex;
+        a {
+          span {
+            &.label {
+              @apply pt-0.5 no-underline md:underline decoration-1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

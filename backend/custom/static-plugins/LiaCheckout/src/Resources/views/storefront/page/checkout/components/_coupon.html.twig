@@ -1,0 +1,32 @@
+{% block lia_checkout_coupon %}
+  <div class="checkout-coupon">
+    <form action="{{ path('frontend.checkout.promotion.add') }}"
+          class="cart-add-promotion"
+          method="post">
+      <input type="hidden"
+             name="redirectTo"
+             value="frontend.checkout.page">
+
+      <div class="promotion-wrapper">
+        <label class="visually-hidden" for="addPromotionInput-{{ identifier }}">
+          {{ "checkout.addPromotionLabel"|trans|sw_sanitize }}
+        </label>
+
+        <input type="text"
+               name="code"
+               class="form-control"
+               id="addPromotionInput-{{ identifier }}"
+               placeholder="{{ "checkout.addPromotionPlaceholder"|trans|striptags }}"
+               aria-label="{{ "checkout.addPromotionLabel"|trans|striptags }}"
+               aria-describedby="addPromotion"
+               required="required">
+
+        <button class="btn btn-success"
+                type="submit"
+                id="addPromotion-{{ identifier }}">
+          {{ "checkout.coupon.label"|trans }}
+        </button>
+      </div>
+    </form>
+  </div>
+{% endblock %}

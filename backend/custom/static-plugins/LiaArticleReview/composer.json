@@ -1,0 +1,47 @@
+{
+  "name": "lia/article-review",
+  "description": "Article review",
+  "version": "1.0.0",
+  "type": "shopware-platform-plugin",
+  "license": "proprietary",
+  "autoload": {
+    "psr-4": {
+      "Lia\\ArticleReview\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "LivingActive",
+      "homepage": "https://www.livingactive.de"
+    }
+  ],
+  "require": {
+    "shopware/core": "~6.5"
+  },
+  "extra": {
+    "shopware-plugin-class": "Lia\\ArticleReview\\LiaArticleReview",
+    "plugin-icon": "src/Resources/plugin.png",
+    "copyright": "(c) by LivingActive",
+    "label": {
+      "de-DE": "Artikelbewertungen",
+      "en-GB": "Article review"
+    },
+    "description": {
+      "de-DE": "Artikelbewertungen mit Dateien | Automatische E-Mail nach X Tagen | Opt-In Artikelbewertung",
+      "en-GB": "Article ratings with files | Automatic e-mail after X days | Opt-in article rating"
+    },
+    "manufacturerLink": {
+      "de-DE": "https://www.unique-web.de",
+      "en-GB": "https://www.unique-web.de"
+    },
+    "supportLink": {
+      "de-DE": "https://www.unique-web.de",
+      "en-GB": "https://www.unique-web.de"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "symfony/runtime": false
+    }
+  }
+}

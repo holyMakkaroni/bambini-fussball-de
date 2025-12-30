@@ -1,0 +1,25 @@
+{% sw_extends '@Storefront/storefront/component/shipping/shipping-method.html.twig' %}
+
+{% block component_shipping_method_description %}
+  <span class="wrapper">
+    <div class="content">
+      <div class="name">
+        {{ shipping.translated.name }}
+      </div>
+
+      {% if shipping.translated.description %}
+        {% set shippingDescription = shipping.translated.description|raw %}
+
+        {% if shipping.id is same as(context.shippingMethod.id) %}
+          {% set shippingDescription = (shippingDescription|length > 175 ? shippingDescription[:175] ~ ' ...' : shippingDescription) %}
+          <p class="description" title="{{ shipping.translated.description|raw }}">{{ shippingDescription }}</p>
+        {% endif %}
+      {% endif %}
+    </div>
+    <div class="price">
+      {% if shipping.extensions.calculatedShippingCosts.price is not null %}
+        {{ shipping.extensions.calculatedShippingCosts.price == '0' ? 'checkout.shipping.free'|trans : shipping.extensions.calculatedShippingCosts.price|currency }}
+      {% endif %}
+    </div>
+  </span>
+{% endblock %}

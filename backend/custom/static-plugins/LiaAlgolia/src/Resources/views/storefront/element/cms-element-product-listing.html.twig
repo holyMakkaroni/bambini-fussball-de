@@ -1,0 +1,16 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-product-listing.html.twig' %}
+
+{% block element_product_listing_wrapper %}
+  {% if app.environment === 'dev' || config('LiaAlgolia.config.enableDebugMode') %}
+    <div>
+      <strong>Algolia DEBUG:</strong>
+      <ul>
+        {% for state in searchResult.states %}
+          <li>{{ state }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  {{ parent() }}
+{% endblock %}

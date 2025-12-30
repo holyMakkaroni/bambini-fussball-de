@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+  <services>
+    <service id="Lia\Algolia\Service\ConfigService">
+      <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService" />
+    </service>
+
+    <service id="Lia\Algolia\Factory\ClientFactory">
+      <argument type="service" id="Lia\Algolia\Service\ConfigService" />
+    </service>
+
+    <service id="Lia\Algolia\Framework\DataAbstractionLayer\CriteriaParser">
+      <argument type="service" id="Shopware\Core\Framework\DataAbstractionLayer\Dbal\EntityDefinitionQueryHelper"/>
+    </service>
+
+    <service id="Lia\Algolia\Framework\AlgoliaRegistry">
+      <argument type="tagged" tag="shopware.algolia.definition"/>
+    </service>
+
+    <service id="Lia\Algolia\Framework\Indexing\IndexCreator">
+      <argument type="service" id="Lia\Algolia\Factory\ClientFactory" />
+      <argument type="service" id="Lia\Algolia\Service\AlgoliaService" />
+      <argument type="service" id="property_group.repository" />
+    </service>
+
+    <service id="Lia\Algolia\Framework\Indexing\AlgoliaIndexer">
+      <argument type="service" id="Lia\Algolia\Service\AlgoliaService" />
+      <argument type="service" id="Lia\Algolia\Framework\AlgoliaRegistry" />
+      <argument type="service" id="Lia\Algolia\Framework\Indexing\IndexCreator" />
+      <argument type="service" id="Shopware\Core\Framework\DataAbstractionLayer\Dbal\Common\IteratorFactory"/>
+      <argument type="service" id="locale.repository"/>
+      <argument type="service" id="event_dispatcher"/>
+      <argument type="service" id="messenger.bus.shopware"/>
+      <argument type="service" id="Lia\Algolia\Service\SalesChannelService" />
+
+      <tag name="messenger.message_handler"/>
+    </service>
+
+    <service id="Lia\Algolia\Framework\Command\AlgoliaIndexingCommand">
+      <argument type="service" id="Lia\Algolia\Framework\Indexing\AlgoliaIndexer"/>
+      <argument type="service" id="messenger.bus.shopware"/>
+      <argument type="service" id="Lia\Algolia\Service\SalesChannelService" />
+      <tag name="console.command"/>
+    </service>
+
+    <service id="Lia\Algolia\Framework\AlgoliaIndexingUtils">
+      <argument type="service" id="Doctrine\DBAL\Connection" />
+      <argument type="service" id="event_dispatcher" />
+      <argument type="service" id="parameter_bag" />
+    </service>
+
+    <service id="Lia\Algolia\Service\AlgoliaService" public="true">
+      <argument type="service" id="Lia\Algolia\Framework\AlgoliaRegistry"/>
+      <argument type="service" id="logger"/>
+      <argument type="service" id="Lia\Algolia\Framework\DataAbstractionLayer\CriteriaParser" />
+      <argument type="service" id="Lia\Algolia\Factory\ClientFactory" />
+    </service>
+
+    <service id="Lia\Algolia\Service\SalesChannelService" public="true">
+      <argument type="service" id="sales_channel.repository" />
+    </service>
+
+    <service id="Lia\Algolia\Framework\DataAbstractionLayer\AbstractAlgoliaSearchHydrator" class="Lia\Algolia\Framework\DataAbstractionLayer\AlgoliaEntitySearchHydrator" />
+
+    <service id="Lia\Algolia\Framework\DataAbstractionLayer\AlgoliaEntitySearcher" decorates="Shopware\Core\Framework\DataAbstractionLayer\Search\EntitySearcherInterface" decoration-priority="1000">
+      <argument type="service" id="Lia\Algolia\Framework\DataAbstractionLayer\AlgoliaEntitySearcher.inner"/>
+
+      <argument type="service" id="Lia\Algolia\Service\AlgoliaService" />
+      <argument type="service" id="Lia\Algolia\Framework\DataAbstractionLayer\AbstractAlgoliaSearchHydrator"/>
+      <argument type="service" id="event_dispatcher"/>
+    </service>
+
+    <service id="Lia\Algolia\Category\AlgoliaCategoryDefinition">
+      <argument type="service" id="Shopware\Core\Content\Category\CategoryDefinition"/>
+      <argument type="service" id="category.repository" />
+      <argument type="service" id="Doctrine\DBAL\Connection" />
+
+      <tag name="shopware.algolia.definition"/>
+    </service>
+
+    <service id="Lia\Algolia\Product\AlgoliaProductDefinition">
+      <argument type="service" id="Shopware\Core\Content\Product\ProductDefinition"/>
+      <argument type="service" id="Lia\Algolia\Product\AbstractProductSearchQueryBuilder"/>
+      <argument type="service" id="product.repository" />
+      <argument type="service" id="category.repository" />
+      <argument type="service" id="Doctrine\DBAL\Connection" />
+
+      <tag name="shopware.algolia.definition"/>
+    </service>
+
+    <service id="Lia\Algolia\Product\AbstractProductSearchQueryBuilder" class="Lia\Algolia\Product\ProductSearchQueryBuilder">
+      <argument type="service" id="Shopware\Core\Framework\DataAbstractionLayer\Dbal\EntityDefinitionQueryHelper"/>
+      <argument type="service" id="Shopware\Core\Content\Product\ProductDefinition"/>
+    </service>
+
+    <service id="Lia\Algolia\Subscriber\ProductSubscriber">
+      <argument type="service" id="Lia\Algolia\Framework\AlgoliaRegistry" />
+      <argument type="service" id="Lia\Algolia\Framework\Indexing\AlgoliaIndexer"/>
+      <argument type="service" id="Lia\Algolia\Service\SalesChannelService" />
+      <tag name="kernel.event_subscriber"/>
+    </service>
+
+    <service id="Lia\Algolia\Subscriber\CategorySubscriber">
+      <argument type="service" id="Lia\Algolia\Framework\AlgoliaRegistry" />
+      <argument type="service" id="Lia\Algolia\Framework\Indexing\AlgoliaIndexer"/>
+      <argument type="service" id="Lia\Algolia\Service\SalesChannelService" />
+      <tag name="kernel.event_subscriber"/>
+    </service>
+
+    <service id="Lia\Algolia\Core\Content\FilterPage\FilterPageDefinition">
+      <tag name="shopware.entity.definition" entity="lia_algolia_filter_page"/>
+    </service>
+
+    <service id="Lia\Algolia\Core\Content\FilterPage\FilterPagePropertyDefinition">
+      <tag name="shopware.entity.definition" entity="lia_algolia_filter_page_property"/>
+    </service>
+
+    <service id="Lia\Algolia\Core\Content\FilterPage\FilterPageSalesChannelDefinition">
+      <tag name="shopware.entity.definition" entity="lia_algolia_filter_page_sales_channel"/>
+    </service>
+
+    <service id="Lia\Algolia\Core\Content\FilterPage\Translation\FilterPageTranslationDefinition">
+      <tag name="shopware.entity.definition" entity="lia_algolia_filter_page_translation"/>
+    </service>
+  </services>
+</container>

@@ -1,0 +1,5 @@
+---
+title: Algolia
+---
+
+# {{ $frontmatter.title }}

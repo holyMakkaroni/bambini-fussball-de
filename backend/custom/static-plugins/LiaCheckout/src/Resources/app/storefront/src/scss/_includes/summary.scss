@@ -1,0 +1,13 @@
+.checkout-order-summary-wrapper {
+  .checkout-order-subtotal, .checkout-order-promotion, .checkout-order-shipping {
+    display: flex;
+    font-size: 14px;
+    line-height: 28px;
+    .label {
+      flex: 1
+    }
+  }
+  .checkout-order-subtotal {
+    font-weight: 600;
+  }
+}

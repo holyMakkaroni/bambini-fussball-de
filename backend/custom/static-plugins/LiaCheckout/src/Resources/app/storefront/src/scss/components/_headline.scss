@@ -1,0 +1,36 @@
+.checkout-headline {
+  .headline-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    align-items: center;
+    .headline {
+      flex: 1;
+      font-size: 20px;
+      font-weight: 600;
+      color: $sw-headline-color;
+      white-space: nowrap;
+      &.big {
+        font-size: 24px
+      }
+    }
+    .actions {
+      text-align: right;
+      button {
+        border: 0;
+        background: none;
+        font-size: 14px;
+        padding: 0;
+        &:hover {
+          text-decoration: underline;
+          color: $sw-color-brand-primary;
+        }
+      }
+    }
+  }
+  .description {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 15px 0;
+  }
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- Definition services -->
+        <service id="lia.seo_suite.slug.service" class="Lia\SeoSuite\Service\SlugService" />
+
+        <!-- Seo resolver -->
+        <service id="Lia\SeoSuite\Content\Seo\FilterSeoResolver" decorates="Shopware\Core\Content\Seo\SeoResolver" decoration-inner-name="lia.seo_suite.filter_seo_resolver.inner">
+            <argument type="service" id="lia.seo_suite.filter_seo_resolver.inner" />
+        </service>
+
+        <!-- Routing Transformer -->
+        <service id="Lia\SeoSuite\Framework\Routing\FilteredRequestTransformer" decorates="Shopware\Core\Framework\Routing\RequestTransformerInterface">
+            <argument type="service" id="Lia\SeoSuite\Framework\Routing\FilteredRequestTransformer.inner" />
+            <argument type="service" id="property_group_option.repository" />
+            <argument type="service" id="product_manufacturer.repository" />
+        </service>
+
+        <service id="Lia\SeoSuite\Content\Seo\StoreApi\PropertyGroupRoute" public="true">
+            <argument type="service" id="property_group.repository"/>
+        </service>
+
+        <service id="Lia\SeoSuite\Content\Seo\StoreApi\PropertyGroupOptionRoute" public="true">
+            <argument type="service" id="property_group_option.repository"/>
+        </service>
+    </services>
+</container>

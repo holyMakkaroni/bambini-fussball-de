@@ -1,0 +1,95 @@
+{% block lia_checkout_order_action %}
+  <div class="checkout-order-action">
+    {% if page.extensions.payoneDeviceFingerprint and page.extensions.payoneDeviceFingerprint.snippet %}
+      {{ page.extensions.payoneDeviceFingerprint.snippet|raw }}
+    {% endif %}
+
+    {% if page.extensions.payone and page.extensions.payone.template %}
+      {% sw_include page.extensions.payone.template %}
+    {% endif %}
+
+    {% block lia_checkout_order_action_headline %}
+      {% sw_include '@Storefront/storefront/page/checkout/components/_headline.html.twig' with {
+        headline: 'checkout.orderAction.headline'|trans
+      } %}
+    {% endblock %}
+
+    <div class="checkout-order-action-mobile">
+      {% sw_include '@Storefront/storefront/page/checkout/components/_coupon.html.twig' with {
+        identifier: 'mobile'
+      } %}
+      {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' with {
+        invertColor: true
+      } %}
+      {% sw_include '@Storefront/storefront/page/checkout/_includes/summary.html.twig' with {
+        summary: summary
+      } %}
+    </div>
+
+    {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' with {
+      invertColor: true
+    } %}
+    {% sw_include '@Storefront/storefront/page/checkout/_includes/total.html.twig' with {
+      total: total,
+      decimals: decimals,
+      big: true
+    } %}
+    {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' %}
+
+    <div class="checkout-order-tos">
+      <small>{{ "checkout.confirmTermsText"|trans({
+          '%url%': path('frontend.cms.page', { id: config('core.basicInformation.tosPage') })
+        })|raw }}</small>
+      <small>{{ "checkout.confirmRevocationNotice"|trans({
+          '%url%': path('frontend.cms.page', { id: config('core.basicInformation.revocationPage') })
+        })|raw }}</small>
+    </div>
+
+    {% if context.customer %}
+      {% set formAddHistoryOptions = {
+        entries: [{
+          state: {},
+          title: 'account.ordersTitle'|trans,
+          url: path('frontend.account.order.page')
+        }]
+      } %}
+
+      <div class="checkout-order-submit">
+        <form id="confirmOrderForm"
+              action="{{ path('frontend.checkout.finish.order') }}"
+              data-form-preserver="true"
+              data-form-submit-loader="true"
+              data-form-add-history="true"
+              data-form-add-history-options='{{ formAddHistoryOptions|json_encode }}'
+              method="post">
+          <input type="hidden" name="tos" value="1"/>
+          {% block page_checkout_confirm_form_submit %}
+            {% block page_checkout_confirm_form_pui_disclaimer %}
+              {# @var \Swag\PayPal\Checkout\PUI\PUIFraudNetData acdcFieldData #}
+              {% set puiFraudnetData = page.extensions[constant('Swag\\PayPal\\Checkout\\PUI\\PUISubscriber::PAYPAL_PUI_FRAUDNET_PAGE_EXTENSION_ID')] %}
+              {% if puiFraudnetData and puiFraudnetData.paymentMethodId is same as(context.paymentMethod.id) %}
+                <div class="text-muted mb-3">{{ "paypal.payUponInvoice.checkout.confirmDisclaimer"|trans|raw }}</div>
+              {% endif %}
+            {% endblock %}
+
+            <div class="d-grid">
+              <button id="confirmFormSubmit"
+                      class="btn btn-success btn-lg"
+                      form="confirmOrderForm"
+                  {% if page.cart.errors.blockResubmit %}
+                    disabled
+                  {% endif %}
+                      type="submit">
+                {{ "checkout.confirmSubmit"|trans|sw_sanitize }}
+              </button>
+            </div>
+
+            {% block page_checkout_confirm_form_submit_paypal_container %}
+              {% sw_include '@SwagPayPal/storefront/component/ecs-spb-checkout/ecs-spb-data.html.twig' %}
+            {% endblock %}
+          {% endblock %}
+        </form>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

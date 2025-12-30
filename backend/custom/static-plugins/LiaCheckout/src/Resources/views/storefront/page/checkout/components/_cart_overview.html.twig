@@ -1,0 +1,31 @@
+{% block lia_checkout_cart_overview %}
+  {% set lineItems = confirm is defined ? page.order.lineItems : page.cart.lineItems %}
+  {% set headline = headline is defined ? headline : 'checkout.headlines.orderOverview'|trans %}
+
+  <div class="checkout-cart-overview">
+    {% if showHeadline is defined %}
+      {% block lia_checkout_cart_overview_headline %}
+        <div class="headline">{{ headline }}</div>
+      {% endblock %}
+
+      {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' with {
+        invertColor: true
+      } %}
+    {% endif %}
+
+      <div class="checkout-cart-items">
+        {% block lia_checkout_cart_overview_lineItems %}
+          {% for lineItem in lineItems %}
+            {% block component_offcanvas_cart_item %}
+              {% sw_include '@Storefront/storefront/component/line-item/line-item.html.twig' with {
+                displayMode: 'offcanvas',
+                redirectTo: 'frontend.checkout.page',
+                showRemoveButton: confirm is defined ? false : true,
+                showQuantitySelect: confirm is defined ? false : true,
+              } %}
+            {% endblock %}
+          {% endfor %}
+        {% endblock %}
+      </div>
+  </div>
+{% endblock %}

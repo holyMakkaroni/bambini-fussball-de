@@ -1,0 +1,11 @@
+{% extends '@Storefront/storefront/base.html.twig' %}
+
+{% block base_body_script %}
+  {{ parent() }}
+
+  {% if config('LiaCheckout.config.googleMapsApiKey') %}
+    <script>
+      window.googleMapsApiKey = '{{ config('LiaCheckout.config.googleMapsApiKey') }}';
+    </script>
+  {% endif %}
+{% endblock %}

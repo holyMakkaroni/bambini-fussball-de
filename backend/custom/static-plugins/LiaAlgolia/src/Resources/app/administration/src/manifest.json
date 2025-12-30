@@ -1,0 +1,7 @@
+{
+  "name": "lia-algolia-filter-page",
+  "author": "Dein Name",
+  "version": "1.0.0",
+  "type": "plugin",
+  "main": "main.js"
+}

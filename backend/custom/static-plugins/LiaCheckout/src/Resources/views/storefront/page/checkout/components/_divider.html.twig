@@ -1,0 +1,9 @@
+{% block lia_divider %}
+  <div class="checkout-divider{% if invertColor is defined and invertColor is true %} invert{% endif %}">
+    {% if label is defined %}
+      <div class="label-wrapper">
+        <div class="label">{{ label }}</div>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

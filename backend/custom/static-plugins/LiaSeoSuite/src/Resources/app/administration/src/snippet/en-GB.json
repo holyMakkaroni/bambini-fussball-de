@@ -1,0 +1,31 @@
+{
+    "liaSeoSuite": {
+        "sw-property": {
+            "detail": {
+                "card": {
+                    "title": "SEO Suite"
+                },
+                "labelFilterName": "Name",
+                "helpTextFilterName": "Label for the SEO URL. Only alphanumeric characters are allowed. [A–z] & [0-9]",
+                "labelFilterPriority": "Priority",
+                "helpTextFilterPriority": "The priority determines the order of the filter segments in the SEO URL.",
+                "labelOptionValue": "Name"
+            }
+        },
+        "sw-category": {
+            "view": {
+                "properties": "Filter properties",
+                "titleEmptyState": "No properties assigned to this category yet."
+            }
+        }
+    },
+    "sw-privileges": {
+        "additional_permissions": {
+            "liaSeoSuite": {
+                "label": "SEO Suite",
+                "propertyEditFilterName": "Edit name for the SEO URL.",
+                "propertyEditOptionValue": "Edit option for the SEO URL."
+            }
+        }
+    }
+}

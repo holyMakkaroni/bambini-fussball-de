@@ -1,0 +1,38 @@
+{% sw_extends '@Storefront/storefront/component/payment/payment-method.html.twig' %}
+
+{% block component_payment_method_name %}{% endblock %}
+
+{% block component_payment_method_label %}
+  <label class="form-check-label payment-method-label" for="paymentMethod{{ payment.id }}">
+    <span class="wrapper">
+      <div class="content">
+        <div class="name">
+          {{ payment.translated.name }}
+        </div>
+
+        {% block component_payment_method_description %}
+          {% if payment.translated.description %}
+            {% if payment.id is same as(context.paymentMethod.id) %}
+              {{ parent() }}
+            {% endif %}
+          {% endif %}
+        {% endblock %}
+      </div>
+      {% if payment.media %}
+        <div class="price">
+          {% sw_thumbnails 'payment-method-image-thumbnails' with {
+            media: payment.media,
+            sizes: {
+              default: '100px'
+            },
+            attributes: {
+              class: 'payment-method-image',
+              alt: (payment.media.translated.alt ?: payment.translated.name),
+              title: (payment.media.translated.title ?: payment.translated.name)
+            }
+          } %}
+        </div>
+      {% endif %}
+    </span>
+  </label>
+{% endblock %}

@@ -1,0 +1,42 @@
+.account-overview {
+  border: 1px solid $sw-border-color;
+  border-radius: 6px;
+  padding: 10px;
+  .overview-item {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $sw-border-color;
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+    }
+    .label {
+      width: 100%;
+      max-width: 100px;
+      font-weight: 600;
+    }
+    .value {
+      flex: 1
+    }
+    .action {
+      width: 100%;
+      max-width: 100px;
+      text-align: left;
+      margin-top: 10px;
+      @include media-breakpoint-up(md) {
+        text-align: right;
+        margin-top: 0;
+      }
+      a {
+        color: $sw-color-brand-primary;
+      }
+    }
+    &:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+}

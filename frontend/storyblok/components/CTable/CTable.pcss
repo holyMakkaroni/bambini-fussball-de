@@ -1,0 +1,14 @@
+.c-table {
+  .table {
+    @apply flex flex-col flex-nowrap;
+    .row {
+      @apply flex flex-nowrap gap-4 border-l border-r border-b border-secondary-light overflow-x-scroll;
+      &.heading {
+        @apply font-bold border-b border-primary border-l-0 border-r-0;
+      }
+    }
+    .cell {
+      @apply flex w-64 md:w-80 px-5 py-3;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{% sw_extends '@Storefront/storefront/component/account/register.html.twig' %}
+
+{% block component_account_register_address_billing %}
+    <div class="register-billing" data-google-address-autocomplete>
+        {{ parent() }}
+    </div>
+{% endblock %}
+
+{% block component_account_register_address_shipping %}
+    <div class="register-shipping js-form-field-toggle-shipping-address d-none" data-google-address-autocomplete>
+        {{ parent() }}
+    </div>
+{% endblock %}

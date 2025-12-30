@@ -1,0 +1,117 @@
+.is-ctl-checkout {
+  &.is-act-checkoutpage, &.is-act-finishpage {
+    .container {
+      max-width: 100%;
+      padding: 0;
+      .container-main {
+        min-height: auto;
+        padding: 0;
+        background: $sw-background-color;
+        @include media-breakpoint-up(lg) {
+          display: flex;
+        }
+        .color-split-screen {
+          display: none;
+          position: fixed;
+          width: 50%;
+          height: 100%;
+          top: 0;
+          @include media-breakpoint-up(lg) {
+            display: block;
+          }
+          &.left {
+            left: 0;
+          }
+          &.right {
+            right: 0;
+            background: $sw-border-color
+          }
+        }
+
+        .checkout-mobile-header {
+          font-size: 14px;
+          padding-top: 20px;
+          @include media-breakpoint-up(lg) {
+            display: none;
+            padding-top: 0;
+          }
+          .checkout-cart-overview {
+            background: $sw-border-color;
+            margin-top: 20px;
+            border-top: 1px solid rgba($sw-text-color, 0.05);
+            border-bottom: 1px solid rgba($sw-text-color, 0.05);
+            .checkout-cart-overview-wrapper {
+              max-width: 570px;
+              margin: 0 auto;
+              padding: 20px;
+              .overview-wrapper {
+                display: flex;
+                align-items: center;
+                .cart-total {
+                  flex: 1;
+                  display: flex;
+                  justify-content: flex-end;
+                  font-size: 16px;
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+        }
+
+        .checkout-wrapper {
+          flex: 0 0 100%;
+          position: relative;
+          max-width: 570px;
+          display: grid;
+          grid-template-columns: 1fr;
+          column-gap: 60px;
+          margin: 0 auto;
+          padding: 0;
+          @include media-breakpoint-up(lg) {
+            max-width: 1280px;
+            padding: 0 30px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+          .checkout-left-side {
+            padding: 20px;
+            @include media-breakpoint-up(lg) {
+              padding: 40px 0;
+            }
+            .header-logo-main {
+              display: none;
+              @include media-breakpoint-up(lg) {
+                display: block;
+              }
+            }
+            .express-wrapper {
+              margin: 40px 0;
+              display: grid;
+              grid-template-columns: 1fr;
+              gap: 20px;
+              @include media-breakpoint-up(lg) {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+              }
+              .easycredit-express {
+                display: grid;
+              }
+            }
+          }
+          .checkout-right-side {
+            display: none;
+            @include media-breakpoint-up(lg) {
+              display: block;
+            }
+            .checkout-right-inner {
+              @include media-breakpoint-up(lg) {
+                position: sticky;
+                top: 0;
+                padding-top: 10px
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

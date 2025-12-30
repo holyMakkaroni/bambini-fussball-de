@@ -1,0 +1,86 @@
+<form action="{{ path('frontend.account.login') }}"
+      class="login-form"
+      method="post"
+      data-form-ajax-submit="true"
+      data-form-ajax-submit-options='{{ formAjaxSubmitOptions|json_encode }}'
+      data-form-submit-loader="true"
+      data-form-validation="true" style="display: none">
+  <input type="hidden"
+         name="redirectTo"
+         value="frontend.checkout.page">
+
+  <input type="hidden"
+         name="redirectParameters"
+         value="{{ {redirected: 0}|json_encode }}">
+  {% sw_include '@Storefront/storefront/page/checkout/components/_headline.html.twig' with {
+    headline: 'checkout.account.headline'|trans,
+    big: true,
+    label: 'checkout.labels.orderAsGuest'|trans
+  } %}
+
+  <div class="login-errors">
+    {% if loginError %}
+      {% if errorSnippet != null %}
+        {% sw_include '@Storefront/storefront/utilities/alert.html.twig' with {
+          type: 'danger',
+          content: errorSnippet|trans|sw_sanitize
+        } %}
+      {% elseif waitTime != null %}
+        {% sw_include '@Storefront/storefront/utilities/alert.html.twig' with {
+          type: 'info',
+          content: 'account.loginThrottled'|trans({'%seconds%': waitTime})|sw_sanitize
+        } %}
+      {% else %}
+        {% sw_include '@Storefront/storefront/utilities/alert.html.twig' with {
+          type: 'danger',
+          content: 'account.loginBadCredentials'|trans|sw_sanitize
+        } %}
+      {% endif %}
+    {% endif %}
+  </div>
+
+  <div class="login-wrapper">
+    <div class="row g-2">
+      <div class="form-floating form-group col-md-6">
+        <input type="email"
+               class="form-control{% if loginError %} is-invalid{% endif %}"
+               autocomplete="username webauthn"
+               id="loginMail"
+               placeholder="{{ 'account.loginMailPlaceholder'|trans|striptags }}"
+               name="username"
+               required="required">
+
+        <label class="form-label"
+               for="loginMail">
+          {{ 'account.loginMailLabel'|trans|sw_sanitize }}
+        </label>
+      </div>
+
+      <div class="form-floating form-group col-md-6">
+        <input type="password"
+               class="form-control{% if loginError %} is-invalid{% endif %}"
+               autocomplete="current-password"
+               id="loginPassword"
+               placeholder="{{ 'account.loginPasswordPlaceholder'|trans|striptags }}"
+               name="password"
+               required="required">
+
+        <label class="form-label"
+               for="loginPassword">
+          {{ 'account.loginPasswordLabel'|trans|sw_sanitize }}
+        </label>
+      </div>
+    </div>
+    <div class="login-password-recover mb-3">
+      <a href="{{ seoUrl('frontend.account.recover.page') }}">
+        {{ 'account.loginPasswordRecover'|trans }}
+      </a>
+    </div>
+    <div class="login-submit">
+      <button type="submit"
+              class="btn btn-primary">
+        {{ 'account.loginSubmit'|trans|sw_sanitize }}
+      </button>
+    </div>
+  </div>
+</form>

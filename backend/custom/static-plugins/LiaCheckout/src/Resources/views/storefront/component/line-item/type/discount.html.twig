@@ -1,0 +1,26 @@
+{% sw_extends '@Storefront/storefront/component/line-item/type/discount.html.twig' %}
+
+{% block component_line_item_type_discount_row_inner %}
+  <div class="item discount">
+    <div class="image">
+      {% sw_include '@Storefront/storefront/component/line-item/element/image.html.twig' with {
+        fallbackIcon: 'marketing'
+      } %}
+    </div>
+    <div class="actions">
+      {% if lineItem.removable and nestingLevel < 1 %}
+        {% sw_include '@Storefront/storefront/component/line-item/element/remove.html.twig' %}
+      {% endif %}
+    </div>
+    <div class="description">
+      <div class="label">
+        {% sw_include '@Storefront/storefront/component/line-item/element/label.html.twig' %}
+      </div>
+    </div>
+    <div class="price">
+      {% sw_include '@Storefront/storefront/component/line-item/element/total-price.html.twig' with {
+        currency: lineItem.order.currency.isoCode
+      } %}
+    </div>
+  </div>
+{% endblock %}

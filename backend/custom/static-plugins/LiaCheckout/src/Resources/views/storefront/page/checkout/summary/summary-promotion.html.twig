@@ -1,0 +1,20 @@
+{% set promotions = summary.data.elements.promotions.elements %}
+{% set totalDiscount = promotions|reduce((carry, item) => carry + item.price.totalPrice, 0) %}
+
+{% block lia_checkout_promotion %}
+  {% block page_checkout_summary_promotion_label %}
+    <div class="label">
+      {{ 'checkout.coupon.headline'|trans|sw_sanitize }}
+    </div>
+  {% endblock %}
+
+  {% block page_checkout_summary_promotion_value %}
+    <div class="value">
+      {% if totalDiscount %}
+        {{ totalDiscount|currency }}{{ 'general.star'|trans|sw_sanitize }}
+      {% else %}
+        -
+      {% endif %}
+    </div>
+  {% endblock %}
+{% endblock %}

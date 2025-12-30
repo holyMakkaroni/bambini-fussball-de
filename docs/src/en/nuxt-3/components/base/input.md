@@ -1,0 +1,10 @@
+---
+title: BaseInput
+---
+
+# `<BaseInput>`
+
+
+
+## Props
+

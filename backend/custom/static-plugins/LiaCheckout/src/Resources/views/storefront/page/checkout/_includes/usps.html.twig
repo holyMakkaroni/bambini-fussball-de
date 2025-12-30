@@ -1,0 +1,33 @@
+{% block lia_checkout_usps %}
+  <div class="checkout-usps">
+    <ul>
+      <li>
+        {% sw_icon 'checkmark' style {
+          'namespace': 'LiaCheckout'
+        } %}
+        <div class="usp-wrapper">
+          <div class="label">Schneller Versand</div>
+          <div class="description">Bei Bestellungen bis 14:00 Uhr wird die Ware am gleichen Tag versandt (nur sofort lieferbare Artikel aus unserem Zentrallager)</div>
+        </div>
+      </li>
+      <li>
+        {% sw_icon 'checkmark' style {
+          'namespace': 'LiaCheckout'
+        } %}
+        <div class="usp-wrapper">
+          <div class="label">Kostenlose Retoure* </div>
+          <div class="description">In Deutschland und Österreich (Munition & Waffen ausgeschlossen)</div>
+        </div>
+      </li>
+      <li>
+        {% sw_icon 'checkmark' style {
+          'namespace': 'LiaCheckout'
+        } %}
+        <div class="usp-wrapper">
+          <div class="label">X zufriedene Kunden</div>
+          <div class="description">evtl ausspielen von Kundenrezenssionen, die auf den schnellen Versand und die unkomplizierte Abwicklung eingehen</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+{% endblock %}

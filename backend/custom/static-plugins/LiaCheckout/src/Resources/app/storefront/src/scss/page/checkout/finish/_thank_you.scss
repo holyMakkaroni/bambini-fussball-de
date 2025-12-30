@@ -1,0 +1,23 @@
+.thank-you-wrapper {
+  .thank-you {
+    margin: 30px 0;
+    @include media-breakpoint-up(lg) {
+      margin: 55px 0;
+    }
+    .checkout-headline {
+      .headline-wrapper {
+        margin-bottom: 30px;
+        .headline {
+          white-space: normal;
+        }
+      }
+    }
+    p {
+      font-size: 14px;
+      margin: 0;
+      &.order-number {
+        font-weight: 600;
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.form-select {
+  line-height: 20px;
+  border-radius: 6px;
+  &:focus {
+    border-color: $sw-color-success;
+    box-shadow: 0 0 0 0.1rem $sw-color-success;
+  }
+}

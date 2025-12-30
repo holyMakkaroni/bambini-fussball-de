@@ -1,0 +1,30 @@
+---
+title: {{name}}
+---
+
+# `<{{name}}>`
+
+{{{description}}}
+
+## Props
+{{#each props}}
+
+### {{name}}
+- **Type**: `{{{type}}}`
+- **Default**: `{{{defaultValue}}}`
+- **Required**: `{{{required}}}`
+{{#if description}}
+- **Description**: {{description}}
+{{/if}}
+
+{{/each}}
+
+{{#if slots.length}}
+## Slots
+{{#each slots}}
+
+### `{{name}}`
+{{description}}
+
+{{/each}}
+{{/if}}

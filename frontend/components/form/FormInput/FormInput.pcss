@@ -1,0 +1,13 @@
+.c-form-input {
+  input {
+    @apply w-full rounded-[6px] outline-primary focus:outline-1 py-[7px] px-5 border focus:ring-0 focus:ring-offset-0 focus:outline focus:border-primary focus-visible:border-primary placeholder:text-secondary;
+    &.with-icon {
+      @apply pr-14;
+    }
+  }
+  &.active {
+    input {
+      @apply border-primary outline-primary outline-1;
+    }
+  }
+}

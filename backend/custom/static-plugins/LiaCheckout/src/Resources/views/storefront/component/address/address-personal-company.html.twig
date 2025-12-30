@@ -1,0 +1,58 @@
+{% sw_extends '@Storefront/storefront/component/address/address-personal-company.html.twig' %}
+
+{% block component_address_form_company_name %}
+  <div class="form-floating form-group col-12">
+    {% if formViolations.getViolations('/company') is not empty %}
+      {% set violationPath = '/company' %}
+    {% elseif formViolations.getViolations("/#{prefix}/company") is not empty %}
+      {% set violationPath = "/#{prefix}/company" %}
+    {% else %}
+      {% set requiredMessage = 'error.VIOLATION::IS_BLANK_ERROR'|trans({ '%field%': 'address.companyNameLabel'|trans|sw_sanitize }) %}
+    {% endif %}
+
+    {% block component_address_form_company_name_input %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_form_company_name_label %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_form_company_name_input_error %}
+      {{ parent() }}
+    {% endblock %}
+  </div>
+{% endblock %}
+
+{% block component_address_form_company_department %}
+  <div class="form-floating form-group col-md-6">
+    {% if formViolations.getViolations('/department') is not empty %}
+      {% set violationPath = '/department' %}
+    {% elseif formViolations.getViolations("/#{prefix}/department") is not empty %}
+      {% set violationPath = "/#{prefix}/department" %}
+    {% endif %}
+
+    {% block component_address_form_company_department_input %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_form_company_department_label %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_form_company_department_input_error %}
+      {{ parent() }}
+    {% endblock %}
+  </div>
+{% endblock %}
+
+{# ludtwig-ignore twig-block-name-snake-case #}
+{% block component_address_form_company_vatId %}
+  {% if prefix != 'shippingAddress' %}
+    <div class="form-floating form-group col-md-6">
+      {% sw_include '@Storefront/storefront/component/address/address-personal-vat-id.html.twig' with {
+        vatIds: data.get('vatIds')
+      } %}
+    </div>
+  {% endif %}
+{% endblock %}

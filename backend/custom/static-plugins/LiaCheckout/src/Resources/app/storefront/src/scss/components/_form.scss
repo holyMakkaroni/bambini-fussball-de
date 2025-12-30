@@ -1,0 +1,17 @@
+.form-floating {
+  & > label {
+    color: rgba($sw-text-color, 50%);
+    background: none;
+  }
+  & > .form-control:not(:placeholder-shown) {
+    ~ label {
+      &:after {
+        background: none;
+      }
+    }
+  }
+  .invalid-feedback {
+    font-size: 13px;
+    padding: 0 8px;
+  }
+}

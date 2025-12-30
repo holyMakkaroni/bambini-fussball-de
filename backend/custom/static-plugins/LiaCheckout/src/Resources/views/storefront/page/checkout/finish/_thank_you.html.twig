@@ -1,0 +1,18 @@
+{% set orderNumber = page.order.orderNumber %}
+{% set email = page.order.orderCustomer.email %}
+
+<div class="thank-you-wrapper">
+  <div class="thank-you">
+    {% sw_include '@Storefront/storefront/page/checkout/components/_headline.html.twig' with {
+      headline: 'checkout.orderFinished.headline'|trans
+    } %}
+    <div>
+      <p class="order-number">{{ 'checkout.orderFinished.description'|trans({
+          '%orderNumber%': orderNumber
+        })|sw_sanitize }}</p>
+      <p>{{ 'checkout.orderFinished.additionalDescription'|trans({
+          '%email%': email
+        })|sw_sanitize }}</p>
+    </div>
+  </div>
+</div>

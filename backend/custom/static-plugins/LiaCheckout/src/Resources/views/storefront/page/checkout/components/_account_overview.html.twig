@@ -1,0 +1,64 @@
+{% block lia_checkout_account_overview %}
+  {% set activeShippingAddress = context.customer.activeShippingAddress %}
+  {% set activeBillingAddress = context.customer.activeBillingAddress %}
+
+  <div class="account-overview">
+
+    {% block lia_checkout_account_overview_contact %}
+      <div class="overview-item">
+        <div class="label">
+          {{ 'checkout.headlines.contact'|trans }}
+        </div>
+        <div class="value">{{ context.customer.email }}</div>
+      </div>
+    {% endblock %}
+
+    {% block lia_checkout_account_overview_shipping %}
+      <div class="overview-item">
+        <div class="label">
+          {{ 'checkout.headlines.shipping'|trans }}
+        </div>
+        <div class="value">
+          {% if activeShippingAddress.company %}{{ activeShippingAddress.company }}, {% endif %}{{ activeShippingAddress.firstName }} {{ activeShippingAddress.lastName }}, {{ activeShippingAddress.street }}, {{ activeShippingAddress.zipcode }} {{ activeShippingAddress.city }}
+        </div>
+        <div class="action">
+          <a href="{{ path('frontend.account.address.edit.page', {addressId: activeShippingAddress.id}) }}"
+             title="{{ 'account.overviewChangeShipping'|trans|striptags }}"
+             data-address-editor="true"
+             data-address-editor-options="{{ {
+               changeShipping: true,
+               addressId: activeShippingAddress.id,
+             }|json_encode }}">
+            {{ 'checkout.headlines.edit'|trans|sw_sanitize }}
+          </a>
+        </div>
+      </div>
+    {% endblock %}
+
+    {% block lia_checkout_account_overview_billing %}
+      <div class="overview-item">
+        <div class="label">
+          {{ 'checkout.headlines.billing'|trans }}
+        </div>
+        <div class="value">
+          {% if activeShippingAddress.id is same as activeBillingAddress.id %}
+            {{ 'checkout.headlines.billingSame'|trans }}
+          {% else %}
+            {% if activeBillingAddress.company %}{{ activeBillingAddress.company }}, {% endif %}{{ activeBillingAddress.firstName }} {{ activeBillingAddress.lastName }}, {{ activeBillingAddress.street }}, {{ activeBillingAddress.zipcode }} {{ activeBillingAddress.city }}
+          {% endif %}
+        </div>
+        <div class="action">
+          <a href="{{ path('frontend.account.address.edit.page', {addressId: activeBillingAddress.id}) }}"
+             title="{{ 'account.overviewChangeBilling'|trans|striptags }}"
+             data-address-editor="true"
+             data-address-editor-options="{{ {
+               changeBilling: true,
+               addressId: activeBillingAddress.id,
+             }|json_encode }}">
+            {{ 'checkout.headlines.edit'|trans|sw_sanitize }}
+          </a>
+        </div>
+      </div>
+    {% endblock %}
+  </div>
+{% endblock %}

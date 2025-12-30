@@ -1,0 +1,26 @@
+.addresses {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+  }
+  @include media-breakpoint-up(lg) {
+    margin: 35px 0;
+  }
+  .card {
+    flex: 1;
+    .checkout-headline {
+      .headline-wrapper {
+        margin-bottom: 15px;
+        @include media-breakpoint-up(lg) {
+          margin-bottom: 30px;
+        }
+      }
+    }
+    .address, .content {
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{% sw_extends '@Storefront/storefront/page/checkout/confirm/index.html.twig' %}
+
+{% block page_checkout_confirm_tos_control %}
+    {{ parent() }}
+
+    <div class="form-check">
+        {% block page_checkout_confirm_agree_rating_consent_control_checkbox %}
+            <input type="checkbox"
+                   class="checkout-confirm-agree-rating-consent-control-checkbox form-check-input"
+                   id="agreeRatingConsent"
+                   form="confirmOrderForm"
+                   name="agreeRatingConsent" {% if config('LiaArticleReview.config.agreeConsentByDefault') %}checked="checked"{% endif %}>
+        {% endblock %}
+
+        {% block page_checkout_confirm_agree_rating_consent_control_label %}
+            <label for="agreeRatingConsent"
+                   class="checkout-confirm-agree-rating-consent-label custom-control-label">
+                {{ "lia.articleReview.label.agreeRatingConsent"|trans }}
+            </label>
+        {% endblock %}
+    </div>
+{% endblock %}

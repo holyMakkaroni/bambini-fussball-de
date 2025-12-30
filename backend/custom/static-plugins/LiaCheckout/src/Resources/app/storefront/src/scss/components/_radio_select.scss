@@ -1,0 +1,68 @@
+.radio-selection {
+  display: grid;
+  gap: 10px;
+  .current-selected {
+    background: $sw-border-color;
+    &:hover {
+      background: $sw-border-color;
+    }
+  }
+  & > div {
+    border: 1px solid $sw-border-color;
+    border-radius: 6px;
+    padding: 10px;
+    transition: all .1s ease-in-out;
+    &:hover {
+      background: rgba($sw-border-color, .25);
+    }
+    .form-group {
+      margin: 0;
+    }
+    .form-check-input {
+      width: 20px;
+      height: 20px;
+      position: relative;
+      &:focus {
+        border-color: #ffffff;
+        box-shadow: none;
+      }
+      &::after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: $sw-border-color;
+      }
+      &:checked[type=radio] {
+        background: #ffffff;
+        border-color: #ffffff;
+        &:after {
+          background: $sw-color-success;
+        }
+      }
+    }
+    label {
+      font-weight: 400;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 4px;
+      padding-left: 4px;
+      .wrapper {
+        display: flex;
+        flex-direction: row;
+        column-gap: 20px;
+        .content {
+          flex: 1;
+          .description, .payment-method-description {
+            width: 100%;
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+  }
+}

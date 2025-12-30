@@ -1,0 +1,13 @@
+{% sw_extends '@Storefront/storefront/page/checkout/summary/summary-shipping.html.twig' %}
+
+{% block page_checkout_summary_shipping_label %}
+  <div class="label">
+    {{ 'checkout.summaryShipping'|trans|sw_sanitize }}
+  </div>
+{% endblock %}
+
+{% block page_checkout_summary_shipping_value %}
+  <div class="description">
+    {{ delivery.shippingCosts.totalPrice|currency }}{{ 'general.star'|trans|sw_sanitize }}
+  </div>
+{% endblock %}

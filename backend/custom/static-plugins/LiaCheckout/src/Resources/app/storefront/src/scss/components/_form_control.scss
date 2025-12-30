@@ -1,0 +1,9 @@
+.form-control {
+  border-radius: 6px;
+  padding: 5px 10px;
+  line-height: 28px;
+  &:focus {
+    border-color: $sw-color-success;
+    box-shadow: 0 0 0 0.1rem $sw-color-success;
+  }
+}

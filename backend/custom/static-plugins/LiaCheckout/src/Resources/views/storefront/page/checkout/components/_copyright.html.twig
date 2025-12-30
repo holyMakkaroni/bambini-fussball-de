@@ -1,0 +1,26 @@
+<div class="copyright-wrapper">
+  <div class="copyright">2025 LivingActive – Beyersdörfer GmbH</div>
+  <ul>
+    {% if config('core.basicInformation.imprintPage') is not null %}
+      <li>
+        <a href="{{ path('frontend.cms.page', { id: config('core.basicInformation.imprintPage') }) }}"
+           title="{{ "general.imprintLink"|trans|sw_sanitize }}"
+           data-ajax-modal="true"
+           data-url="{{ path('frontend.cms.page', { id: config('core.basicInformation.imprintPage') }) }}">
+          {{ "general.imprintLink"|trans|sw_sanitize }}
+        </a>
+      </li>
+    {% endif %}
+
+    {% if config('core.basicInformation.privacyPage') is not null %}
+      <li>
+        <a href="{{ path('frontend.cms.page', { id: config('core.basicInformation.privacyPage') }) }}"
+           title="{{ "general.privacyLink"|trans|sw_sanitize }}"
+           data-ajax-modal="true"
+           data-url="{{ path('frontend.cms.page', { id: config('core.basicInformation.privacyPage') }) }}">
+          {{ "general.privacyLink"|trans|sw_sanitize }}
+        </a>
+      </li>
+    {% endif %}
+  </ul>
+</div>

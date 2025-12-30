@@ -1,0 +1,285 @@
+<form action="{{ path('frontend.account.register.save') }}"
+      class="register-form"
+      method="post"
+      data-form-ajax-submit="true"
+      data-form-ajax-submit-options='{{ formAjaxSubmitOptions|json_encode }}'
+      data-form-submit-loader="true"
+      data-form-validation="true">
+  <div class="checkout-account-login">
+    {% block lia_checkout_account_login_headline %}
+      {% sw_include '@Storefront/storefront/page/checkout/components/_headline.html.twig' with {
+        headline: 'checkout.account.headline'|trans,
+        big: true,
+        label: 'checkout.labels.login'|trans
+      } %}
+    {% endblock %}
+    {% block lia_checkout_account_redirect %}
+      <input type="hidden"
+             name="redirectTo"
+             value="frontend.checkout.page">
+
+      <input type="hidden"
+             name="redirectParameters"
+             value="{{ {redirected: 0}|json_encode }}">
+    {% endblock %}
+
+    {% block lia_checkout_account_create_account %}{% endblock %}
+
+    {% block lia_checkout_account_form_action %}
+      <input type="hidden"
+             name="errorRoute"
+             value="{{ errorRoute ?: 'frontend.account.register.page' }}">
+
+      <input type="hidden"
+             name="errorParameters"
+             value="{{ errorParameters }}">
+    {% endblock %}
+
+    <div class="row g-2">
+      <div class="form-floating form-group col-md-12">
+        {% block lia_checkout_account_email_input %}
+          <input type="email"
+                 class="form-control{% if formViolations.getViolations('/email') is not empty %} is-invalid{% endif %}"
+                 autocomplete="section-personal email"
+                 id="personalMail"
+                 placeholder="{{ "checkout.labels.email"|trans|striptags }}"
+                 name="email"
+                 value="{{ data.get('email') }}"
+              {% if config('core.loginRegistration.requireEmailConfirmation') %}
+                data-form-validation-equal="personalMail"
+              {% endif %}
+                 required="required">
+        {% endblock %}
+        {% block lia_checkout_account_email_label %}
+          <label class="form-label"
+                 for="personalMail">
+            {{ "checkout.labels.email"|trans|sw_sanitize }}{{ "general.required"|trans|sw_sanitize }}
+          </label>
+        {% endblock %}
+
+        {% block lia_checkout_account_email_violations %}
+          {% if formViolations.getViolations('/email') is not empty %}
+            {% sw_include '@Storefront/storefront/utilities/form-violation.html.twig' with {
+              violationPath: '/email'
+            } %}
+          {% endif %}
+        {% endblock %}
+      </div>
+    </div>
+
+    <div class="row g-2">
+      {% block lia_checkout_account_personal_password %}
+        <div class="js-form-field-toggle-guest-mode form-floating form-group col-md-12 mb-3">
+          {% block lia_checkout_account_personal_password_input %}
+            <input type="password"
+                   class="form-control{% if formViolations.getViolations('/password') is not empty %} is-invalid{% endif %}"
+                   autocomplete="new-password"
+                   id="personalPassword"
+                   placeholder="{{ "account.personalPasswordPlaceholder"|trans|striptags }}"
+                   name="password"
+                   minlength="{{ config('core.loginRegistration.passwordMinLength') }}"
+                {% if config('core.loginRegistration.requirePasswordConfirmation') %}
+                  data-form-validation-equal="newPassword"
+                {% endif %}
+                {% if config('core.loginRegistration.passwordMinLength') != 0 %}
+                  data-form-validation-length="{{ config('core.loginRegistration.passwordMinLength') }}"
+                  data-form-validation-length-message=" {{ "account.personalPasswordDescription"|trans({
+                    '%minLength%': config('core.loginRegistration.passwordMinLength')
+                  })|sw_sanitize }}"
+                {% endif %}
+                   required="required">
+          {% endblock %}
+
+          {% block lia_checkout_account_personal_password_label %}
+            <label class="form-label"
+                   for="personalPassword">
+              {{ "account.personalPasswordLabel"|trans|sw_sanitize }}{{ "general.required"|trans|sw_sanitize }}
+            </label>
+          {% endblock %}
+
+          {% block lia_checkout_account_personal_password_description %}
+            {% if config('core.loginRegistration.passwordMinLength') != 0 %}
+              <small class="form-text js-validation-message"
+                     data-form-validation-length-text="true">
+                {{ "account.personalPasswordDescription"|trans({
+                  '%minLength%': config('core.loginRegistration.passwordMinLength')
+                })|sw_sanitize }}
+              </small>
+            {% endif %}
+          {% endblock %}
+
+          {% block lia_checkout_account_personal_password_input_error %}
+            {% if formViolations.getViolations('/password') is not empty %}
+              {% sw_include '@Storefront/storefront/utilities/form-violation.html.twig' with {
+                violationPath: '/password'
+              } %}
+            {% endif %}
+          {% endblock %}
+        </div>
+
+        {% if config('core.loginRegistration.requirePasswordConfirmation') %}
+          {% block lia_checkout_account_personal_password_confirmation %}
+            <div class="form-floating mb-3">
+                        <span class="js-form-field-toggle-guest-mode">
+                          {% block lia_checkout_account_personal_password_confirmation_input %}
+                            <input type="password"
+                                   class="form-control{% if formViolations.getViolations('/password') is not empty or formViolations.getViolations('/passwordConfirmation') is not empty %} is-invalid{% endif %}"
+                                   autocomplete="new-password"
+                                   id="personalPasswordConfirmation"
+                                   placeholder="{{ 'account.personalPasswordConfirmationPlaceholder'|trans|striptags }}"
+                                   name="passwordConfirmation"
+                                   minlength="{{ config('core.loginRegistration.passwordMinLength') }}"
+                                   data-form-validation-equal="newPassword"
+                                   data-form-validation-equal-message="{{ 'account.personalPasswordConfirmationInvalidMessage'|trans|striptags }}"
+                                   required="required">
+                          {% endblock %}
+
+                          {% block lia_checkout_account_personal_password_confirmation_label %}
+                            <label class="form-label"
+                                   for="personalPasswordConfirmation">
+                                  {{ 'account.personalPasswordConfirmationLabel'|trans|sw_sanitize }}{{ 'general.required'|trans|sw_sanitize }}
+                              </label>
+                          {% endblock %}
+
+                          {% block lia_checkout_account_personal_password_confirmation_input_error %}
+                            {% if formViolations.getViolations('/password') is not empty %}
+                              {% sw_include '@Storefront/storefront/utilities/form-violation.html.twig' with {
+                                violationPath: '/password'
+                              } %}
+                            {% endif %}
+
+                            {% if formViolations.getViolations('/passwordConfirmation') is not empty %}
+                              {% sw_include '@Storefront/storefront/utilities/form-violation.html.twig' with {
+                                violationPath: '/passwordConfirmation'
+                              } %}
+                            {% endif %}
+                          {% endblock %}
+                        </span>
+            </div>
+          {% endblock %}
+        {% endif %}
+      {% endblock %}
+
+      {% block lia_checkout_account__captcha %}
+        {% sw_include '@Storefront/storefront/component/captcha/base.html.twig' with { preCheck: true } %}
+      {% endblock %}
+
+      {% block page_checkout_register_personal_guest %}
+        <div class="form-check register-guest-control">
+          {% block page_checkout_register_personal_guest_input %}
+            <input type="checkbox"
+                   class="form-check-input"
+                   name="createCustomerAccount"
+                   value="true"
+                   id="personalGuest"
+                   {% if config('core.loginRegistration.createCustomerAccountDefault') == 1 %}checked="checked"{% endif %}
+                   data-form-field-toggle="true"
+                   data-form-field-toggle-target=".js-form-field-toggle-guest-mode"
+                   data-form-field-toggle-value="true">
+          {% endblock %}
+
+          {% block page_checkout_register_personal_guest_label %}
+            <label class="custom-control-label"
+                   for="personalGuest">
+              {{ "checkout.registerCustomermodeLabel"|trans|sw_sanitize }}
+            </label>
+          {% endblock %}
+        </div>
+      {% endblock %}
+    </div>
+  </div>
+
+  {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' %}
+
+  <div class="checkout-delivery-address">
+    {% block lia_checkout_delivery_address_headline %}
+      {% sw_include '@Storefront/storefront/page/checkout/components/_headline.html.twig' with {
+        headline: 'checkout.billing_address.headline'|trans
+      } %}
+    {% endblock %}
+
+    {% block lia_checkout_account_registration %}
+      {% block lia_checkout_account_address_personal %}
+        {% sw_include '@Storefront/storefront/component/address/address-personal.html.twig' with {
+          'showBirthdayField': config('core.loginRegistration.showBirthdayField'),
+          'accountType': data.get('accountType')
+        } %}
+      {% endblock %}
+      {% block lia_checkout_account_address_company %}
+        {% sw_include '@Storefront/storefront/component/address/address-personal-company.html.twig' with {
+          'prefix': 'billingAddress',
+          'address': data.get('billingAddress')
+        } %}
+      {% endblock %}
+
+      <div class="register-address">
+        {% block lia_checkout_account_address_billing %}
+          <div class="register-billing" data-google-address-autocomplete>
+            {% sw_include '@Storefront/storefront/component/address/address-form.html.twig' with {
+              'prefix': 'billingAddress',
+              'data': data.get('billingAddress'),
+              'showNoShippingPostfix': true,
+            } %}
+          </div>
+        {% endblock %}
+
+        {% block lia_checkout_account_address_shipping %}
+          <div>
+            <div class="form-check register-different-shipping">
+              <input type="checkbox"
+                     class="form-check-input js-different-shipping-checkbox"
+                     name="differentShippingAddress"
+                     value="1"
+                     id="differentShippingAddress"
+                     {% if data.get('differentShippingAddress') %}checked="checked"{% endif %}
+                     data-form-field-toggle="true"
+                     data-form-field-toggle-target=".js-form-field-toggle-shipping-address"
+                     data-form-field-toggle-value="true"
+                     data-form-field-toggle-trigger-nested="true">
+
+              <label class="custom-control-label no-validation"
+                     for="differentShippingAddress">
+                {{ "account.registerDifferentShipping"|trans|sw_sanitize }}
+              </label>
+            </div>
+
+            <div class="register-shipping js-form-field-toggle-shipping-address d-none" data-google-address-autocomplete>
+              <div class="h3">
+                {{ "account.registerAddressShippingHeader"|trans|sw_sanitize }}
+              </div>
+
+              {% sw_include '@Storefront/storefront/component/address/address-personal.html.twig' with {
+                'prefix': 'shippingAddress',
+                'data': data.get('shippingAddress'),
+                'hideCustomerTypeSelect': false,
+                'customToggleTarget': true,
+                'accountType': data.get('shippingAddress').get('accountType')
+              } %}
+
+              {% sw_include '@Storefront/storefront/component/address/address-personal-company.html.twig' with {
+                'prefix': 'shippingAddress',
+                'customToggleTarget': true,
+                'address': data.get('shippingAddress')
+              } %}
+
+              {% sw_include '@Storefront/storefront/component/address/address-form.html.twig' with {
+                'prefix': 'shippingAddress',
+                'data': data.get('shippingAddress'),
+                'showNoShippingPostfix': true,
+                'disableNonShippableCountries': true,
+              } %}
+            </div>
+          </div>
+        {% endblock %}
+
+        {% block lia_checkout_account_actions %}
+          {% block lia_checkout_account_actions_proceed %}
+            <button class="btn btn-primary">
+              {{ 'checkout.labels.actionProceed'|trans }}
+            </button>
+          {% endblock %}
+        {% endblock %}
+      </div>
+    {% endblock %}
+  </div>
+</form>

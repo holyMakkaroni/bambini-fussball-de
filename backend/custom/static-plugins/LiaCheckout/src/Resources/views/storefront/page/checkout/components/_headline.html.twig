@@ -1,0 +1,19 @@
+<div class="checkout-headline">
+  <div class="headline-wrapper">
+    {% if headline is defined %}
+      <div class="headline{% if big is defined and big is true %} big{% endif %}">
+        {{ headline }}
+      </div>
+    {% endif %}
+    {% if label is defined %}
+      <div class="actions">
+        <button type="button" class="login-register-toggle">{{ label }}</button>
+      </div>
+    {% endif %}
+  </div>
+  {% if description is defined %}
+    <div class="description">
+      {{ description }}
+    </div>
+  {% endif %}
+</div>

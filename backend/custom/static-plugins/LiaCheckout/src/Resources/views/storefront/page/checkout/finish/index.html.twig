@@ -1,0 +1,37 @@
+{% sw_extends '@Storefront/storefront/page/checkout/index.html.twig' %}
+
+{% block lia_checkout_coupon_form_mobile %}{% endblock %}
+{% block lia_checkout_coupon_form %}{% endblock %}
+{% block lia_checkout_usps %}{% endblock %}
+
+{% block lia_checkout_left_inner %}
+  {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' %}
+  {% sw_include '@Storefront/storefront/page/checkout/finish/_thank_you.html.twig' %}
+  {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' %}
+
+  {% sw_include '@Storefront/storefront/page/checkout/finish/_addresses.html.twig' %}
+  {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' %}
+
+  {% sw_include '@Storefront/storefront/page/checkout/finish/_shipping_and_payment.html.twig' %}
+  {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' %}
+
+  {% sw_include '@Storefront/storefront/page/checkout/finish/_action_back.html.twig' %}
+
+  {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' %}
+
+  {% sw_include '@Storefront/storefront/page/checkout/components/_copyright.html.twig' %}
+{% endblock %}
+
+{% block lia_checkout_cart_overview_mobile %}
+  {% sw_include '@Storefront/storefront/page/checkout/components/_cart_overview.html.twig' with {
+    confirm: true
+  } %}
+{% endblock %}
+
+{% block lia_checkout_cart_overview %}
+  {% sw_include '@Storefront/storefront/page/checkout/components/_cart_overview.html.twig' with {
+    showHeadline: true,
+    headline: 'checkout.headlines.orderSummary'|trans,
+    confirm: true
+  } %}
+{% endblock %}

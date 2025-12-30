@@ -1,0 +1,22 @@
+.checkout-order-total-wrapper {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  margin: 14px 0;
+  .total-labels {
+    flex: 1;
+    .label {
+      font-weight: 600
+    }
+    .description {
+      font-size: 12px;
+      opacity: .5
+    }
+  }
+  .total {
+    font-weight: 600;
+    &.big {
+      font-size: 20px;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+---
+title: BaseDeliveryInformation
+---
+
+# `<BaseDeliveryInformation>`
+
+
+
+## Props
+

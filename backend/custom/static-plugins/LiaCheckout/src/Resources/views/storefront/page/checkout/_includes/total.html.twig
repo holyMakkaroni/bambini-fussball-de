@@ -1,0 +1,11 @@
+{% block lia_checkout_total %}
+  <div class="checkout-order-total-wrapper">
+    <div class="total-labels">
+      <div class="label">Gesamtsumme</div>
+      <div class="description">inkl. MwSt. & Versand</div>
+    </div>
+    <div class="total{% if big is defined %} big{% endif %}">
+      {{ total|currency(decimals=decimals) }}{{ 'general.star'|trans|sw_sanitize }}
+    </div>
+  </div>
+{% endblock %}

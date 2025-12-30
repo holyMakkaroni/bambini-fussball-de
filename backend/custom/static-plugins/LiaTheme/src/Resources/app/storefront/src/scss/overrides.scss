@@ -1,0 +1,17 @@
+/*
+Override variable defaults
+==================================================
+This file is used to override default SCSS variables from the Shopware Storefront or Bootstrap.
+
+Because of the !default flags, theme variable overrides have to be declared beforehand.
+https://getbootstrap.com/docs/4.0/getting-started/theming/#variable-defaults
+*/
+
+$font-size-base: 1rem;
+
+$form-floating-height: 50px;
+$form-floating-padding-x: 10px;
+$form-floating-padding-y: 12px;
+$form-floating-input-padding-t: 20px;
+$form-floating-input-padding-b: 5px;
+$form-floating-label-transform: scale(0.75) translateY(-0.5rem) translateX(0.55rem);

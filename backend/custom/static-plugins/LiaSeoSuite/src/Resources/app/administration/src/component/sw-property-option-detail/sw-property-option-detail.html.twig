@@ -1,0 +1,13 @@
+{% block sw_property_option_detail_media %}
+    {% parent %}
+    <sw-container v-if="acl.can('lia_seoSuite_property_group_option:update')" columns="1fr" class="lia-seo-suite">
+        <h4 class="sw-modal__title">SEO Suite</h4>
+        <sw-text-field
+                v-model:value="currentOption.customFields.optionValue"
+                type="text"
+                :label="$tc('liaSeoSuite.sw-property.detail.labelOptionValue')"
+                :helpText="$tc('liaSeoSuite.sw-property.detail.helpTextFilterName')"
+                :placeholder="currentOption.customFields.optionValue"
+        />
+    </sw-container>
+{% endblock %}

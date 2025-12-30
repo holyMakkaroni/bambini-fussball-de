@@ -1,0 +1,48 @@
+{
+  "name": "lia/seo-suite",
+  "description": "Seo suite",
+  "version": "1.2.0",
+  "type": "shopware-platform-plugin",
+  "license": "proprietary",
+  "autoload": {
+    "psr-4": {
+      "Lia\\SeoSuite\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "LivingActive",
+      "homepage": "https://www.livingactive.de"
+    }
+  ],
+  "require": {
+    "shopware/core": "~6.6",
+    "cocur/slugify": "4.5.1"
+  },
+  "extra": {
+    "shopware-plugin-class": "Lia\\SeoSuite\\LiaSeoSuite",
+    "plugin-icon": "src/Resources/plugin.png",
+    "copyright": "(c) by LivingActive",
+    "label": {
+      "de-DE": "SEO Suite",
+      "en-GB": "SEO suite"
+    },
+    "description": {
+      "de-DE": "Sprechende Filter URL's | SEO Landingpages",
+      "en-GB": "Speaking filter URL's | SEO Landingpages"
+    },
+    "manufacturerLink": {
+      "de-DE": "https://www.unique-web.de",
+      "en-GB": "https://www.unique-web.de"
+    },
+    "supportLink": {
+      "de-DE": "https://www.unique-web.de",
+      "en-GB": "https://www.unique-web.de"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "symfony/runtime": false
+    }
+  }
+}

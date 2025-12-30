@@ -1,0 +1,21 @@
+{% block lia_checkout_summary %}
+  <div class="checkout-order-summary-wrapper">
+    <div class="checkout-order-subtotal">
+      {% sw_include '@Storefront/storefront/page/checkout/summary/summary-position.html.twig' with {
+        summary: summary
+      } %}
+    </div>
+
+    <div class="checkout-order-promotion">
+      {% sw_include '@Storefront/storefront/page/checkout/summary/summary-promotion.html.twig' with {
+        summary: summary
+      } %}
+    </div>
+
+    <div class="checkout-order-shipping">
+      {% sw_include '@Storefront/storefront/page/checkout/summary/summary-shipping.html.twig' with {
+        summary: summary
+      } %}
+    </div>
+  </div>
+{% endblock %}

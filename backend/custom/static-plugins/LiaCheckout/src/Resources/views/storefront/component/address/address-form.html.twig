@@ -1,0 +1,269 @@
+{% sw_extends '@Storefront/storefront/component/address/address-form.html.twig' %}
+
+{% block component_address_form_company_name %}
+  <div class="form-floating form-group col-6">
+    {% if formViolations.getViolations('/company') is not empty %}
+      {% set violationPath = '/company' %}
+    {% elseif formViolations.getViolations("/#{prefix}/company") is not empty %}
+      {% set violationPath = "/#{prefix}/company" %}
+    {% endif %}
+
+    {% block component_address_form_company_name_input %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_form_company_name_label %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_form_company_name_input_error %}
+      {{ parent() }}
+    {% endblock %}
+  </div>
+{% endblock %}
+
+{% block component_address_form_company_department %}
+  <div class="form-group col-md-6">
+    {% if formViolations.getViolations('/department') is not empty %}
+      {% set violationPath = '/department' %}
+    {% elseif formViolations.getViolations("/#{prefix}/department") is not empty %}
+      {% set violationPath = "/#{prefix}/department" %}
+    {% endif %}
+
+    {% block component_address_form_company_department_input %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_form_company_department_label %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_form_company_department_input_error %}
+      {{ parent() }}
+    {% endblock %}
+  </div>
+{% endblock %}
+
+{% block component_address_form_street %}
+  <div class="form-floating form-group col-md-12">
+    {% if formViolations.getViolations('/street') is not empty %}
+      {% set violationPath = '/street' %}
+    {% elseif formViolations.getViolations("/#{prefix}/street") is not empty %}
+      {% set violationPath = "/#{prefix}/street" %}
+    {% else %}
+      {% set requiredMessage = 'error.VIOLATION::IS_BLANK_ERROR'|trans({ '%field%': 'address.streetLabel'|trans|sw_sanitize }) %}
+    {% endif %}
+
+    {% block component_address_form_street_input %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_form_street_label %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_form_street_input_error %}
+      {{ parent() }}
+    {% endblock %}
+  </div>
+{% endblock %}
+
+{% block component_address_form_zipcode_city %}
+  {% set zipcodeField %}
+    {% set zipcodeValue = formViolations.getInputData()['zipcode'] ?? data.get('zipcode') %}
+
+    {% if formViolations.getViolations('/zipcode') is not empty %}
+      {% set violationPath = '/zipcode' %}
+    {% elseif formViolations.getViolations("/#{prefix}/zipcode") is not empty %}
+      {% set violationPath = "/#{prefix}/zipcode" %}
+    {% else %}
+      {% set requiredMessage = 'error.VIOLATION::IS_BLANK_ERROR'|trans({ '%field%': 'address.zipcodeLabel'|trans|sw_sanitize }) %}
+    {% endif %}
+
+    {% block component_address_form_zipcode_input %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_form_zipcode_label %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_form_zipcode_error %}
+      {{ parent() }}
+    {% endblock %}
+  {% endset %}
+
+  {% set cityField %}
+    {% if formViolations.getViolations('/city') is not empty %}
+      {% set violationPath = '/city' %}
+    {% elseif formViolations.getViolations("/#{prefix}/city") is not empty %}
+      {% set violationPath = "/#{prefix}/city" %}
+    {% else %}
+      {% set requiredMessage = 'error.VIOLATION::IS_BLANK_ERROR'|trans({ '%field%': 'address.cityLabel'|trans|sw_sanitize }) %}
+      {% set violationPath = null %}
+    {% endif %}
+
+    {% block component_address_form_city_input %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_form_city_label %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_form_city_error %}
+      {{ parent() }}
+    {% endblock %}
+  {% endset %}
+
+  {% set wrappedZipcodeField %}
+    {% block component_address_form_zipcode_field %}
+      <div class="form-floating form-group col-md-4">
+        {{ zipcodeField }}
+      </div>
+    {% endblock %}
+  {% endset %}
+
+  {% set wrappedCityField %}
+    {% block component_address_form_city_field %}
+      <div class="form-floating form-group col-md-8">
+        {{ cityField }}
+      </div>
+    {% endblock %}
+  {% endset %}
+
+  {% block component_address_form_zipcode_city_fields %}
+    {{ parent() }}
+  {% endblock %}
+{% endblock %}
+
+{% block component_address_form_additional_field1 %}
+  {% if formViolations.getViolations('/additionalAddressLine1') is not empty %}
+    {% set violationPath = '/additionalAddressLine1' %}
+  {% elseif formViolations.getViolations("/#{prefix}/additionalAddressLine1") is not empty %}
+    {% set violationPath = "/#{prefix}/additionalAddressLine1" %}
+  {% endif %}
+
+  <div class="form-floating form-group col-md-12 postnumber" style="display: none">
+    {% block component_address_form_additional_field1_input %}
+      <input type="text"
+             class="form-control {% if violationPath %} is-invalid{% endif %}"
+             autocomplete="{% if prefix == 'shippingAddress' %}shipping {% elseif prefix == 'billingAddress' %}billing {% endif %}address-line2"
+             id="{{ idPrefix ~ prefix }}AdditionalField1"
+             placeholder="{{ 'address.additionalField1Placeholder'|trans|striptags }}"
+             name="{{ prefix }}[additionalAddressLine1]"
+             value="{{ data.get('additionalAddressLine1') }}">
+    {% endblock %}
+
+    {% block component_address_form_additional_field1_label %}
+      <label class="form-label" for="{{ idPrefix ~ prefix }}AdditionalField1">
+        {{ 'checkout.labels.postNumber'|trans|sw_sanitize }}{{ 'general.required'|trans|sw_sanitize }}
+      </label>
+    {% endblock %}
+
+    {% block component_address_form_additional_field1_error %}
+      {{ parent() }}
+    {% endblock %}
+  </div>
+{% endblock %}
+
+{% block component_address_form_additional_field2 %}
+  {% if config('core.loginRegistration.showAdditionalAddressField2') %}
+    {% if formViolations.getViolations('/additionalAddressLine2') is not empty %}
+      {% set violationPath = '/additionalAddressLine2' %}
+    {% elseif formViolations.getViolations("/#{prefix}/additionalAddressLine2") is not empty %}
+      {% set violationPath = "/#{prefix}/additionalAddressLine2" %}
+    {% endif %}
+    <div class="form-floating form-group col-md-12">
+      {% block component_address_form_additional_field2_input %}
+        {{ parent() }}
+      {% endblock %}
+
+      {% block component_address_form_additional_field2_label %}
+        {{ parent() }}
+      {% endblock %}
+
+      {% block component_address_form_additional_field2_error %}
+        {{ parent() }}
+      {% endblock %}
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block component_address_form_country %}
+  <div class="form-floating form-group col-md-6">
+    {% set initialCountryId = null %}
+
+    {% if data.get('countryId') %}
+      {% set initialCountryId = data.get('countryId') %}
+    {% elseif page.countries|length == 1 and disableNonShippableCountries is not defined %}
+      {% set initialCountryId = (page.countries|first).id %}
+    {% endif %}
+
+    {% if formViolations.getViolations('/countryId') is not empty %}
+      {% set violationPath = '/countryId' %}
+    {% elseif formViolations.getViolations("/#{prefix}/countryId") is not empty %}
+      {% set violationPath = "/#{prefix}/countryId" %}
+    {% endif %}
+
+    {% block component_address_form_country_select %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_form_country_label %}
+      {{ parent() }}
+    {% endblock %}
+
+    {# @deprecated tag:v6.7.0 - will be renamed to component_address_form_country_error #}
+    {% block component_address_form_country_violation_error %}
+      {{ parent() }}
+    {% endblock %}
+  </div>
+
+  <div class="form-floating form-group col-md-6 d-none">
+    {% if formViolations.getViolations('/countryStateId') is not empty %}
+      {% set violationPath = '/countryStateId' %}
+    {% elseif formViolations.getViolations("/#{prefix}/countryStateId") is not empty %}
+      {% set violationPath = "/#{prefix}/countryStateId" %}
+    {% endif %}
+
+    {% block component_address_form_country_state_select %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_form_country_state_label %}
+      {{ parent() }}
+    {% endblock %}
+
+    {# @depecated tag:v6.7.0 - use component_address_form_country_state_error instead #}
+    {% block component_address_form_country_error %}
+      {% block component_address_form_country_state_error %}
+        {{ parent() }}
+      {% endblock %}
+    {% endblock %}
+  </div>
+{% endblock %}
+
+{% block component_address_form_phone_number %}
+  {% if config('core.loginRegistration.showPhoneNumberField') %}
+    <div class="form-floating form-group col-md-6">
+      {% if formViolations.getViolations('/phoneNumber') is not empty %}
+        {% set violationPath = '/phoneNumber' %}
+      {% elseif formViolations.getViolations("/#{prefix}/phoneNumber") is not empty %}
+        {% set violationPath = "/#{prefix}/phoneNumber" %}
+      {% endif %}
+
+      {% block component_address_form_phone_number_input %}
+        {{ parent() }}
+      {% endblock %}
+
+      {% block component_address_form_phone_number_label %}
+        {{ parent() }}
+      {% endblock %}
+
+      {% block component_address_form_phone_error %}
+        {{ parent() }}
+      {% endblock %}
+    </div>
+  {% endif %}
+{% endblock %}

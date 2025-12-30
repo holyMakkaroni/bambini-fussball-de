@@ -1,0 +1,59 @@
+{
+  "checkout": {
+    "labels": {
+      "email": "Email",
+      "actionProceed": "Next",
+      "postNumber": "Postnummer",
+      "login": "Einloggen",
+      "orderAsGuest": "Als Gast fortfahren"
+    },
+    "headlines": {
+      "orderOverview": "Bestellübersicht",
+      "orderSummary": "Summary",
+      "express": "Express Checkout",
+      "or": "oder",
+      "contact": "Email",
+      "shipping": "Versand",
+      "billing": "Rechnung",
+      "billingSame": "identisch mit Lieferadresse",
+      "edit": "Ändern"
+    },
+    "account": {
+      "headline": "Ihre Kontaktdaten"
+    },
+    "billing_address": {
+      "headline": "Rechnungsinformationen",
+      "alternative": "Rechnungsadresse"
+    },
+    "delivery_address": {
+      "headline": "Lieferung",
+      "alternative": "Lieferadresse"
+    },
+    "shipping": {
+      "headline": "Versand",
+      "alternative": "Lieferadresse",
+      "disabled": "Geben Sie Ihre Lieferadresse ein, um verfügbare Versandarten anzuzeigen.",
+      "free": "kostenlos"
+    },
+    "payment": {
+      "headline": "Zahlarten",
+      "description": "Hinweistext PayPal oder Kauf auf Rechnung mit Ratepay nicht auswählbar, wenn Waffen und Munition im Warenkorb. Waffen, Munition & Zubehör können nicht mit PayPal bezahlt werden.",
+      "disabled": "Wählen Sie den Versand aus, um verfügbare Zahlungsarten anzuzeigen."
+    },
+    "coupon": {
+      "headline": "Rabatt",
+      "label": "Anwenden"
+    },
+    "summary": {
+      "summaryPositionPrice": "{1} Zwischensumme • 1 Artikel|]1,Inf[Zwischensumme • %count% Artikel"
+    },
+    "orderAction": {
+      "headline": "Bezahlvorgang abschließen"
+    },
+    "orderFinished": {
+      "headline": "Vielen Dank für Ihre Bestellung bei LivingActive!",
+      "description": "Ihre Bestellnummer: %orderNumber%",
+      "additionalDescription": "Eine Bestellbestätigung wurde per E-Mail an %email% verschickt."
+    }
+  }
+}

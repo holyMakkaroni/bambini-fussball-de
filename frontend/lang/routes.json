@@ -1,0 +1,46 @@
+{
+  "search/[...all]": {
+    "de-DE": "/suche/[...all]",
+    "en-US": "/search/[...all]"
+  },
+  "my-account/index": {
+    "de-DE": "/mein-konto",
+    "en-US": "/my-account"
+  },
+  "my-account/profile": {
+    "de-DE": "/mein-konto/profil",
+    "en-US": "/my-account/profile"
+  },
+  "my-account/addresses": {
+    "de-DE": "/mein-konto/adressen",
+    "en-US": "/my-account/addresses"
+  },
+  "my-account/payment-methods": {
+    "de-DE": "/mein-konto/zahlungsmoeglichkeiten",
+    "en-US": "/my-account/payment-methods"
+  },
+  "my-account/orders": {
+    "de-DE": "/mein-konto/bestellungen",
+    "en-US": "/my-account/orders"
+  },
+  "my-account/wishlist": {
+    "de-DE": "/mein-konto/merkzettel",
+    "en-US": "/my-account/wishlist"
+  },
+  "my-account/reviews": {
+    "de-DE": "/mein-konto/bewertungen",
+    "en-US": "/my-account/reviews"
+  },
+  "magazin/tag/[tag]": {
+    "de-DE": "/magazin/tag/[tag]",
+    "en-US": "/magazins/tag/[tag]"
+  },
+  "brand/index": {
+    "de-DE": "/hersteller",
+    "en-US": "/brand"
+  },
+  "brand/[slug]": {
+    "de-DE": "/hersteller/[slug]",
+    "en-US": "/brand/[slug]"
+  }
+}

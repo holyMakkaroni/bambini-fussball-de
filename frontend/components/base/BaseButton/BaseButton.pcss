@@ -1,0 +1,48 @@
+.c-base-button {
+  @apply flex w-fit justify-center font-semibold items-start transition-default outline-0 hover:brightness-95;
+  &.primary {
+    @apply bg-primary text-white;
+    &.outline {
+      @apply bg-transparent border-2 text-primary ml-0.5 border-primary outline-none hover:bg-primary hover:text-white;
+      &.active {
+        @apply border-primary bg-primary text-white;
+      }
+    }
+  }
+  &.secondary {
+    @apply bg-secondary text-white;
+    &.outline {
+      @apply bg-transparent border-2 text-secondary ml-0.5 border-secondary outline-none hover:bg-secondary hover:text-white;
+      &.active {
+        @apply border-secondary bg-secondary text-white;
+      }
+    }
+  }
+  &.green {
+    @apply bg-success text-white;
+    &.outline {
+      @apply bg-transparent border-2 text-success ml-0.5 border-success hover:bg-success hover:text-white;
+      &.active {
+        @apply border-success bg-success text-white;
+      }
+    }
+  }
+  &.white {
+    @apply bg-white text-primary;
+    &.outline {
+      @apply bg-transparent border-2 text-white ml-0.5 border-white hover:bg-white hover:text-primary;
+      &.active {
+        @apply border-white bg-white text-primary;
+      }
+    }
+  }
+  &.small {
+    @apply text-xs py-1.5 px-2.5;
+  }
+  &.normal {
+    @apply text-base py-2 px-5 lg:px-8;
+  }
+  &.big {
+    @apply text-base md:text-xl py-3 px-8 lg:px-10;
+  }
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>API Keys</title>
+        <title lang="de-DE">API-Schlüssel</title>
+
+        <input-field type="text">
+            <name>applicationId</name>
+            <label>Application ID</label>
+            <label lang="de-DE">Anwendung ID</label>
+            <helpText>This is your unique application identifier. It's used to identify you when using Algolia's API.</helpText>
+            <helpText lang="de-DE">Dies ist Ihr eindeutiger Anwendungsbezeichner. Er wird verwendet, um Sie bei der Nutzung von Algolia's API zu identifizieren.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>searchApiKey</name>
+            <label>Search API Key</label>
+            <label lang="de-DE">Suche API-Schlüssel</label>
+            <helpText>This is the public API key which can be safely used in your frontend code.This key is usable for search queries and it's also able to list the indices you've got access to.</helpText>
+            <helpText lang="de-DE">Dies ist der öffentliche API-Schlüssel, der sicher in Ihrem Frontend-Code verwendet werden kann, um Suchanfragen zu stellen und die Indizes aufzulisten, auf die Sie Zugriff haben.</helpText>
+        </input-field>
+
+        <input-field type="password">
+            <name>adminApiKey</name>
+            <label>Admin API Key</label>
+            <label lang="de-DE">Admin API-Schlüssel</label>
+            <helpText>This is the ADMIN API key. Please keep it secret and use it ONLY from your backend: this key is used to create, update and DELETE your indices. You can also use it to manage your API keys.</helpText>
+            <helpText lang="de-DE">Dies ist der Admin-API-Schlüssel. Bitte halten Sie ihn geheim und verwenden Sie ihn NUR in Ihrem Backend: Dieser Schlüssel wird zum Erstellen, Aktualisieren und Löschen Ihrer Indizes verwendet. Sie können ihn auch verwenden, um Ihre API-Schlüssel zu verwalten.</helpText>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Developer</title>
+        <title lang="de-DE">Entwickler</title>
+
+        <input-field type="bool">
+            <name>enableDebugMode</name>
+            <label>Debug mode?</label>
+            <label lang="de-DE">Debugmodus?</label>
+        </input-field>
+    </card>
+</config>

@@ -1,0 +1,16 @@
+{% set delivery = page.order.deliveries|first %}
+{% set transaction = page.order.transactions|first %}
+{% set shippingMethod = delivery.shippingMethod %}
+{% set paymentMethod = transaction.paymentMethod %}
+
+<div class="addresses">
+  {% sw_include '@Storefront/storefront/page/checkout/components/_card.html.twig' with {
+    headline: 'checkout.delivery_address.alternative'|trans,
+    content: shippingMethod.translated.name
+  } %}
+
+  {% sw_include '@Storefront/storefront/page/checkout/components/_card.html.twig' with {
+    headline: 'checkout.billing_address.alternative'|trans,
+    content: paymentMethod.translated.name
+  } %}
+</div>

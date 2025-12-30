@@ -1,0 +1,42 @@
+shopware:
+    filesystem:
+        public:
+            url: "https://%env(AWS_BUCKET)%.s3.%env(AWS_REGION)%.amazonaws.com/"
+            type: "amazon-s3"
+            config:
+                bucket: "%env(AWS_BUCKET)%"
+                region: "%env(AWS_REGION)%"
+                endpoint: "https://s3.%env(AWS_REGION)%.amazonaws.com"
+                credentials:
+                    key: "%env(AWS_ACCESS_KEY)%"
+                    secret: "%env(AWS_ACCESS_SECRET)%"
+                root: ""
+                options:
+                    visibility: "public"
+        private:
+            type: "local"
+            config:
+                root: "%kernel.project_dir%/public"
+        asset:
+            url: "%env(APP_URL)%"
+            type: "local"
+            config:
+                root: "%kernel.project_dir%/public"
+        theme:
+            url: "%env(APP_URL)%"
+            type: "local"
+            config:
+                root: "%kernel.project_dir%/public"
+        sitemap:
+            url: "%env(APP_URL)%"
+            type: "local"
+            config:
+                root: "%kernel.project_dir%/public"
+        temp:
+            type: "local"
+            config:
+                root: "%kernel.project_dir%/public"
+    auto_update:
+        enabled: false
+    admin_worker:
+        enable_admin_worker: false

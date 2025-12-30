@@ -1,0 +1,19 @@
+{% set headline = headline is defined ? headline : null %}
+{% set address = address is defined ? address : null %}
+{% set content = content is defined ? content : null %}
+
+<div class="card">
+  {% if headline %}
+    {% sw_include '@Storefront/storefront/page/checkout/components/_headline.html.twig' with {
+      headline: headline
+    } %}
+  {% endif %}
+
+  {% if address %}
+    {% sw_include '@Storefront/storefront/component/address/address.html.twig' with {address: address} %}
+  {% endif %}
+
+  {% if content %}
+    <div class="content">{{ content }}</div>
+  {% endif %}
+</div>

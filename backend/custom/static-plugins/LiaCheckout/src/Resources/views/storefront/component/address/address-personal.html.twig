@@ -1,0 +1,164 @@
+{% sw_extends '@Storefront/storefront/component/address/address-personal.html.twig' %}
+
+
+{% block component_address_personal_fields_salutation %}
+  <div class="form-floating form-group col-md-3 col-sm-6">
+    {% block component_address_form_salutation_select %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_personal_fields_salutation_label %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_form_salutation_select_error %}
+      {{ parent() }}
+    {% endblock %}
+  </div>
+{% endblock %}
+
+{% block component_address_personal_fields_title %}
+  {% if config('core.loginRegistration.showTitleField') %}
+
+    {% if formViolations.getViolations("/#{prefix}/title") is not empty %}
+      {% set violationPath = "/#{prefix}/title" %}
+    {% elseif formViolations.getViolations("/title") is not empty %}
+      {% set violationPath = "/title" %}
+    {% endif %}
+
+    <div class="form-floatingform-group col-md-3 col-sm-6">
+      {% block component_address_personal_fields_title_input %}
+        {{ parent() }}
+      {% endblock %}
+
+      {% block component_address_personal_fields_title_label %}
+        {{ parent() }}
+      {% endblock %}
+
+      {% block component_address_personal_fields_title_input_error %}
+        {{ parent() }}
+      {% endblock %}
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block component_address_personal_fields_first_name %}
+  <div class="form-floating form-group col-sm-6">
+    {% if feature('v6.7.0.0') %}
+      {# New implementation, setting of "violationPath" #}
+      {% if formViolations.getViolations("/#{prefix}/firstName") is not empty %}
+        {% set violationPath = "/#{prefix}/firstName" %}
+      {% elseif formViolations.getViolations("/firstName") is not empty and not prefix %}
+        {% set violationPath = "/firstName" %}
+      {% else %}
+        {% set requiredMessage = "error.VIOLATION::IS_BLANK_ERROR"|trans({ '%field%': "account.personalFirstNameLabel"|trans|sw_sanitize }) %}
+      {% endif %}
+    {% else %}
+      {% if formViolations.getViolations("/firstName") is not empty %}
+        {% set violationPath = "/firstName" %}
+      {% else %}
+        {% set requiredMessage = "error.VIOLATION::IS_BLANK_ERROR"|trans({ '%field%': "account.personalFirstNameLabel"|trans|sw_sanitize }) %}
+      {% endif %}
+    {% endif %}
+
+    {% block component_address_personal_fields_first_name_input %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_personal_fields_first_name_label %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_personal_fields_first_name_input_error %}
+      {{ parent() }}
+    {% endblock %}
+  </div>
+{% endblock %}
+
+{% block component_address_personal_fields_last_name %}
+  <div class="form-floating form-group col-sm-6">
+    {# @deprecated tag:v6.7.0 - lastName will have additional validation #}
+    {% if feature('v6.7.0.0') %}
+      {% if formViolations.getViolations("/#{prefix}/lastName") is not empty %}
+        {% set violationPath = "/#{prefix}/lastName" %}
+      {% elseif formViolations.getViolations("/lastName") is not empty and not prefix %}
+        {% set violationPath = "/lastName" %}
+      {% else %}
+        {% set requiredMessage = "error.VIOLATION::IS_BLANK_ERROR"|trans({ '%field%': "account.personalLastNameLabel"|trans|sw_sanitize }) %}
+      {% endif %}
+    {% else %}
+      {% if formViolations.getViolations("/lastName") is not empty %}
+        {% set violationPath = "/lastName" %}
+      {% else %}
+        {% set requiredMessage = "error.VIOLATION::IS_BLANK_ERROR"|trans({ '%field%': "account.personalLastNameLabel"|trans|sw_sanitize }) %}
+      {% endif %}
+    {% endif %}
+
+    {% block component_address_personal_fields_last_name_input %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_personal_fields_last_name_label %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_personal_fields_last_name_input_error %}
+      {{ parent() }}
+    {% endblock %}
+  </div>
+{% endblock %}
+
+{% block component_address_personal_company_name %}
+  <div class="form-floating form-group col-12">
+    {% if formViolations.getViolations("/company") is not empty %}
+      {% set violationPath = "/company" %}
+    {% else %}
+      {% set requiredMessage = "error.VIOLATION::IS_BLANK_ERROR"|trans({ '%field%': "address.companyNameLabel"|trans|sw_sanitize }) %}
+    {% endif %}
+
+    {% block component_address_personal_company_name_input %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_personal_company_name_label %}
+      {{ parent() }}
+    {% endblock %}
+
+    {% block component_address_personal_company_name_input_error %}
+      {{ parent() }}
+    {% endblock %}
+  </div>
+{% endblock %}
+
+{% block component_address_personal_vat_id_fields %}
+  <div class="row g-2">
+    <div class="form-floating form-group col-12">
+      {% sw_include '@Storefront/storefront/component/address/address-personal-vat-id.html.twig' with {
+        'vatIds': data.get('vatIds'),
+        'editMode': true
+      } %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block component_address_personal_account_type %}
+  {% if (onlyCompanyRegistration or (config('core.loginRegistration.showAccountTypeSelection') and not hideCustomerTypeSelect)) and not hasSelectedBusiness %}
+    <div class="row g-2">
+      <div class="form-floating form-group col-md-3 col-sm-6 contact-type">
+        {% block component_address_personal_account_type_select %}
+          {{ parent() }}
+        {% endblock %}
+
+        {% block component_address_personal_account_type_label %}
+          {{ parent() }}
+        {% endblock %}
+
+        {% block component_address_personal_account_type_error %}
+          {{ parent() }}
+        {% endblock %}
+      </div>
+    </div>
+  {% elseif not hideCustomerTypeSelect %}
+    <input type="hidden" name="accountType">
+  {% endif %}
+{% endblock %}

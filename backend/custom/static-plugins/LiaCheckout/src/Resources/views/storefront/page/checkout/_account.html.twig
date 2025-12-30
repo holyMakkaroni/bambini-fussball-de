@@ -1,0 +1,12 @@
+{% block lia_checkout_account %}
+  <div class="checkout-account">
+    {% set formAjaxSubmitOptions = {
+      submitOnChange: false,
+      replaceSelectors: ['.lia-checkout-wrapper'],
+    } %}
+    <div class="checkout-account-variants" login-register-toggle>
+      {% sw_include '@Storefront/storefront/component/account/form/login.html.twig' %}
+      {% sw_include '@Storefront/storefront/component/account/form/register.html.twig' %}
+    </div>
+  </div>
+{% endblock %}

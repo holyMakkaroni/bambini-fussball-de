@@ -1,0 +1,344 @@
+{
+  "notifications": {
+    "title": {
+      "success": "Success"
+    },
+    "cart": {
+      "add": {
+        "success": "{productName} has been added to cart"
+      },
+      "remove": {
+        "success": "{productName} has been removed to cart"
+      }
+    },
+    "wishlist": {
+      "add": {
+        "success": "Product has been added to wishlist"
+      },
+      "remove": {
+        "success": "Product has been removed to wishlist"
+      }
+    }
+  },
+  "components": {
+    "app": {
+      "general": {
+        "labels": {
+          "discoverNow": "Discover now",
+          "cookieSettings": "Cookie settings",
+          "lostPassword": "Lost password?",
+          "login": "Login",
+          "logout": "Logout",
+          "salutation": "Salutation",
+          "firstName": "First name",
+          "lastName": "Last name",
+          "company": "Company",
+          "street": "Street and House number",
+          "zipcode": "Zip",
+          "city": "City",
+          "country": "Country",
+          "province": "Province",
+          "password": "Password",
+          "currentPassword": "Current password",
+          "email": "Email address",
+          "newEmail": "New email address",
+          "newEmailConfirmation": "Confirm new email address",
+          "newPassword": "New password",
+          "newPasswordConfirmation": "Confirm new password",
+          "saveChange": "Save changes"
+        }
+      },
+      "navigation": {
+        "tab": {
+          "product": "Products",
+          "about": "About",
+          "service": "Service"
+        }
+      },
+      "header": {
+        "user": {
+          "label": "Customer account"
+        },
+        "wishlist": {
+          "label": "Wishlist"
+        },
+        "cart": {
+          "label": "Cart"
+        }
+      },
+      "topbar": {
+        "review": {
+          "rating": "very good",
+          "label": "{reviewCount} reviews"
+        }
+      },
+      "search": {
+        "placeholder": "What are you looking for?",
+        "label": "Suchen",
+        "indices": {
+          "recentSearches": "Previous search terms",
+          "suggestions": "Suggestions",
+          "products": "Products",
+          "categories": "Categories"
+        }
+      }
+    },
+    "base": {
+      "modal": {
+        "close": "Close"
+      },
+      "navigationItem": {
+        "label": "Menu",
+        "back": "Back"
+      },
+      "productBox": {
+        "deliveryLabelDay": "Delivery time {deliveryTime} days",
+        "deliveryLabelWeek": "Delivery time {deliveryTime} weeks",
+        "campaignLabel": "Campaign"
+      },
+      "price": {
+        "reductionsLabel": "Lowest price in the last 30 days: {formatedPrice} (-{percentDiscount}%)"
+      },
+      "loginForm": {
+        "headline": "Login name",
+        "register": {
+          "text": "No account yet?\n {url} or {checkout-url}",
+          "label": "Register now",
+          "guestCheckout": "Order as a guest"
+        }
+      },
+      "accountMenu": {
+        "headline": "{firstName} {lastName}",
+        "overview": {
+          "name": "Overview",
+          "description": "Description",
+          "actionLabel": "Overview"
+        },
+        "orders": {
+          "name": "My orders",
+          "description": "Track orders, download invoices, cancel or buy again",
+          "actionLabel": "View orders"
+        },
+        "profile": {
+          "name": "My profile/account",
+          "description": "Change name, password or e-mail address",
+          "actionLabel": "Edit profile"
+        },
+        "addresses": {
+          "name": "Addresses",
+          "description": "Edit, remove or set default address",
+          "actionLabel": "Edit addresses"
+        },
+        "paymentMethods": {
+          "name": "Payment methods",
+          "description": "Edit, define standard payment method",
+          "actionLabel": "Edit payment methods"
+        },
+        "wishlist": {
+          "name": "Wishlist",
+          "description": "Edit, remove wishlist products",
+          "actionLabel": "Edit wishlist"
+        },
+        "myReviews": {
+          "name": "My reviews",
+          "description": "Description",
+          "actionLabel": "View reviews"
+        }
+      },
+      "addressCard": {
+        "editAddress": "Edit address",
+        "deleteAddress": "Delete address"
+      },
+      "sidebarCart": {
+        "headline": "{count} items in shopping cart",
+        "headlineEmpty": "Your shopping cart is empty",
+        "checkout": "Checkout",
+        "total": "Total {total}",
+        "tax": "All prices incl. taxes., Excl. Shipping"
+      },
+      "sidebarWishlist": {
+        "headline": "Your wish list",
+        "headlineEmpty": "Your wish list is empty",
+        "checkout": "Add all to cart"
+      },
+      "productDescription": {
+        "description": "Product description",
+        "functions": "Data, features and downloads",
+        "productProperties": "Product features",
+        "defaultProperties": "Standard data",
+        "downloads": "Downloads",
+        "properties": {
+          "sku": "Sku",
+          "ean": "EAN",
+          "brand": "Brand",
+          "size": "Size",
+          "weight": "Weight"
+        }
+      },
+      "relatedProducts": {
+        "headline": "Similar products"
+      },
+      "productReviews": {
+        "headline": "{count} customer reviews",
+        "rateProduct": "Rate product",
+        "rateProductHeadline": "Your vote counts",
+        "rateProductDescription": "We only allow reviews from real users who have bought the product from us.",
+        "rateProductButton": "Log in / Rate product",
+        "writtenAt": "rated on {date}",
+        "star": "{count} Stern | {count} Sterne"
+      },
+      "pagination": {
+        "firstPage": "Go to first page",
+        "prevPage": "Previous page",
+        "goToPage": "Go to page {page}",
+        "nextPage": "Next page",
+        "lastPage": "Go to last page",
+        "totalPages": "from {total}"
+      },
+      "sectionHeadline": {
+        "viewAll": "View all"
+      },
+      "appointmentCard": {
+        "time": "{startAt} - {endAt}",
+        "label": "Appointment details"
+      },
+      "newsletter": {
+        "subscribe": "To the registration"
+      },
+      "authorBox": {
+        "contact": "Get in touch with {name}",
+        "posts": "All posts from {name}"
+      },
+      "faqGroupItem": {
+        "headline": "All questions about {groupName}",
+        "all": "Show all"
+      },
+      "carousel": {
+        "pagination": {
+          "item": "Go to item {item}"
+        },
+        "navigation": {
+          "prev": "Previous item",
+          "next": "Next item"
+        }
+      }
+    },
+    "shopware": {
+      "general": {
+        "labels": {
+          "cart": "Add to cart"
+        }
+      },
+      "listing": {
+        "noProducts": "No products exist"
+      },
+      "detail": {
+        "shipping": {
+          "feature1": {
+            "label": "Free returns*",
+            "value": "in Germany (ammunition & weapons excluded)"
+          },
+          "feature2": {
+            "label": "Fast delivery",
+            "value": "for immediately available items from our own stock"
+          },
+          "feature3": {
+            "label": "Financing",
+            "value": "from a purchase amount of 200 €"
+          }
+        },
+        "manufacturerLabel": "Brand: {name}",
+        "additionalInformation": "Additional information {productName}"
+      }
+    }
+  },
+  "storyblok": {
+    "components": {
+      "toc": {
+        "headline": "Table of content"
+      }
+    },
+    "type": {
+      "blogOverview": {
+        "relatedPosts": {
+          "headline": "This might also interest you:"
+        }
+      },
+      "faq": {
+        "relatedFaq": "Similar questions"
+      }
+    }
+  },
+  "pages": {
+    "brand": {
+      "index": {
+        "all": "All",
+        "headline": "All brands",
+        "description": "{countBrands} brands"
+      }
+    },
+    "myAccount": {
+      "index": {
+        "headline": "Hello {firstName} {lastName},",
+        "description": "Here you have direct access to your profile information, stored addresses and the standard payment method.\nEtiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui etiam rhoncus.",
+        "newsletter": {
+          "headline": "Newsletter",
+          "label": "Yes, I would like to receive the free LivingActive newsletter regularly! Data protection notice Unsubscribe at any time. Simply uncheck the box!"
+        }
+      },
+      "profile": {
+        "headline": "My profile/account",
+        "description": "Edit your personal data here. The fields marked with an asterisk (*) are mandatory.",
+        "personalData": "Personal data",
+        "yourEmail": "Your email address: {email}",
+        "accessData": "Access data"
+      },
+      "addresses": {
+        "headline": "Addresses",
+        "description": "Change your default address or add a new one.",
+        "defaultBillingAddressHeadline": "Default billing address",
+        "defaultShippingAddressHeadline": "Default shipping address",
+        "addressesHeadline": "Your address(es)",
+        "createAnotherAddressHeadline": "Create another address",
+        "createAnotherAddressDescription": "Add addresses to get more billing/delivery addresses as an option.",
+        "addNewAddress": "Add address"
+      },
+      "orders": {
+        "headline": "My orders",
+        "description": "Here you can see your orders. \nOptionally, you can initiate returns or cancelations, download invoices or report warranty claims.",
+        "openOrdersHeadline": "Open orders",
+        "closedOrdersHeadline": "Completed orders"
+      }
+    },
+    "search": {
+      "headline": "Search results for „{query}“",
+      "result":  "0 results | 1 result | {count} results",
+      "time": "{time} sec"
+    }
+  },
+  "filter": {
+    "sortBy": {
+      "label": "Sort by: {label}",
+      "popularity": {
+        "desc": "Popularity desc",
+        "asc": "Popularity asc"
+      },
+      "rating": {
+        "desc": "Rating desc",
+        "asc": "Rating asc"
+      }
+    },
+    "manufacturer": {
+      "label":  "Brand",
+      "seoKey": "brand"
+    },
+    "inSale": {
+      "label":  "Only sales",
+      "seoKey": "only-sale"
+    },
+    "priceRange": {
+      "label":  "Price",
+      "seoKey": "price"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{% block sw_property_detail_content_detail_seoSuite %}
+<sw-card
+        v-if="allowEdit"
+        position-identifier="sw-property-detail-base-seo"
+        :title="$tc('liaSeoSuite.sw-property.detail.card.title')"
+        :is-loading="isLoading"
+>
+    <sw-container
+            columns="repeat(2, 1fr)"
+            gap="0px 30px"
+    >
+        <sw-text-field
+                v-model:value="propertyGroup.customFields.filterName"
+                type="text"
+                :label="$tc('liaSeoSuite.sw-property.detail.labelFilterName')"
+                :helpText="$tc('liaSeoSuite.sw-property.detail.helpTextFilterName')"
+                :placeholder="propertyGroup.customFields.filterName" />
+        <sw-number-field
+                numberType="int"
+                v-model:value="propertyGroup.customFields.filterPriority"
+                pattern="[0-9]"
+                :step="1"
+                :label="$tc('liaSeoSuite.sw-property.detail.labelFilterPriority')"
+                :helpText="$tc('liaSeoSuite.sw-property.detail.helpTextFilterPriority')"
+                :placeholder="String(propertyGroup.customFields.filterPriority)" />
+    </sw-container>
+</sw-card>
+{% endblock %}

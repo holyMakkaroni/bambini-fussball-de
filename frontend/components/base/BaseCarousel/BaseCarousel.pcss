@@ -1,0 +1,26 @@
+.c-base-carousel {
+  @apply relative flex flex-col h-full;
+  --slide-spacing: 1rem;
+  .c-base-carousel-viewport {
+    @apply h-full overflow-hidden;
+    .c-base-carousel-items {
+      @apply flex h-full;
+      .c-base-carousel-item {
+        @apply min-w-0 select-none;
+      }
+    }
+    .c-base-carousel-navigation {
+      button {
+        @apply cursor-pointer;
+        &:disabled {
+          @apply cursor-not-allowed;
+        }
+      }
+    }
+    .c-base-carousel-pagination {
+      button {
+        @apply cursor-pointer;
+      }
+    }
+  }
+}

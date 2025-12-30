@@ -1,0 +1,10 @@
+---
+title: AppFooter
+---
+
+# `<AppFooter>`
+
+
+
+## Props
+

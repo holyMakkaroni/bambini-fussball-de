@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>API Keys</title>
+        <title lang="de-DE">API-Schlüssel</title>
+
+        <input-field type="text">
+            <name>googleMapsApiKey</name>
+            <label>Google maps api key</label>
+            <label lang="de-DE">Google Maps API Key</label>
+            <helpText>This is your Google maps api key. It's used to identify you when using Google Maps API.</helpText>
+            <helpText lang="de-DE">Dies ist Google Maps API Key. Er wird verwendet, um Sie bei der Nutzung von der Google Maps API zu identifizieren.</helpText>
+        </input-field>
+    </card>
+</config>

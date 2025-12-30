@@ -1,0 +1,20 @@
+.c-faq-search {
+  .index-result {
+    @apply leading-[26px];
+    li, a {
+      @apply cursor-pointer;
+      &:hover {
+        @apply no-underline text-primary;
+        .ais-Highlight-highlighted {
+          @apply text-current;
+        }
+      }
+    }
+  }
+
+  .ais-Highlight {
+    .ais-Highlight-highlighted {
+      @apply font-semibold bg-transparent;
+    }
+  }
+}

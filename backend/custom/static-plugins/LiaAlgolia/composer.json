@@ -1,0 +1,48 @@
+{
+  "name": "lia/algolia",
+  "description": "Algolia",
+  "version": "1.0.2",
+  "type": "shopware-platform-plugin",
+  "license": "proprietary",
+  "autoload": {
+    "psr-4": {
+      "Lia\\Algolia\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "LivingActive",
+      "homepage": "https://www.livingactive.de"
+    }
+  ],
+  "require": {
+    "shopware/core": "~6.6",
+    "algolia/algoliasearch-client-php": "3.4.1"
+  },
+  "extra": {
+    "shopware-plugin-class": "Lia\\Algolia\\LiaAlgolia",
+    "plugin-icon": "src/Resources/plugin.png",
+    "copyright": "(c) by LivingActive",
+    "label": {
+      "de-DE": "Algolia",
+      "en-GB": "Algolia"
+    },
+    "description": {
+      "de-DE": "Integration Algolia",
+      "en-GB": "Integration Algolia"
+    },
+    "manufacturerLink": {
+      "de-DE": "https://www.unique-web.de",
+      "en-GB": "https://www.unique-web.de"
+    },
+    "supportLink": {
+      "de-DE": "https://www.unique-web.de",
+      "en-GB": "https://www.unique-web.de"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "symfony/runtime": false
+    }
+  }
+}

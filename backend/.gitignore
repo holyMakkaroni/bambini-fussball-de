@@ -1,0 +1,26 @@
+.DS_Store
+.well-known
+/.ddev
+/.idea
+/vendor/
+
+###> shopware/core ###
+.env.local
+.env.local.php
+.env.*.local
+/public/bundles/*
+/public/media/*
+/public/theme/*
+/public/theme-config/*
+/public/theme-variables/*
+/public/theme-variables.scss
+/public/thumbnail/*
+/public/sitemap/*
+/files/*
+!/files/.htaccess
+/var/*
+!/var/.htaccess
+/auth.json
+/install.lock
+public/asset-manifest.json
+###< shopware/core ###

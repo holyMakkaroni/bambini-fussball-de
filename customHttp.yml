@@ -1,0 +1,11 @@
+applications:
+  - appRoot: "frontend"
+    customHeaders:
+      - pattern: "api/{icons,mailing-groups}"
+        headers:
+          - key: "Access-Control-Allow-Origin"
+            value: "https://app.storyblok.com"
+      - pattern: '_nuxt/**/*'
+        headers:
+          - key: 'Cache-Control'
+            value: 'public, max-age=31536000, immutable'

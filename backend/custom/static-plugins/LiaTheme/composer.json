@@ -1,0 +1,38 @@
+{
+  "name": "lia/theme",
+  "description": "Default shopware 6 frontend LivingActive.",
+  "version": "1.0.0",
+  "type": "shopware-platform-plugin",
+  "license": "proprietary",
+  "autoload": {
+    "psr-4": {
+      "Lia\\Theme\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "LivingActive",
+      "homepage": "https://www.livingactive.de"
+    }
+  ],
+  "require": {
+    "shopware/core": "~6.6"
+  },
+  "extra": {
+    "shopware-plugin-class": "Lia\\Theme\\LiaTheme",
+    "plugin-icon": "src/Resources/plugin.png",
+    "copyright": "(c) by LivingActive",
+    "label": {
+      "de-DE": "LivingActive Theme",
+      "en-GB": "LivingActive theme"
+    },
+    "manufacturerLink": {
+      "de-DE": "https://www.unique-web.de",
+      "en-GB": "https://www.unique-web.de"
+    },
+    "supportLink": {
+      "de-DE": "https://www.unique-web.de",
+      "en-GB": "https://www.unique-web.de"
+    }
+  }
+}

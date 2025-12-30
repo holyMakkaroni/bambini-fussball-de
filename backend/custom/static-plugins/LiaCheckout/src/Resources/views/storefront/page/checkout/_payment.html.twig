@@ -1,0 +1,47 @@
+{% block lia_checkout_payment %}
+  <div class="checkout-payment">
+    {% block lia_checkout_payment_headline %}
+      {% sw_include '@Storefront/storefront/page/checkout/components/_headline.html.twig' with {
+        headline: 'checkout.payment.headline'|trans,
+        description: 'checkout.payment.description'|trans
+      } %}
+    {% endblock %}
+
+    {% if context.customer %}
+      {% set selectedPaymentMethodId = context.paymentMethod.id %}
+      <form id="changePaymentForm"
+            name="changePaymentForm"
+            action="{{ path('frontend.checkout.configure') }}"
+          {% if config('core.cart.paymentAjaxRefresh') %}
+            data-form-ajax-submit="true"
+            data-form-ajax-submit-options='{{ {submitOnChange: true,replaceSelectors: ['.kw-checkout-wrapper']}|json_encode }}'
+          {% else %}
+            data-form-auto-submit="true"
+            data-form-auto-submit-options='{{ {changeTriggerSelectors: ['.payment-method-input']}|json_encode }}'
+          {% endif %}
+            method="post">
+
+        {% block kw_checkout_payment_hidden %}
+          <input type="hidden" name="redirectTo" value="frontend.checkout.page">
+          <input type="hidden" name="redirectParameters" value="{{ {redirected: 0}|json_encode }}">
+        {% endblock %}
+
+        {% block kw_checkout_payment_methods %}
+          <div class="radio-selection">
+            {% for payment in page.paymentMethods %}
+              <div {% if payment.id is same as(context.paymentMethod.id) %}class="current-selected"{% endif %}>
+                {% sw_include '@Storefront/storefront/component/payment/payment-method.html.twig' %}
+              </div>
+            {% endfor %}
+          </div>
+        {% endblock %}
+      </form>
+    {% else %}
+      {% block lia_checkout_payment_unavailable %}
+        {% sw_include '@Storefront/storefront/page/checkout/components/_checkout_step_not_available.html.twig' with {
+          text: 'checkout.payment.disabled'|trans
+        } %}
+      {% endblock %}
+    {% endif %}
+  </div>
+{% endblock %}

@@ -1,0 +1,168 @@
+{% extends '@Storefront/storefront/base.html.twig' %}
+
+{% if page.cart %}
+  {% set summary = page.cart %}
+{% elseif page.order %}
+  {% set summary = page.order %}
+{% endif %}
+
+{% set total = summary.price.totalPrice %}
+{% set decimals = context.totalRounding.decimals %}
+
+{% block base_flashbags %}{% endblock %}
+{% block base_navigation %}{% endblock %}
+{% block base_footer %}{% endblock %}
+{% block base_header %}{% endblock %}
+
+{% block base_content %}
+  <div class="color-split-screen left"></div>
+  <div class="color-split-screen right"></div>
+
+  <div class="checkout-mobile-header">
+    {% sw_include '@Storefront/storefront/layout/header/logo.html.twig' %}
+
+    <div class="checkout-cart-overview">
+      <div class="checkout-cart-overview-wrapper">
+        <div class="overview-wrapper" data-bs-toggle="collapse" data-bs-target="#collapseCart" aria-expanded="false" aria-controls="collapseCart">
+          <div>{{ 'checkout.headlines.orderOverview'|trans }}</div>
+          <div class="cart-total">{{ total|currency }}</div>
+        </div>
+        <div class="cart-collapse collapse" id="collapseCart">
+          {% block lia_checkout_cart_overview_mobile %}
+            {% sw_include '@Storefront/storefront/page/checkout/components/_cart_overview.html.twig' %}
+          {% endblock %}
+          {% block lia_checkout_coupon_form_mobile %}
+            {% sw_include '@Storefront/storefront/page/checkout/components/_coupon.html.twig' with {
+              identifier: 'mobile-toggle'
+            } %}
+            {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' with {
+              invertColor: true
+            } %}
+          {% endblock %}
+          {% sw_include '@Storefront/storefront/page/checkout/_includes/summary.html.twig' with {
+            summary: summary
+          } %}
+          {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' with {
+            invertColor: true
+          } %}
+          {% sw_include '@Storefront/storefront/page/checkout/_includes/total.html.twig' with {
+            total: total,
+            decimals: decimals,
+            big: true
+          } %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="checkout-wrapper lia-checkout-wrapper">
+    {% block lia_checkout_left %}
+      <div class="checkout-left-side">
+        {% sw_include '@Storefront/storefront/layout/header/logo.html.twig' %}
+        {% sw_include '@Storefront/storefront/page/checkout/components/_flashbags.html.twig' %}
+
+        {% block lia_checkout_left_inner %}
+          {% if not context.customer %}
+            {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' with {
+              label: "checkout.headlines.express"|trans
+            } %}
+            <div class="express-wrapper">
+              {% block lia_expres_container %}
+                {% set amount = page.cart.price.totalPrice %}
+                {% set easycreditExpressSettings = page.extensions.easycredit %}
+                {% set expressSettings = page.extensions[constant('Swag\\PayPal\\Checkout\\ExpressCheckout\\ExpressCheckoutSubscriber::PAYPAL_EXPRESS_CHECKOUT_BUTTON_DATA_EXTENSION_ID')] %}
+
+                {% if easycreditExpressSettings.expressCartEnabled and amount > 0 %}
+                  <div class="easycredit-express">
+                    {% sw_include '@EasyCreditRatenkauf/storefront/component/express-button.html.twig' with {
+                      fullWidth: true
+                    } %}
+                  </div>
+                {% endif %}
+
+                {% if expressSettings.offCanvasEnabled %}
+                  <div class="paypal-express">
+                    {% sw_include '@SwagPayPal/storefront/component/ecs-spb-checkout/ecs-button.html.twig' with {
+                      button_class: 'btn-block'
+                    } %}
+                  </div>
+                {% endif %}
+              {% endblock %}
+            </div>
+            {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' with {
+              label: "checkout.headlines.or"|trans
+            } %}
+          {% endif %}
+
+          {% if context.customer %}
+            {% sw_include '@Storefront/storefront/page/checkout/components/_account_overview.html.twig' %}
+          {% else %}
+            {% sw_include '@Storefront/storefront/page/checkout/_account.html.twig' %}
+            {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' %}
+          {% endif %}
+
+          {% sw_include '@Storefront/storefront/page/checkout/_shipping.html.twig' %}
+          {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' %}
+          {% sw_include '@Storefront/storefront/page/checkout/_payment.html.twig' %}
+          {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' %}
+          {% sw_include '@Storefront/storefront/page/checkout/_orderAction.html.twig' %}
+          {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' %}
+
+          {% sw_include '@Storefront/storefront/page/checkout/components/_copyright.html.twig' %}
+        {% endblock %}
+      </div>
+    {% endblock %}
+
+    {% block lia_checkout_right %}
+      <div class="checkout-right-side">
+      <div class="checkout-right-inner">
+        {% block lia_checkout_cart_overview %}
+          {% sw_include '@Storefront/storefront/page/checkout/components/_cart_overview.html.twig' with {
+            showHeadline: true
+          } %}
+        {% endblock %}
+        {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' with {
+          invertColor: true
+        } %}
+        {% block lia_checkout_coupon_form %}
+          {% sw_include '@Storefront/storefront/page/checkout/components/_coupon.html.twig'  with {
+            identifier: 'desktop'
+          } %}
+          {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' with {
+            invertColor: true
+          } %}
+        {% endblock %}
+        {% sw_include '@Storefront/storefront/page/checkout/_includes/summary.html.twig' with {
+          summary: summary
+        } %}
+        {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' with {
+          invertColor: true
+        } %}
+        {% sw_include '@Storefront/storefront/page/checkout/_includes/total.html.twig' with {
+          total: total,
+          decimals: decimals,
+          big: true
+        } %}
+        {% sw_include '@Storefront/storefront/page/checkout/components/_divider.html.twig' with {
+          invertColor: true
+        } %}
+        {% block lia_checkout_usps %}
+          {% sw_include '@Storefront/storefront/page/checkout/_includes/usps.html.twig' %}
+        {% endblock %}
+      </div>
+
+
+    </div>
+    {% endblock %}
+  </div>
+{% endblock %}
+
+{% block base_body_script %}
+  {{ parent() }}
+
+  {% if config('LiaCheckout.config.googleMapsApiKey') %}
+    <script>
+      window.googleMapsApiKey = '{{ config('LiaCheckout.config.googleMapsApiKey') }}';
+    </script>
+  {% endif %}
+{% endblock %}

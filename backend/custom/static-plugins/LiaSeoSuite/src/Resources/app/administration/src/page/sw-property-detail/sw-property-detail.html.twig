@@ -1,0 +1,8 @@
+{% block sw_property_detail_content_detail_base %}
+    {% parent %}
+    <sw-property-detail-seo-suite
+            v-if="propertyGroup"
+            :property-group="propertyGroup"
+            :allow-edit="acl.can('lia_seoSuite_property_group_filter:update')"
+    />
+{% endblock %}

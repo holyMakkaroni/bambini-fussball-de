@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>Basic settings</title>
+        <title lang="de-DE">Grundeinstellungen</title>
+
+        <input-field type="bool">
+            <name>agreeConsentByDefault</name>
+            <label>Agree to consent by default?</label>
+            <label lang="de-DE">Einwilligung standardmäßig zustimmen?</label>
+            <defaultValue>false</defaultValue>
+        </input-field>
+
+        <input-field type="int">
+            <name>daysAfterShipping</name>
+            <label>Send automatic rating request after X days</label>
+            <label lang="de-DE">Automatische Bewertungsaufforderung nach X Tagen verschicken</label>
+            <defaultValue>7</defaultValue>
+            <helpText>After X days, a rating request is automatically sent once the order reaches the selected shipping status.</helpText>
+            <helpText lang="de-DE">Nach X Tagen wird automatisch eine Bewertungsaufforderung geschickt, sobald die Bestellung den ausgewählten Versandstatus erreicht hat.</helpText>
+        </input-field>
+
+        <component name="order-delivery-state-select">
+            <name>deliveryState</name>
+            <entity>state_machine_state</entity>
+            <label>Delivery status</label>
+            <label lang="de-DE">Versandstatus</label>
+            <helpText>Delivery status for the automatic rating request.</helpText>
+            <helpText lang="de-DE">Versandstatus für die automatische Bewertungsafforderung.</helpText>
+        </component>
+    </card>
+
+    <card>
+        <title>Email settings</title>
+        <title lang="de-DE">Email Einstellungen</title>
+
+        <component name="sw-entity-single-select">
+            <name>emailTemplate</name>
+            <entity>mail_template_type_translation</entity>
+            <label>Email template</label>
+            <label lang="de-DE">E-Mail Template</label>
+            <helpText>E-mail that the customer receives automatically after X days.</helpText>
+            <helpText lang="de-DE">E-Mail die der Kunde nach X Tagen automatisch erhält.</helpText>
+        </component>
+
+        <input-field type="text">
+            <name>bccRecipients</name>
+            <label>BCC recipients</label>
+            <label lang="de-DE">BCC Empfänger</label>
+            <helpText>Several recipients can be stored comma-separated.</helpText>
+            <helpText lang="de-DE">Es können mehrere Empfänger kommasepariert hinterlegt werden.</helpText>
+        </input-field>
+    </card>
+</config>

@@ -1,0 +1,21 @@
+.c-base-text {
+  p {
+    &:last-child {
+      @apply mb-0;
+    }
+  }
+  ul, ol {
+    @apply gap-y-2 mb-5;
+    li {
+      p {
+        @apply mb-0;
+      }
+    }
+  }
+  ul {
+    @apply list-disc;
+  }
+  ol {
+    @apply list-decimal;
+  }
+}

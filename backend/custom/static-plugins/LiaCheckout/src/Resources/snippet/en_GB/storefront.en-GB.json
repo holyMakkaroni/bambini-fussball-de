@@ -1,0 +1,58 @@
+{
+  "checkout": {
+    "labels": {
+      "email": "Email address",
+      "actionProceed": "Weiter",
+      "postNumber": "Post number",
+      "login": "Login",
+      "orderAsGuest": "Order as guest"
+    },
+    "headlines": {
+      "orderOverview": "Order overview",
+      "orderSummary": "Summary",
+      "express": "Express checkout",
+      "or": "or",
+      "contact": "Email",
+      "shipping": "Shipping",
+      "billing": "Billing",
+      "billingSame": "same as shipping",
+      "edit": "Change"
+    },
+    "account": {
+      "headline": "Your contact information"
+    },
+    "billing_address": {
+      "headline": "Billing",
+      "alternative": "Billing address"
+    },
+    "delivery_address": {
+      "headline": "Delivery information",
+      "alternative": "Shipping address"
+    },
+    "shipping": {
+      "headline": "Shipping",
+      "disabled": "Enter your delivery address to display available shipping methods.",
+      "free": "free"
+    },
+    "payment": {
+      "headline": "Payment methods",
+      "description": "Note: PayPal or purchase on account with Ratepay cannot be selected if weapons and ammunition are in the shopping cart. Weapons, ammunition, and accessories cannot be paid for with PayPal.",
+      "disabled": "Select shipping to view available payment methods."
+    },
+    "coupon": {
+      "headline": "Discount",
+      "label": "Apply"
+    },
+    "summary": {
+      "summaryPositionPrice": "{1}Subtotal • 1 product|]1,Inf[Subtotal • %count% products"
+    },
+    "orderAction": {
+      "headline": "Complete the payment process"
+    },
+    "orderFinished": {
+      "headline": "Thank you for ordering from LivingActive!",
+      "description": "",
+      "additionalDescription": ""
+    }
+  }
+}

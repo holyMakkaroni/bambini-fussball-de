@@ -1,0 +1,8 @@
+framework:
+  messenger:
+    serializer:
+      symfony_serializer:
+        context:
+          default_constructor_arguments:
+            Lia\Algolia\Framework\Indexing\IndexerOffset:
+              mappingDefinitions: [ ]

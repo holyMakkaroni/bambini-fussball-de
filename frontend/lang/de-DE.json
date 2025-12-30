@@ -1,0 +1,344 @@
+{
+  "notifications": {
+    "title": {
+      "success": "Erfolg"
+    },
+    "cart": {
+      "add": {
+        "success": "{productName} wurde zum Warenkorb hinzugefügt"
+      },
+      "remove": {
+        "success": "{productName} wurde aus dem Warenkorb gelöscht"
+      }
+    },
+    "wishlist": {
+      "add": {
+        "success": "Produkt wurde dem Merkzettel hinzugefügt"
+      },
+      "remove": {
+        "success": "Produkt wurde vom Merkzettel gelöscht"
+      }
+    }
+  },
+  "components": {
+    "app": {
+      "general": {
+        "labels": {
+          "discoverNow": "Jetzt entdecken",
+          "cookieSettings": "Cookie Einstellungen",
+          "lostPassword": "Passwort vergessen?",
+          "login": "Anmelden",
+          "logout": "Abmelden",
+          "salutation": "Anrede",
+          "firstName": "Vorname",
+          "lastName": "Nachname",
+          "company": "Firma",
+          "street": "Straße und Hausnummer",
+          "zipcode": "Postleitzahl",
+          "city": "Stadt",
+          "country": "Land",
+          "province": "Staat",
+          "password": "Passwort",
+          "currentPassword": "Aktuelles Passwort",
+          "email": "E-Mail-Adresse",
+          "newEmail": "Neue E-Mail-Adresse",
+          "newEmailConfirmation": "Neue E-Mail-Adresse bestätigen",
+          "newPassword": "Neues Passwort",
+          "newPasswordConfirmation": "Neues Passwort bestätigen",
+          "saveChange": "Änderungen speichern"
+        }
+      },
+      "navigation": {
+        "tab": {
+          "product": "Produkte",
+          "about": "Über uns",
+          "service": "Service"
+        }
+      },
+      "header": {
+        "user": {
+          "label": "Kundenaccount"
+        },
+        "wishlist": {
+          "label": "Wunschzettel"
+        },
+        "cart": {
+          "label": "Warenkorb"
+        }
+      },
+      "topbar": {
+        "review": {
+          "rating": "Sehr gut",
+          "label": "{reviewCount} Bewertungen"
+        }
+      },
+      "search": {
+        "placeholder": "Wonach suchst Du?",
+        "label": "Suchen",
+        "indices": {
+          "recentSearches": "Vorherige Suchbegriffe",
+          "suggestions": "Vorschläge",
+          "products": "Produkte",
+          "categories": "Kategorien"
+        }
+      }
+    },
+    "base": {
+      "modal": {
+        "close": "Schließen"
+      },
+      "navigationItem": {
+        "label": "Menü",
+        "back": "Zurück"
+      },
+      "productBox": {
+        "deliveryLabelDay": "Lieferzeit {deliveryTime} Werktage",
+        "deliveryLabelWeek": "Lieferzeit {deliveryTime} Wochen",
+        "campaignLabel": "Aktion"
+      },
+      "price": {
+        "reductionsLabel": "Niedrigster Preis der letzten 30 Tage: {formatedPrice} (-{percentDiscount}%)"
+      },
+      "loginForm": {
+        "headline": "Anmeldung",
+        "register": {
+          "text": "Noch kein Konto?\n {url} oder {checkout-url}",
+          "label": "Jetzt registrieren",
+          "guestCheckout": "als Gast bestellen"
+        }
+      },
+      "accountMenu": {
+        "headline": "{firstName} {lastName}",
+        "overview": {
+          "name": "Übersicht",
+          "description": "Beschreibung",
+          "actionLabel": "Übersicht"
+        },
+        "orders": {
+          "name": "Meine Bestellungen",
+          "description": "Bestellungen nachverfolgen, Rechnungen herunterladen, stornieren oder erneut kaufen",
+          "actionLabel": "Bestellungen ansehen"
+        },
+        "profile": {
+          "name": "Mein Profil/Konto",
+          "description": "Name, Passwort oder E-Mail-Adresse ändern",
+          "actionLabel": "Profil bearbeiten"
+        },
+        "addresses": {
+          "name": "Adressen",
+          "description": "Standard-Adresse bearbeiten, entfernen oder festlegen",
+          "actionLabel": "Adressen bearbeiten"
+        },
+        "paymentMethods": {
+          "name": "Zahlungsart",
+          "description": "Standard-Zahlungsart bearbeiten, festlegen",
+          "actionLabel": "Zahlungsart bearbeiten"
+        },
+        "wishlist": {
+          "name": "Merkzettel",
+          "description": "Merkzettel-Produkte bearbeiten, entfernen",
+          "actionLabel": "Merkzettel bearbeiten"
+        },
+        "myReviews": {
+          "name": "Meine Bewertungen",
+          "description": "Description",
+          "actionLabel": "Bewertungen ansehen"
+        }
+      },
+      "addressCard": {
+        "editAddress": "Adresse bearbeiten",
+        "deleteAddress": "Adresse löschen"
+      },
+      "sidebarCart": {
+        "headline": "{count} Artikel im Warenkorb",
+        "headlineEmpty": "Ihr Warenkorb ist leer",
+        "checkout": "Zur Kasse gehen",
+        "total": "Summe {total}",
+        "tax": "Alle Preise inkl. MwSt., Zzgl. Versand"
+      },
+      "sidebarWishlist": {
+        "headline": "Ihr Merkzettel",
+        "headlineEmpty": "Ihr Merkzettel is leer",
+        "checkout": "Alles in den Warenkorb"
+      },
+      "productDescription": {
+        "description": "Produktbeschreibung",
+        "functions": "Daten, Features & Downloads",
+        "productProperties": "Produktfeatures",
+        "defaultProperties": "Standarddaten",
+        "downloads": "Downloads",
+        "properties": {
+          "sku": "Artikel-Nr.",
+          "ean": "EAN",
+          "brand": "Marke",
+          "size": "Abmessungen",
+          "weight": "Gewicht"
+        }
+      },
+      "relatedProducts": {
+        "headline": "Ähnliche Produkte"
+      },
+      "productReviews": {
+        "headline": "{count} Kundenbewertungen",
+        "rateProduct": "Produkt bewerten",
+        "rateProductHeadline": "Ihre Stimme zählt",
+        "rateProductDescription": "Wir erlauben nur Bewertungen von echten Usern, die das Produkt auch bei uns gekauft haben.",
+        "rateProductButton": "Anmelden / Produkt bewerten",
+        "writtenAt": "bewertet am {date}",
+        "star": "{count} Stern | {count} Sterne"
+      },
+      "pagination": {
+        "firstPage": "Erste Seite",
+        "prevPage": "vorherige Seite",
+        "goToPage": "Gehe zu Seite {page}",
+        "nextPage": "nächste Seite",
+        "lastPage": "Gehe zur letzten Seite",
+        "totalPages": "von {total}"
+      },
+      "sectionHeadline": {
+        "viewAll": "Alle anzeigen"
+      },
+      "appointmentCard": {
+        "time": "{startAt} - {endAt}",
+        "label": "Termindetails"
+      },
+      "newsletter": {
+        "subscribe": "Zur Anmeldung"
+      },
+      "authorBox": {
+        "contact": "{name} kontaktieren",
+        "posts": "Alle Beiträge von {name}"
+      },
+      "faqGroupItem": {
+        "headline": "Alle Fragen zu {groupName}",
+        "all": "Alle anzeigen"
+      },
+      "carousel": {
+        "pagination": {
+          "item": "Gehe zu Item {item}"
+        },
+        "navigation": {
+          "prev": "Vorheriger item",
+          "next": "Nächster item"
+        }
+      }
+    },
+    "shopware": {
+      "general": {
+        "labels": {
+          "cart": "In den Warenkorb"
+        }
+      },
+      "listing": {
+        "noProducts": "Leider konnten wir keine passenden Produkte finden"
+      },
+      "detail": {
+        "shipping": {
+          "feature1": {
+            "label": "Kostenlose Retoure*",
+            "value": "in Deutschland (Munition & Waffen ausgeschlossen)"
+          },
+          "feature2": {
+            "label": "Schnelle Lieferung",
+            "value": "bei sofort lieferbaren Artikeln aus eigenem Vorrat"
+          },
+          "feature3": {
+            "label": "Finanzierung",
+            "value": "ab einem Einkaufsbetrag von 200 €"
+          }
+        },
+        "manufacturerLabel": "Marke: {name}",
+        "additionalInformation": "Zusatzinformationen {productName}"
+      }
+    }
+  },
+  "storyblok": {
+    "components": {
+      "toc": {
+        "headline": "Inhaltsverzeichnis"
+      }
+    },
+    "type": {
+      "blogOverview": {
+        "relatedPosts": {
+          "headline": "Das könnte Sie auch interessieren:"
+        }
+      },
+      "faq": {
+        "relatedFaq": "Ähnliche Fragen"
+      }
+    }
+  },
+  "pages": {
+    "brand": {
+      "index": {
+        "all": "Alle",
+        "headline": "Alle Hersteller",
+        "description": "{countBrands} Hersteller"
+      }
+    },
+    "myAccount": {
+      "index": {
+        "headline": "Hallo {firstName} {lastName},",
+        "description": "hier haben Sie direkten Zugriff auf Ihre Profilinformationen, hinterlegte Adressen und die Standard-Zahlungsart.\nEtiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui etiam rhoncus.",
+        "newsletter": {
+          "headline": "Newsletter-Abonnement",
+          "label": "Ja, ich möchte regelmäßig den kostenlosen Newsletter von LivingActive erhalten! Datenschutzhinweis \nAbmeldung jederzeit möglich. Einfach Häkchen entfernen!"
+        }
+      },
+      "profile": {
+        "headline": "Mein Profil/Konto",
+        "description": "Bearbeiten Sie hier Ihre persönlichen Daten. Die mit einem Stern (*) markierten Felder sind Pflichtfelder.",
+        "personalData": "Persönliche Daten",
+        "yourEmail": "Ihre E-Mail-Adresse: {email}",
+        "accessData": "Zugangsdaten"
+      },
+      "addresses": {
+        "headline": "Adressen",
+        "description": "Ändern Sie Ihre Standard-Adresse oder fügen Sie neue hinzu.",
+        "defaultBillingAddressHeadline": "Standard Rechnungsadresse",
+        "defaultShippingAddressHeadline": "Standard Lieferadresse",
+        "addressesHeadline": "Ihre Adresse(n)",
+        "createAnotherAddressHeadline": "Weitere Adresse anlegen",
+        "createAnotherAddressDescription": "Fügen Sie Adressen hinzu um weitere Rechnungs-/Lieferadressen als Option zu erhalten.",
+        "addNewAddress": "Adresse hinzufügen"
+      },
+      "orders": {
+        "headline": "Meine Bestellungen",
+        "description": "Hier sehen Sie Ihre Bestellungen. \nOptional können Sie Rücksendungen oder Stornierungen veranlassen, Rechnungen downloaden oder Garantiefälle melden.",
+        "openOrdersHeadline": "Offene Bestellungen",
+        "closedOrdersHeadline": "Abgeschlossene Bestellungen"
+      }
+    },
+    "search": {
+      "headline": "Suchergebnise für „{query}“",
+      "result":  "0 Ergebnisse | 1 Ergebnis | {count} Ergebnisse",
+      "time": "{time} Sek"
+    }
+  },
+  "filter": {
+    "sortBy": {
+      "label": "Sortiert nach: {label}",
+      "popularity": {
+        "desc": "Beliebtheit absteigend",
+        "asc": "Beliebtheit aufsteigend"
+      },
+      "rating": {
+        "desc": "Bester Bewertung",
+        "asc": "Bewertungen aufsteigend"
+      }
+    },
+    "manufacturer": {
+      "label":  "Marke",
+      "seoKey": "marke"
+    },
+    "inSale": {
+      "label":  "Nur Aktionen",
+      "seoKey": "nur-aktionen"
+    },
+    "priceRange": {
+      "label":  "Preis",
+      "seoKey": "preis"
+    }
+  }
+}

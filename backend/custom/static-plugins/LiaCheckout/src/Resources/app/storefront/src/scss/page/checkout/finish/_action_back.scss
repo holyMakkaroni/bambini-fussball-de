@@ -1,0 +1,9 @@
+.action-back {
+  margin: 20px 0;
+  @include media-breakpoint-up(sm) {
+    margin: 40px 0;
+  }
+  .btn {
+    width: 100%;
+  }
+}

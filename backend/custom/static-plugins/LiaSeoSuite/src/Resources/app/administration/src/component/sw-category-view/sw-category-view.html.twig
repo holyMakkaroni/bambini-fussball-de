@@ -1,0 +1,12 @@
+<!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+{% block sw_category_view_tabs_seo %}
+    {% parent %}
+
+    <sw-tabs-item
+        v-show="isPage"
+        class="sw-category-detail__tab-properties"
+        :route="{ name: 'sw.category.detail.filterProperties' }"
+        :title="$tc('liaSeoSuite.sw-category.view.properties')"
+    >{{ $tc('liaSeoSuite.sw-category.view.properties') }}
+    </sw-tabs-item>
+{% endblock %}
