@@ -1,3 +1,6 @@
+import { readFile, writeFile } from 'node:fs/promises'
+import { resolve } from 'node:path'
+import { writeAmplifyFiles } from 'nitropack/presets/aws-amplify/utils'
 import svgLoader from 'vite-svg-loader'
 import routes from './lang/routes.json'
 export default defineNuxtConfig({
@@ -177,8 +180,38 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    preset: 'aws-amplify',
     compressPublicAssets: {
       brotli: true
+    },
+    hooks: {
+      compiled: async (nitro) => {
+        if (!nitro?.options?.output?.dir) {
+          nitro.logger?.warn('Unable to locate Nitro output directory to update deploy-manifest runtime')
+          return
+        }
+
+        const manifestPath = resolve(nitro.options.output.dir, 'deploy-manifest.json')
+
+        try {
+          await writeAmplifyFiles(nitro)
+
+          const manifest = JSON.parse(await readFile(manifestPath, 'utf-8'))
+
+          if (Array.isArray(manifest.computeResources)) {
+            manifest.computeResources = manifest.computeResources.map((resource) => ({
+              ...resource,
+              runtime: 'nodejs22.x'
+            }))
+
+            await writeFile(manifestPath, JSON.stringify(manifest, null, 2))
+            nitro.logger?.info('Updated Amplify deploy-manifest runtime to nodejs22.x')
+          }
+        }
+        catch (error) {
+          nitro.logger?.warn(`Unable to update Amplify deploy-manifest runtime: ${error}`)
+        }
+      }
     }
   },
 
