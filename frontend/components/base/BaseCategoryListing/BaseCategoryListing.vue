@@ -154,7 +154,7 @@ const widgets = computed(() => [
     searchParameters: {
       hitsPerPage: 50,
       page: 0,
-      filters: `categoriesRo.id: ${categoryId.value}`,
+      filters: `categoriesRo.id: "${categoryId.value}"`,
       facetingAfterDistinct: true
     }
   }),
