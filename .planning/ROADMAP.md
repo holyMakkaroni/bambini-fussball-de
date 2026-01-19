@@ -35,11 +35,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. URLs follow clean pattern without file extensions (e.g., /trainer/ballbeherrschung/)
   3. Project deploys to Cloudflare Pages with HTTPS enabled
   4. Folder structure supports future content categories (trainer, eltern, vereine)
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: Astro project scaffolding with Tailwind CSS 4
-- [ ] 01-02: Cloudflare Pages deployment configuration
+- [ ] 01-01-PLAN.md — Astro project scaffolding with Tailwind CSS 4
+- [ ] 01-02-PLAN.md — Cloudflare Pages deployment configuration
 
 ### Phase 2: Technical Infrastructure
 **Goal**: Website passes Google Mobile-Friendly Test and establishes Core Web Vitals baseline
@@ -211,7 +211,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> ... -> 11
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/2 | Not started | - |
+| 1. Foundation | 0/2 | Planned | - |
 | 2. Technical Infrastructure | 0/2 | Not started | - |
 | 3. Legal Compliance | 0/2 | Not started | - |
 | 4. Content Architecture | 0/3 | Not started | - |
