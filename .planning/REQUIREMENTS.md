@@ -76,39 +76,37 @@ Explizit ausgeschlossen. Dokumentiert um Scope Creep zu verhindern.
 
 ## Traceability
 
-Welche Phasen welche Requirements abdecken. Wird während Roadmap-Erstellung gefüllt.
-
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| TECH-01 | — | Pending |
-| TECH-02 | — | Pending |
-| TECH-03 | — | Pending |
-| TECH-04 | — | Pending |
-| TECH-05 | — | Pending |
-| TECH-06 | — | Pending |
-| LEGAL-01 | — | Pending |
-| LEGAL-02 | — | Pending |
-| LEGAL-03 | — | Pending |
-| CONT-01 | — | Pending |
-| CONT-02 | — | Pending |
-| CONT-03 | — | Pending |
-| CONT-04 | — | Pending |
-| CONT-05 | — | Pending |
-| SEO-01 | — | Pending |
-| SEO-02 | — | Pending |
-| SEO-03 | — | Pending |
-| SEO-04 | — | Pending |
-| SEO-05 | — | Pending |
-| SEO-06 | — | Pending |
-| PERF-01 | — | Pending |
-| PERF-02 | — | Pending |
-| PERF-03 | — | Pending |
+| TECH-01 | Phase 2 | Pending |
+| TECH-02 | Phase 2 | Pending |
+| TECH-03 | Phase 11 | Pending |
+| TECH-04 | Phase 11 | Pending |
+| TECH-05 | Phase 1 | Pending |
+| TECH-06 | Phase 1 | Pending |
+| LEGAL-01 | Phase 3 | Pending |
+| LEGAL-02 | Phase 3 | Pending |
+| LEGAL-03 | Phase 3 | Pending |
+| CONT-01 | Phase 4 | Pending |
+| CONT-02 | Phase 4 | Pending |
+| CONT-03 | Phase 4 | Pending |
+| CONT-04 | Phase 9 | Pending |
+| CONT-05 | Phase 6, 7, 8 | Pending |
+| SEO-01 | Phase 5 | Pending |
+| SEO-02 | Phase 5 | Pending |
+| SEO-03 | Phase 5 | Pending |
+| SEO-04 | Phase 5 | Pending |
+| SEO-05 | Phase 5 | Pending |
+| SEO-06 | Phase 5 | Pending |
+| PERF-01 | Phase 10 | Pending |
+| PERF-02 | Phase 10 | Pending |
+| PERF-03 | Phase 10 | Pending |
 
 **Coverage:**
 - v1 Requirements: 23 total
-- Mapped to phases: 0
-- Unmapped: 23 ⚠️
+- Mapped to phases: 23
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2025-01-19*
-*Last updated: 2025-01-19 after initial definition*
+*Last updated: 2025-01-19 after roadmap creation*
