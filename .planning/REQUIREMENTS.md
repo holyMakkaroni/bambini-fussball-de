@@ -11,8 +11,8 @@ Requirements für den initialen Launch. Jedes Requirement wird einer Roadmap-Pha
 
 - [x] **TECH-01**: Website ist mobile-responsive und besteht Google Mobile-Friendly Test
 - [x] **TECH-02**: Core Web Vitals erfüllt (LCP < 2.5s, INP < 200ms, CLS < 0.1)
-- [ ] **TECH-03**: XML Sitemap wird automatisch generiert
-- [ ] **TECH-04**: robots.txt ist konfiguriert
+- [x] **TECH-03**: XML Sitemap wird automatisch generiert
+- [x] **TECH-04**: robots.txt ist konfiguriert
 - [x] **TECH-05**: URLs sind sauber und lesbar (/trainer/ballbeherrschung/)
 - [x] **TECH-06**: HTTPS ist aktiviert
 
@@ -80,8 +80,8 @@ Explizit ausgeschlossen. Dokumentiert um Scope Creep zu verhindern.
 |-------------|-------|--------|
 | TECH-01 | Phase 2 | Complete |
 | TECH-02 | Phase 2 | Complete |
-| TECH-03 | Phase 11 | Pending |
-| TECH-04 | Phase 11 | Pending |
+| TECH-03 | Phase 11 | Complete |
+| TECH-04 | Phase 11 | Complete |
 | TECH-05 | Phase 1 | Complete |
 | TECH-06 | Phase 1 | Complete |
 | LEGAL-01 | Phase 3 | Complete |
@@ -109,4 +109,4 @@ Explizit ausgeschlossen. Dokumentiert um Scope Creep zu verhindern.
 
 ---
 *Requirements defined: 2025-01-19*
-*Last updated: 2026-01-22 after Phase 10 completion*
+*Last updated: 2026-01-22 after Phase 11 completion - ALL v1 REQUIREMENTS COMPLETE*
