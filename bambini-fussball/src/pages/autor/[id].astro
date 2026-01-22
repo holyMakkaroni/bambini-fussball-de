@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const authors = await getCollection('authors');
+  return authors.map((author) => ({
+    params: { id: author.id },
+    props: { author },
+  }));
+}
+
+const { author } = Astro.props;
+const siteUrl = 'https://bambini-fussball.pages.dev';
+
+const profileSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "dateCreated": "2026-01-01T00:00:00+01:00",
+  "dateModified": new Date().toISOString(),
+  "mainEntity": {
+    "@type": "Person",
+    "@id": `${siteUrl}/autor/${author.id}/`,
+    "name": author.data.name,
+    "description": author.data.bio,
+    "image": `${siteUrl}${author.data.image}`,
+    "sameAs": author.data.sameAs || []
+  }
+};
+---
+
+<BaseLayout title={`${author.data.name} | Autor | Bambini-Fussball`} description={author.data.bio}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(profileSchema)} />
+
+  <div class="container mx-auto px-4 py-8">
+    <article class="max-w-3xl mx-auto">
+      <header class="flex flex-col sm:flex-row items-start gap-6 mb-8">
+        <div class="w-32 h-32 rounded-full bg-gray-200 overflow-hidden flex-shrink-0">
+          <img
+            src={author.data.image}
+            alt={`Foto von ${author.data.name}`}
+            class="w-full h-full object-cover"
+            onerror="this.style.display='none'"
+          />
+        </div>
+        <div>
+          <h1 class="text-3xl font-bold text-gray-900 mb-2">{author.data.name}</h1>
+          <p class="text-green-700 font-medium mb-4">{author.data.credentials}</p>
+        </div>
+      </header>
+
+      <section class="prose prose-lg max-w-none">
+        <h2 class="text-xl font-semibold text-gray-900 mb-4">Uber den Autor</h2>
+        <p class="text-gray-700 leading-relaxed">{author.data.bio}</p>
+      </section>
+
+      <nav class="mt-8 pt-8 border-t border-gray-200">
+        <a href="/" class="inline-flex items-center min-h-[44px] text-green-600 hover:text-green-800">
+          &larr; Zuruck zur Startseite
+        </a>
+      </nav>
+    </article>
+  </div>
+</BaseLayout>
