@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-01-19)
 ## Current Position
 
 Phase: 5 of 11 (SEO Infrastructure)
-Plan: 1 of 3 in phase - COMPLETE
+Plan: 2 of 3 in phase - COMPLETE
 Status: In progress
-Last activity: 2026-01-22 - Completed 05-01-PLAN.md
+Last activity: 2026-01-22 - Completed 05-02-PLAN.md
 
-Progress: [████████░░] 38%
+Progress: [████████░░] 42%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 10
+- Total plans completed: 11
 - Average duration: ~5 minutes
-- Total execution time: ~0.75 hours
+- Total execution time: ~0.8 hours
 
 **By Phase:**
 
@@ -31,10 +31,10 @@ Progress: [████████░░] 38%
 | 2. Technical Infrastructure | 2/2 | ~7 min | ~3.5 min |
 | 3. Legal Compliance | 2/2 | ~7 min | ~3.5 min |
 | 4. Content Architecture | 3/3 | ~9 min | ~3 min |
-| 5. SEO Infrastructure | 1/3 | ~3 min | ~3 min |
+| 5. SEO Infrastructure | 2/3 | ~7 min | ~3.5 min |
 
 **Recent Trend:**
-- Last 5 plans: 03-02 (~3 min), 04-01 (~3 min), 04-02 (~3 min), 04-03 (~3 min), 05-01 (~3 min)
+- Last 5 plans: 04-01 (~3 min), 04-02 (~3 min), 04-03 (~3 min), 05-01 (~3 min), 05-02 (~4 min)
 - Trend: Active
 
 *Updated after each plan completion*
@@ -73,6 +73,9 @@ Recent decisions affecting current work:
 - 05-01: Canonical URL uses Astro.url.pathname with production domain
 - 05-01: Head slot for page-specific meta injection (after twitter:card)
 - 05-01: Schema validation enforces SEO limits at build time (title 60, desc 160)
+- 05-02: Authors collection with JSON schema for structured author data
+- 05-02: Article schema uses reference('authors') for type-safe author links
+- 05-02: Author @id pattern: https://bambini-fussball.pages.dev/autor/{id}/
 
 ### Performance Baseline (Phase 2)
 
@@ -87,6 +90,8 @@ Recent decisions affecting current work:
 
 - [ ] Replace placeholder contact info in Impressum/Datenschutz before launch
 - [ ] Create /images/og-default.jpg for social sharing fallback
+- [ ] Create /images/authors/redaktion.jpg for author profile image
+- [ ] Create author profile pages at /autor/{id}/ (referenced in JSON-LD)
 
 ### Blockers/Concerns
 
@@ -94,8 +99,8 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-22 12:55 UTC
-Stopped at: Completed 05-01-PLAN.md
+Last session: 2026-01-22 12:59 UTC
+Stopped at: Completed 05-02-PLAN.md
 Resume file: None
 
 ## Deployment Info
@@ -126,5 +131,7 @@ Resume file: None
 ### SEO Requirements (Phase 5 in progress)
 - [x] SEO-01: Unique meta title < 60 chars - MET (05-01, schema validation)
 - [x] SEO-02: Unique meta description < 160 chars - MET (05-01, schema validation)
-- [ ] SEO-03: Sitemap.xml - Pending (05-02)
-- [ ] SEO-04: Robots.txt - Pending (05-02)
+- [x] SEO-03: Article JSON-LD - MET (05-02)
+- [x] SEO-04: Author schema linked - MET (05-02)
+- [ ] SEO-05: Sitemap.xml - Pending (05-03)
+- [ ] SEO-06: Robots.txt - Pending (05-03)
