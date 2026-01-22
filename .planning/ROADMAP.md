@@ -195,12 +195,12 @@ Plans:
   3. robots.txt exists and allows search engine crawling
   4. All pages are reachable from sitemap
   5. Site passes final pre-launch checklist
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 11-01: Sitemap generation verification
-- [ ] 11-02: Robots.txt and final SEO verification
-- [ ] 11-03: Pre-launch checklist and smoke testing
+- [ ] 11-01-PLAN.md — Sitemap integration and robots.txt configuration
+- [ ] 11-02-PLAN.md — Default OG image for social sharing fallback
+- [ ] 11-03-PLAN.md — Pre-launch checklist and placeholder replacement
 
 ## Progress
 
@@ -219,4 +219,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> ... -> 11
 | 8. Content - Vereine | 2/2 | Complete | 2026-01-22 |
 | 9. Related Content | 1/1 | Complete | 2026-01-22 |
 | 10. Performance | 2/2 | Complete | 2026-01-22 |
-| 11. Launch Prep | 0/3 | Not started | - |
+| 11. Launch Prep | 0/3 | In Progress | - |
