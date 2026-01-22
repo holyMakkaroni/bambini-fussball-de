@@ -9,10 +9,13 @@ interface Props {
   description: string;
   category: 'trainer' | 'eltern' | 'vereine';
   pubDate: Date;
-  author: string;
+  updatedDate?: Date;
+  authorId: string;
+  authorName: string;
+  image?: string;
 }
 
-const { title, description, category, pubDate, author } = Astro.props;
+const { title, description, category, pubDate, updatedDate, authorId, authorName, image } = Astro.props;
 
 // Category labels in German
 const categoryLabels = {
@@ -27,9 +30,33 @@ const crumbs = [
   { text: categoryLabels[category], href: `/${category}/` },
   { text: title, href: '#', 'aria-current': 'page' as const }
 ];
+
+// Article JSON-LD schema for SEO
+const siteUrl = 'https://bambini-fussball.pages.dev';
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": image ? `${siteUrl}${image}` : `${siteUrl}/images/og-default.jpg`,
+  "datePublished": pubDate.toISOString(),
+  "dateModified": (updatedDate || pubDate).toISOString(),
+  "author": {
+    "@type": "Person",
+    "@id": `${siteUrl}/autor/${authorId}/`,
+    "name": authorName,
+    "url": `${siteUrl}/autor/${authorId}/`
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bambini-Fussball",
+    "url": siteUrl
+  }
+};
 ---
 
-<BaseLayout title={`${title} | Bambini-Fussball`} description={description}>
+<BaseLayout title={`${title} | Bambini-Fussball`} description={description} type="article" image={image}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <main class="flex-1 container mx-auto px-4 py-8">
     <nav class="mb-6" aria-label="Breadcrumb">
       <Breadcrumbs
@@ -43,7 +70,7 @@ const crumbs = [
       <header class="mb-8 not-prose">
         <h1 class="text-3xl font-bold text-gray-900 mb-4">{title}</h1>
         <div class="flex items-center gap-4 text-sm text-gray-600">
-          <span>Von {author}</span>
+          <span>Von <a href={`/autor/${authorId}/`} class="text-green-700 hover:underline">{authorName}</a></span>
           <span aria-hidden="true">|</span>
           <time datetime={pubDate.toISOString()}>
             {pubDate.toLocaleDateString('de-DE', {
