@@ -12,6 +12,7 @@
     "@jop-software/astro-cookieconsent": "^3.0.1",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.11",
+    "astro-breadcrumbs": "^3.3.3",
     "tailwindcss": "^4.1.18"
   }
 }
