@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-19)
 
 **Core value:** Die beste und vollstandigste Informationsquelle fur Bambini-Fussball in Deutschland
-**Current focus:** Phase 3 - Legal Compliance (COMPLETE)
+**Current focus:** Phase 4 - Content Architecture (In Progress)
 
 ## Current Position
 
-Phase: 3 of 11 (Legal Compliance) - COMPLETE
-Plan: 2 of 2 in phase - COMPLETE
-Status: Phase 3 complete, ready for Phase 4
-Last activity: 2026-01-22 - Completed 03-02-PLAN.md
+Phase: 4 of 11 (Content Architecture)
+Plan: 2 of 3 in phase
+Status: In progress
+Last activity: 2026-01-22 - Completed 04-02-PLAN.md
 
-Progress: [██████░░░░] 23%
+Progress: [███████░░░] 31%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
-- Average duration: ~6 minutes
-- Total execution time: ~0.5 hours
+- Total plans completed: 8
+- Average duration: ~5 minutes
+- Total execution time: ~0.6 hours
 
 **By Phase:**
 
@@ -30,9 +30,10 @@ Progress: [██████░░░░] 23%
 | 1. Foundation | 2/2 | ~23 min | ~12 min |
 | 2. Technical Infrastructure | 2/2 | ~7 min | ~3.5 min |
 | 3. Legal Compliance | 2/2 | ~7 min | ~3.5 min |
+| 4. Content Architecture | 2/3 | ~6 min | ~3 min |
 
 **Recent Trend:**
-- Last 5 plans: 02-01 (~2 min), 02-02 (~5 min), 03-01 (~4 min), 03-02 (~3 min)
+- Last 5 plans: 02-02 (~5 min), 03-01 (~4 min), 03-02 (~3 min), 04-01 (~3 min), 04-02 (~3 min)
 - Trend: Active
 
 *Updated after each plan completion*
@@ -61,6 +62,10 @@ Recent decisions affecting current work:
 - 03-02: Cookie consent via @jop-software/astro-cookieconsent (Astro integration)
 - 03-02: equalWeightButtons: true for March 2025 German court ruling compliance
 - 03-02: Analytics opt-in by default (DSGVO requirement)
+- 04-01: Content config migrated to Astro 5 glob() loader syntax
+- 04-01: Header component with category navigation added to BaseLayout
+- 04-02: CollectionEntry union type for ArticleCard component
+- 04-02: article.id for URLs (Astro 5 replaced slug with id)
 
 ### Performance Baseline (Phase 2)
 
@@ -81,8 +86,8 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-22 11:55 UTC
-Stopped at: Completed 03-02-PLAN.md
+Last session: 2026-01-22 11:20 UTC
+Stopped at: Completed 04-02-PLAN.md
 Resume file: None
 
 ## Deployment Info
@@ -105,3 +110,7 @@ Resume file: None
 - [x] LEGAL-01: Impressum accessible from every page - MET (03-01)
 - [x] LEGAL-02: Datenschutzerklarung accessible from every page - MET (03-01)
 - [x] LEGAL-03: Cookie consent banner - MET (03-02)
+
+### CONTENT Requirements (Phase 4 in progress)
+- [x] CONT-01: Pillar pages for three audiences - MET (04-02)
+- [ ] CONT-02: Dynamic article routes - Pending (04-03)
