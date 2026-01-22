@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title: string;
@@ -19,7 +20,8 @@ const { title, description = 'Die beste Informationsquelle fur Bambini-Fussball 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body class="bg-white text-gray-900 font-sans min-h-screen">
+  <body class="bg-white text-gray-900 font-sans min-h-screen flex flex-col">
     <slot />
+    <Footer />
   </body>
 </html>
