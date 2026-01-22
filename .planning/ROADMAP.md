@@ -20,8 +20,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 6: Content Creation - Trainer** - 8-10 articles targeting trainers/coaches
 - [x] **Phase 7: Content Creation - Eltern** - 8-10 articles targeting parents
 - [x] **Phase 8: Content Creation - Vereine** - 6-8 articles targeting clubs/associations
-- [ ] **Phase 9: Related Content System** - Related articles feature with cross-linking
-- [ ] **Phase 10: Performance Optimization** - Image optimization (WebP, lazy-load, responsive)
+- [x] **Phase 9: Related Content System** - Related articles feature with cross-linking
+- [x] **Phase 10: Performance Optimization** - Image optimization (WebP, lazy-load, responsive)
 - [ ] **Phase 11: Launch Preparation** - Sitemap, robots.txt, final verification
 
 ## Phase Details
@@ -168,7 +168,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 09-01-PLAN.md — RelatedArticles component with same-category filtering and ArticleLayout integration
+- [x] 09-01-PLAN.md — RelatedArticles component with same-category filtering and ArticleLayout integration
 
 ### Phase 10: Performance Optimization
 **Goal**: All images are optimized with WebP format, lazy loading, and responsive sizing
@@ -179,11 +179,11 @@ Plans:
   2. Images are served in WebP format
   3. Images are served in appropriate sizes for device viewport
   4. Lighthouse performance score remains above 90 on mobile
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 10-01: Astro Image optimization configuration
-- [ ] 10-02: Image component with lazy loading and responsive sizes
+- [x] 10-01-PLAN.md — Astro image optimization pipeline (schema + components)
+- [x] 10-02-PLAN.md — Wire image data through category pages
 
 ### Phase 11: Launch Preparation
 **Goal**: Technical SEO elements verified, sitemap and robots.txt working, site ready for search engine indexing
@@ -217,6 +217,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> ... -> 11
 | 6. Content - Trainer | 3/3 | Complete | 2026-01-22 |
 | 7. Content - Eltern | 2/2 | Complete | 2026-01-22 |
 | 8. Content - Vereine | 2/2 | Complete | 2026-01-22 |
-| 9. Related Content | 0/1 | Not started | - |
-| 10. Performance | 0/2 | Not started | - |
+| 9. Related Content | 1/1 | Complete | 2026-01-22 |
+| 10. Performance | 2/2 | Complete | 2026-01-22 |
 | 11. Launch Prep | 0/3 | Not started | - |

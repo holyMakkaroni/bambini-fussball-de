@@ -27,8 +27,8 @@ Requirements für den initialen Launch. Jedes Requirement wird einer Roadmap-Pha
 - [x] **CONT-01**: Pillar-Cluster-Struktur mit 3 Säulen (Trainer, Eltern, Vereine)
 - [x] **CONT-02**: Kategorie-Übersichtsseiten für jede Zielgruppe
 - [x] **CONT-03**: Breadcrumb-Navigation auf allen Artikelseiten
-- [ ] **CONT-04**: Verwandte Artikel-Sektion am Ende jedes Artikels (3-4 Links)
-- [ ] **CONT-05**: 20-30 Ratgeber-Artikel verteilt auf alle Kategorien
+- [x] **CONT-04**: Verwandte Artikel-Sektion am Ende jedes Artikels (3-4 Links)
+- [x] **CONT-05**: 20-30 Ratgeber-Artikel verteilt auf alle Kategorien
 
 ### SEO & E-E-A-T
 
@@ -41,9 +41,9 @@ Requirements für den initialen Launch. Jedes Requirement wird einer Roadmap-Pha
 
 ### Performance
 
-- [ ] **PERF-01**: Bilder werden lazy-loaded
-- [ ] **PERF-02**: Bilder werden als WebP ausgeliefert
-- [ ] **PERF-03**: Bilder werden in optimierten Größen ausgeliefert
+- [x] **PERF-01**: Bilder werden lazy-loaded
+- [x] **PERF-02**: Bilder werden als WebP ausgeliefert
+- [x] **PERF-03**: Bilder werden in optimierten Größen ausgeliefert
 
 ## v2 Requirements
 
@@ -90,17 +90,17 @@ Explizit ausgeschlossen. Dokumentiert um Scope Creep zu verhindern.
 | CONT-01 | Phase 4 | Complete |
 | CONT-02 | Phase 4 | Complete |
 | CONT-03 | Phase 4 | Complete |
-| CONT-04 | Phase 9 | Pending |
-| CONT-05 | Phase 6, 7, 8 | Pending |
+| CONT-04 | Phase 9 | Complete |
+| CONT-05 | Phase 6, 7, 8 | Complete |
 | SEO-01 | Phase 5 | Complete |
 | SEO-02 | Phase 5 | Complete |
 | SEO-03 | Phase 5 | Complete |
 | SEO-04 | Phase 5 | Complete |
 | SEO-05 | Phase 5 | Complete |
 | SEO-06 | Phase 5 | Complete |
-| PERF-01 | Phase 10 | Pending |
-| PERF-02 | Phase 10 | Pending |
-| PERF-03 | Phase 10 | Pending |
+| PERF-01 | Phase 10 | Complete |
+| PERF-02 | Phase 10 | Complete |
+| PERF-03 | Phase 10 | Complete |
 
 **Coverage:**
 - v1 Requirements: 23 total
@@ -109,4 +109,4 @@ Explizit ausgeschlossen. Dokumentiert um Scope Creep zu verhindern.
 
 ---
 *Requirements defined: 2025-01-19*
-*Last updated: 2026-01-22 after Phase 5 completion*
+*Last updated: 2026-01-22 after Phase 10 completion*

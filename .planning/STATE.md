@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-19)
 
 **Core value:** Die beste und vollstandigste Informationsquelle fur Bambini-Fussball in Deutschland
-**Current focus:** Phase 8 - Content Creation: Vereine
+**Current focus:** Phase 11 - Launch Preparation
 
 ## Current Position
 
-Phase: 8 of 11 (Content Creation - Vereine) - NOT STARTED
+Phase: 11 of 11 (Launch Preparation) - NOT STARTED
 Plan: 0 of 3 in phase
 Status: Ready for planning
-Last activity: 2026-01-22 - Completed Phase 7 (Content Creation - Eltern)
+Last activity: 2026-01-22 - Completed Phase 10 (Performance Optimization)
 
-Progress: [███████░░░] 64%
+Progress: [█████████░] 91%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 18
-- Average duration: ~5.6 minutes
-- Total execution time: ~1.5 hours
+- Total plans completed: 23
+- Average duration: ~5.1 minutes
+- Total execution time: ~1.95 hours
 
 **By Phase:**
 
@@ -34,9 +34,12 @@ Progress: [███████░░░] 64%
 | 5. SEO Infrastructure | 4/4 | ~13 min | ~3.3 min |
 | 6. Content Creation - Trainer | 3/3 | ~16 min | ~5.3 min |
 | 7. Content Creation - Eltern | 2/2 | ~17 min | ~8.5 min |
+| 8. Content Creation - Vereine | 2/2 | ~18 min | ~9 min |
+| 9. Related Content System | 1/1 | ~2 min | ~2 min |
+| 10. Performance Optimization | 2/2 | ~8 min | ~4 min |
 
 **Recent Trend:**
-- Last 5 plans: 06-01 (~5 min), 06-02 (~5 min), 06-03 (~6 min), 07-01 (~9 min), 07-02 (~8 min)
+- Last 5 plans: 08-01 (~10 min), 08-02 (~8 min), 09-01 (~2 min), 10-01 (~6 min), 10-02 (~2 min)
 - Trend: Active
 
 *Updated after each plan completion*
@@ -96,6 +99,22 @@ Recent decisions affecting current work:
 - 07-01: First-day guide addresses parent anxiety ("Du bist nervoser als dein Kind")
 - 07-02: FAQ format for comprehensive parent resource (2000+ words)
 - 07-02: DFB Kinderspielformen explained for parents (no tables philosophy)
+- 08-01: Vereine tone: "ihr" address, empowering, acknowledging volunteer constraints
+- 08-01: Club-level perspective (organizational, not trainer methodology)
+- 08-01: Dienstagstrainer model for flexible trainer recruitment
+- 08-01: DFB 2024/25 reform implementation guide with checklists
+- 08-02: FairPlayLiga three rules with cultural change management approach
+- 08-02: DFB-Mobil positioned as strategic club development resource
+- 08-02: Kinderschutz with regional variation disclaimer
+- 08-02: Minimum viable Bambini program (1 person, 100-200€ material)
+- 09-01: RelatedArticles shows 3 articles from same category (maxArticles=3)
+- 09-01: Same-category filtering without tags (corpus size 8-10 per category)
+- 09-01: Date sorting (newest first) for related articles
+- 10-01: Content schema uses image() helper for automatic WebP optimization
+- 10-01: Hero images use priority loading (loading="eager" decoding="sync")
+- 10-01: Thumbnails use default lazy loading via <Image> component
+- 10-01: Author images kept as z.string() (public paths not optimizable)
+- 10-02: Full pipeline verified: schema → pages → layout → Image component
 
 ### Performance Baseline (Phase 2)
 
@@ -117,8 +136,8 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-22 15:57 UTC
-Stopped at: Completed 07-02-PLAN.md (Eltern supporting articles) - Phase 7 complete
+Last session: 2026-01-22
+Stopped at: Completed 10-02-PLAN.md (image prop wiring) - Phase 10 complete
 Resume file: None
 
 ## Deployment Info
@@ -159,3 +178,14 @@ Resume file: None
 
 ### CONTENT Requirements - Phase 7 COMPLETE
 - [x] CONT-04: 8-10 Eltern articles - MET (10 articles in /eltern/)
+
+### CONTENT Requirements - Phase 8 COMPLETE
+- [x] CONT-05: 6-8 Vereine articles - MET (8 articles in /vereine/)
+
+### CONTENT Requirements - Phase 9 COMPLETE
+- [x] CONT-04: Related articles at end of every article - MET (09-01)
+
+### PERF Requirements - Phase 10 COMPLETE
+- [x] PERF-01: Images lazy-loaded - MET (10-01, default <Image> behavior)
+- [x] PERF-02: Images served as WebP - MET (10-01, image() helper)
+- [x] PERF-03: Images in optimized sizes - MET (10-01, layout: 'constrained')
