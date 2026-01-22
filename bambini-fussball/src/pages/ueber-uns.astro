@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const siteUrl = 'https://bambini-fussball.pages.dev';
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Uber Bambini-Fussball.de",
+  "description": "Die beste Informationsquelle fur Bambini-Fussball in Deutschland",
+  "url": `${siteUrl}/ueber-uns/`,
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Bambini-Fussball.de",
+    "url": siteUrl,
+    "description": "Ratgeber und Tipps fur Trainer, Eltern und Vereine im Kinderfussball"
+  }
+};
+---
+
+<BaseLayout
+  title="Uber uns | Bambini-Fussball"
+  description="Erfahren Sie mehr uber Bambini-Fussball.de - Ihre Informationsquelle fur Kinderfussball in Deutschland."
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(aboutSchema)} />
+
+  <div class="container mx-auto px-4 py-8">
+    <article class="max-w-3xl mx-auto prose prose-lg">
+      <h1 class="text-3xl font-bold text-gray-900 mb-6">Uber Bambini-Fussball.de</h1>
+
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold text-gray-900 mb-4">Unsere Mission</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Bambini-Fussball.de ist die umfassende Informationsquelle fur alle, die mit Kinderfussball
+          zu tun haben. Unser Ziel ist es, Trainern, Eltern und Vereinen das notige Wissen zu vermitteln,
+          um Kindern im Alter von 4-6 Jahren einen positiven Einstieg in den Fussball zu ermoglichen.
+        </p>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold text-gray-900 mb-4">Fur wen wir schreiben</h2>
+        <ul class="text-gray-700 space-y-3">
+          <li>
+            <strong>Trainer:</strong> Praktische Ubungen, Spielformen und methodische Tipps
+            fur das Training mit den Jungsten.
+          </li>
+          <li>
+            <strong>Eltern:</strong> Hintergrundwissen zum Kinderfussball, Tipps zur Forderung
+            und Antworten auf haufige Fragen.
+          </li>
+          <li>
+            <strong>Vereine:</strong> Best Practices fur die Organisation und den Aufbau
+            einer erfolgreichen Bambini-Abteilung.
+          </li>
+        </ul>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold text-gray-900 mb-4">Unsere Expertise</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Alle Inhalte werden von erfahrenen Trainern und Padagogen mit langjahrigem
+          Hintergrund im Kinderfussball erstellt. Wir legen Wert auf praxisnahe,
+          kindgerechte und fundierte Informationen.
+        </p>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold text-gray-900 mb-4">Kontakt</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Fur rechtliche Informationen besuchen Sie bitte unser <a href="/impressum/" class="text-green-700 hover:underline">Impressum</a>.
+          Details zum Datenschutz finden Sie in unserer <a href="/datenschutz/" class="text-green-700 hover:underline">Datenschutzerklarung</a>.
+        </p>
+      </section>
+
+      <nav class="mt-8 pt-8 border-t border-gray-200 not-prose">
+        <a href="/" class="inline-flex items-center min-h-[44px] text-green-600 hover:text-green-800">
+          &larr; Zuruck zur Startseite
+        </a>
+      </nav>
+    </article>
+  </div>
+</BaseLayout>
