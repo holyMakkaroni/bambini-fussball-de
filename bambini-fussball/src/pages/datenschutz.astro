@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Datenschutzerklarung | Bambini-Fussball Deutschland">
+  <main class="container mx-auto px-4 py-8 max-w-3xl flex-grow">
+    <h1 class="text-3xl font-bold text-green-700 mb-8">Datenschutzerklarung</h1>
+
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Verantwortlicher</h2>
+      <address class="not-italic text-gray-700 space-y-1">
+        <p>[Vorname Nachname]</p>
+        <p>[Strasse Nr.]</p>
+        <p>[PLZ Ort]</p>
+        <p>E-Mail: [email@example.de]</p>
+      </address>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Erhebung und Speicherung personenbezogener Daten</h2>
+      <p class="text-gray-700 mb-4">
+        Beim Besuch unserer Website werden automatisch Informationen durch den Webserver erfasst.
+        Diese Informationen umfassen:
+      </p>
+      <ul class="list-disc list-inside text-gray-700 mb-4 space-y-1">
+        <li>IP-Adresse des anfragenden Rechners</li>
+        <li>Datum und Uhrzeit des Zugriffs</li>
+        <li>Name und URL der abgerufenen Datei</li>
+        <li>Browsertyp und -version</li>
+        <li>Verwendetes Betriebssystem</li>
+        <li>Referrer URL (zuvor besuchte Seite)</li>
+      </ul>
+      <p class="text-gray-700">
+        Die Rechtsgrundlage fur die vorubergehende Speicherung der Daten ist Art. 6 Abs. 1 lit. f DSGVO
+        (berechtigtes Interesse). Diese Daten werden zur Sicherstellung eines storungsfreien Betriebs
+        der Website benotigt und nach 30 Tagen automatisch geloscht.
+      </p>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Cookies</h2>
+      <p class="text-gray-700 mb-4">
+        Diese Website verwendet Cookies zur Speicherung Ihrer Praferenzen. Cookies sind kleine
+        Textdateien, die auf Ihrem Endgerat gespeichert werden.
+      </p>
+      <p class="text-gray-700 mb-4">
+        Wir setzen folgende Arten von Cookies ein:
+      </p>
+      <ul class="list-disc list-inside text-gray-700 mb-4 space-y-1">
+        <li><strong>Technisch notwendige Cookies:</strong> Diese sind fur den Betrieb der Website erforderlich.</li>
+        <li><strong>Praferenz-Cookies:</strong> Diese speichern Ihre Einstellungen (z.B. Cookie-Einwilligung).</li>
+      </ul>
+      <p class="text-gray-700">
+        Sie konnen der Verwendung von Cookies jederzeit widersprechen. Entsprechende Einstellungen
+        konnen Sie in Ihrem Browser vornehmen. Bei der erstmaligen Nutzung unserer Website werden
+        Sie uber unseren Cookie-Hinweis um Ihre Einwilligung gebeten.
+      </p>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Ihre Rechte</h2>
+      <p class="text-gray-700 mb-4">
+        Sie haben gegenuber uns folgende Rechte hinsichtlich der Sie betreffenden personenbezogenen Daten:
+      </p>
+      <ul class="list-disc list-inside text-gray-700 space-y-2">
+        <li><strong>Auskunft (Art. 15 DSGVO):</strong> Sie haben das Recht, Auskunft uber Ihre bei uns gespeicherten personenbezogenen Daten zu erhalten.</li>
+        <li><strong>Berichtigung (Art. 16 DSGVO):</strong> Sie haben das Recht, unrichtige Daten berichtigen zu lassen.</li>
+        <li><strong>Loschung (Art. 17 DSGVO):</strong> Sie haben das Recht, die Loschung Ihrer Daten zu verlangen.</li>
+        <li><strong>Einschrankung (Art. 18 DSGVO):</strong> Sie haben das Recht, die Einschrankung der Verarbeitung zu verlangen.</li>
+        <li><strong>Datenubertragbarkeit (Art. 20 DSGVO):</strong> Sie haben das Recht, Ihre Daten in einem gangigen Format zu erhalten.</li>
+        <li><strong>Widerspruch (Art. 21 DSGVO):</strong> Sie haben das Recht, jederzeit gegen die Verarbeitung Widerspruch einzulegen.</li>
+      </ul>
+      <p class="text-gray-700 mt-4">
+        Zur Ausubung Ihrer Rechte konnen Sie sich jederzeit an uns unter der oben angegebenen Adresse wenden.
+        Sie haben zudem das Recht, sich bei einer Datenschutz-Aufsichtsbehorde zu beschweren.
+      </p>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Hosting</h2>
+      <p class="text-gray-700 mb-4">
+        Diese Website wird bei Cloudflare Pages gehostet. Der Anbieter ist:
+      </p>
+      <address class="not-italic text-gray-700 mb-4">
+        <p>Cloudflare, Inc.</p>
+        <p>101 Townsend St</p>
+        <p>San Francisco, CA 94107, USA</p>
+      </address>
+      <p class="text-gray-700 mb-4">
+        Bei jedem Aufruf unserer Website werden durch Cloudflare automatisch Server-Logfiles erstellt
+        und temporar gespeichert. Diese Daten werden zur Gewahrleistung der Sicherheit und
+        Performance der Website benotigt.
+      </p>
+      <p class="text-gray-700">
+        Weitere Informationen zum Datenschutz bei Cloudflare finden Sie unter:
+        <a href="https://www.cloudflare.com/privacypolicy/" class="text-green-700 hover:text-green-900 underline" rel="noopener noreferrer" target="_blank">
+          https://www.cloudflare.com/privacypolicy/
+        </a>
+      </p>
+    </section>
+  </main>
+</BaseLayout>
