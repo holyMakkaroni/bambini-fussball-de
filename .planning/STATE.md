@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-19)
 
 **Core value:** Die beste und vollstandigste Informationsquelle fur Bambini-Fussball in Deutschland
-**Current focus:** Phase 4 - Content Architecture (COMPLETE) → Ready for Phase 5
+**Current focus:** Phase 5 - SEO Infrastructure (In Progress)
 
 ## Current Position
 
-Phase: 4 of 11 (Content Architecture) - COMPLETE
-Plan: 3 of 3 in phase - COMPLETE
-Status: Phase 4 complete, ready for Phase 5
-Last activity: 2026-01-22 - Phase 4 verified and complete
+Phase: 5 of 11 (SEO Infrastructure)
+Plan: 1 of 3 in phase - COMPLETE
+Status: In progress
+Last activity: 2026-01-22 - Completed 05-01-PLAN.md
 
-Progress: [████████░░] 35%
+Progress: [████████░░] 38%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 9
+- Total plans completed: 10
 - Average duration: ~5 minutes
-- Total execution time: ~0.7 hours
+- Total execution time: ~0.75 hours
 
 **By Phase:**
 
@@ -31,9 +31,10 @@ Progress: [████████░░] 35%
 | 2. Technical Infrastructure | 2/2 | ~7 min | ~3.5 min |
 | 3. Legal Compliance | 2/2 | ~7 min | ~3.5 min |
 | 4. Content Architecture | 3/3 | ~9 min | ~3 min |
+| 5. SEO Infrastructure | 1/3 | ~3 min | ~3 min |
 
 **Recent Trend:**
-- Last 5 plans: 03-01 (~4 min), 03-02 (~3 min), 04-01 (~3 min), 04-02 (~3 min), 04-03 (~3 min)
+- Last 5 plans: 03-02 (~3 min), 04-01 (~3 min), 04-02 (~3 min), 04-03 (~3 min), 05-01 (~3 min)
 - Trend: Active
 
 *Updated after each plan completion*
@@ -69,6 +70,9 @@ Recent decisions affecting current work:
 - 04-03: astro-breadcrumbs for Schema.org JSON-LD support
 - 04-03: Custom crumbs array for German labels (Startseite not Home)
 - 04-03: render() as standalone import from astro:content (Astro 5 pattern)
+- 05-01: Canonical URL uses Astro.url.pathname with production domain
+- 05-01: Head slot for page-specific meta injection (after twitter:card)
+- 05-01: Schema validation enforces SEO limits at build time (title 60, desc 160)
 
 ### Performance Baseline (Phase 2)
 
@@ -82,6 +86,7 @@ Recent decisions affecting current work:
 ### Pending Todos
 
 - [ ] Replace placeholder contact info in Impressum/Datenschutz before launch
+- [ ] Create /images/og-default.jpg for social sharing fallback
 
 ### Blockers/Concerns
 
@@ -89,8 +94,8 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-22 11:26 UTC
-Stopped at: Completed 04-03-PLAN.md
+Last session: 2026-01-22 12:55 UTC
+Stopped at: Completed 05-01-PLAN.md
 Resume file: None
 
 ## Deployment Info
@@ -117,3 +122,9 @@ Resume file: None
 ### CONTENT Requirements (Phase 4 COMPLETE)
 - [x] CONT-01: Pillar pages for three audiences - MET (04-02)
 - [x] CONT-02: Dynamic article routes - MET (04-03)
+
+### SEO Requirements (Phase 5 in progress)
+- [x] SEO-01: Unique meta title < 60 chars - MET (05-01, schema validation)
+- [x] SEO-02: Unique meta description < 160 chars - MET (05-01, schema validation)
+- [ ] SEO-03: Sitemap.xml - Pending (05-02)
+- [ ] SEO-04: Robots.txt - Pending (05-02)
