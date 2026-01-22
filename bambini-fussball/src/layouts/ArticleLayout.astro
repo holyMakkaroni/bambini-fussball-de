@@ -3,6 +3,7 @@
 import BaseLayout from './BaseLayout.astro';
 import { Breadcrumbs } from 'astro-breadcrumbs';
 import 'astro-breadcrumbs/breadcrumbs.css';
+import RelatedArticles from '../components/RelatedArticles.astro';
 
 interface Props {
   title: string;
@@ -13,9 +14,10 @@ interface Props {
   authorId: string;
   authorName: string;
   image?: string;
+  articleId: string;
 }
 
-const { title, description, category, pubDate, updatedDate, authorId, authorName, image } = Astro.props;
+const { title, description, category, pubDate, updatedDate, authorId, authorName, image, articleId } = Astro.props;
 
 // Category labels in German
 const categoryLabels = {
@@ -85,6 +87,8 @@ const articleSchema = {
       <div class="article-content">
         <slot />
       </div>
+
+      <RelatedArticles category={category} currentArticleId={articleId} />
     </article>
   </main>
 </BaseLayout>
