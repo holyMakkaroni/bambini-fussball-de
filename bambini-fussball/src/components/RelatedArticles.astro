@@ -1,0 +1,58 @@
+---
+// src/components/RelatedArticles.astro
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  category: 'trainer' | 'eltern' | 'vereine';
+  currentArticleId: string;
+  maxArticles?: number;
+}
+
+const { category, currentArticleId, maxArticles = 3 } = Astro.props;
+
+// Category labels in German
+const categoryLabels = {
+  trainer: 'Trainer',
+  eltern: 'Eltern',
+  vereine: 'Vereine'
+};
+
+// Get articles from the same category
+const allArticles = await getCollection(category);
+
+// Filter out current article and sort by date (newest first)
+const relatedArticles = allArticles
+  .filter((article) => article.id !== currentArticleId)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, maxArticles);
+---
+
+{relatedArticles.length > 0 && (
+  <aside class="related-articles mt-12 pt-8 border-t border-gray-200" aria-labelledby="related-heading">
+    <h2 id="related-heading" class="text-2xl font-bold text-gray-900 mb-6">
+      Weitere Artikel für {categoryLabels[category]}
+    </h2>
+    <div class="grid gap-4 md:grid-cols-3">
+      {relatedArticles.map((article) => (
+        <article class="bg-gray-50 border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">
+            <a href={`/${category}/${article.id}/`} class="hover:text-green-700">
+              {article.data.title}
+            </a>
+          </h3>
+          <p class="text-sm text-gray-600 line-clamp-2">{article.data.description}</p>
+        </article>
+      ))}
+    </div>
+  </aside>
+)}
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
