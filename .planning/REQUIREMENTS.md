@@ -18,9 +18,9 @@ Requirements für den initialen Launch. Jedes Requirement wird einer Roadmap-Pha
 
 ### Rechtliche Anforderungen
 
-- [ ] **LEGAL-01**: Impressum-Seite ist von jeder Seite erreichbar
-- [ ] **LEGAL-02**: Datenschutzerklärung ist vorhanden und DSGVO-konform
-- [ ] **LEGAL-03**: Cookie-Consent-Banner erscheint bei Erstzugriff
+- [x] **LEGAL-01**: Impressum-Seite ist von jeder Seite erreichbar
+- [x] **LEGAL-02**: Datenschutzerklärung ist vorhanden und DSGVO-konform
+- [x] **LEGAL-03**: Cookie-Consent-Banner erscheint bei Erstzugriff
 
 ### Content-Struktur
 
@@ -84,9 +84,9 @@ Explizit ausgeschlossen. Dokumentiert um Scope Creep zu verhindern.
 | TECH-04 | Phase 11 | Pending |
 | TECH-05 | Phase 1 | Complete |
 | TECH-06 | Phase 1 | Complete |
-| LEGAL-01 | Phase 3 | Pending |
-| LEGAL-02 | Phase 3 | Pending |
-| LEGAL-03 | Phase 3 | Pending |
+| LEGAL-01 | Phase 3 | Complete |
+| LEGAL-02 | Phase 3 | Complete |
+| LEGAL-03 | Phase 3 | Complete |
 | CONT-01 | Phase 4 | Pending |
 | CONT-02 | Phase 4 | Pending |
 | CONT-03 | Phase 4 | Pending |
@@ -109,4 +109,4 @@ Explizit ausgeschlossen. Dokumentiert um Scope Creep zu verhindern.
 
 ---
 *Requirements defined: 2025-01-19*
-*Last updated: 2026-01-22 after Phase 2 completion*
+*Last updated: 2026-01-22 after Phase 3 completion*

@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Astro project setup with Tailwind, clean URLs, and dev environment
 - [x] **Phase 2: Technical Infrastructure** - Mobile responsiveness and Core Web Vitals baseline
-- [ ] **Phase 3: Legal Compliance** - Impressum, Datenschutz, and Cookie consent (DSGVO)
+- [x] **Phase 3: Legal Compliance** - Impressum, Datenschutz, and Cookie consent (DSGVO)
 - [ ] **Phase 4: Content Architecture** - Pillar-cluster structure with category pages and navigation
 - [ ] **Phase 5: SEO Infrastructure** - Meta tags, JSON-LD schemas, and author/about pages
 - [ ] **Phase 6: Content Creation - Trainer** - 8-10 articles targeting trainers/coaches
@@ -69,8 +69,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — Footer component with Impressum and Datenschutz pages
-- [ ] 03-02-PLAN.md — Cookie consent banner implementation
+- [x] 03-01-PLAN.md — Footer component with Impressum and Datenschutz pages
+- [x] 03-02-PLAN.md — Cookie consent banner implementation
 
 ### Phase 4: Content Architecture
 **Goal**: Pillar-cluster content structure is in place with category overview pages and breadcrumb navigation
@@ -213,7 +213,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> ... -> 11
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete | 2026-01-22 |
 | 2. Technical Infrastructure | 2/2 | Complete | 2026-01-22 |
-| 3. Legal Compliance | 0/2 | Not started | - |
+| 3. Legal Compliance | 2/2 | Complete | 2026-01-22 |
 | 4. Content Architecture | 0/3 | Not started | - |
 | 5. SEO Infrastructure | 0/3 | Not started | - |
 | 6. Content - Trainer | 0/3 | Not started | - |
