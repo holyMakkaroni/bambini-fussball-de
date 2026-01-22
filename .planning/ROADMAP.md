@@ -99,12 +99,12 @@ Plans:
   3. Author schema links articles to author entity
   4. Author page exists with bio, credentials, and photo
   5. About page explains website purpose and operator
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 05-01: Meta tag system with frontmatter integration
-- [ ] 05-02: Article and Author JSON-LD schema components
-- [ ] 05-03: Author page and About page creation
+- [ ] 05-01-PLAN.md — Meta tag system with canonical URL and Open Graph tags
+- [ ] 05-02-PLAN.md — Author collection with reference() and Article JSON-LD
+- [ ] 05-03-PLAN.md — Author profile page and About page with structured data
 
 ### Phase 6: Content Creation - Trainer
 **Goal**: 8-10 high-quality articles published for the Trainer target audience covering coaching topics
@@ -215,7 +215,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> ... -> 11
 | 2. Technical Infrastructure | 2/2 | Complete | 2026-01-22 |
 | 3. Legal Compliance | 2/2 | Complete | 2026-01-22 |
 | 4. Content Architecture | 3/3 | Complete | 2026-01-22 |
-| 5. SEO Infrastructure | 0/3 | Not started | - |
+| 5. SEO Infrastructure | 0/3 | Planned | - |
 | 6. Content - Trainer | 0/3 | Not started | - |
 | 7. Content - Eltern | 0/3 | Not started | - |
 | 8. Content - Vereine | 0/3 | Not started | - |
