@@ -66,11 +66,11 @@ Plans:
   3. Cookie consent banner appears on first visit
   4. User can accept/reject cookies, choice is remembered
   5. Privacy links are accessible from every page via footer
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: Impressum and Datenschutz pages with footer integration
-- [ ] 03-02: Cookie consent banner implementation
+- [ ] 03-01-PLAN.md — Footer component with Impressum and Datenschutz pages
+- [ ] 03-02-PLAN.md — Cookie consent banner implementation
 
 ### Phase 4: Content Architecture
 **Goal**: Pillar-cluster content structure is in place with category overview pages and breadcrumb navigation
