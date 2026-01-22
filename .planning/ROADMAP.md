@@ -150,12 +150,11 @@ Plans:
   3. Each article includes Article schema markup
   4. Articles cover diverse Vereine topics (Organisation, Jugendarbeit, Spielbetrieb)
   5. Articles are accessible from Vereine category overview page
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 08-01: Vereine content planning and outline creation
-- [ ] 08-02: Vereine articles batch 1 (3-4 articles)
-- [ ] 08-03: Vereine articles batch 2 (3-4 articles)
+- [ ] 08-01-PLAN.md — Core club articles (trainer recruitment, DFB reform implementation, Spielfest organization, parent management)
+- [ ] 08-02-PLAN.md — Supporting club articles (FairPlayLiga, DFB-Mobil, child protection, building Bambini program)
 
 ### Phase 9: Related Content System
 **Goal**: Every article displays 3-4 related article links at the end, enabling content discovery
@@ -218,7 +217,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> ... -> 11
 | 5. SEO Infrastructure | 4/4 | Complete | 2026-01-22 |
 | 6. Content - Trainer | 3/3 | Complete | 2026-01-22 |
 | 7. Content - Eltern | 2/2 | Complete | 2026-01-22 |
-| 8. Content - Vereine | 0/3 | Not started | - |
+| 8. Content - Vereine | 0/2 | Not started | - |
 | 9. Related Content | 0/2 | Not started | - |
 | 10. Performance | 0/2 | Not started | - |
 | 11. Launch Prep | 0/3 | Not started | - |
