@@ -1,0 +1,133 @@
+---
+// src/layouts/ArticleLayout.astro
+import BaseLayout from './BaseLayout.astro';
+import { Breadcrumbs } from 'astro-breadcrumbs';
+import 'astro-breadcrumbs/breadcrumbs.css';
+
+interface Props {
+  title: string;
+  description: string;
+  category: 'trainer' | 'eltern' | 'vereine';
+  pubDate: Date;
+  author: string;
+}
+
+const { title, description, category, pubDate, author } = Astro.props;
+
+// Category labels in German
+const categoryLabels = {
+  trainer: 'Trainer',
+  eltern: 'Eltern',
+  vereine: 'Vereine'
+};
+
+// Custom breadcrumb items for semantic clarity
+const crumbs = [
+  { text: 'Startseite', href: '/' },
+  { text: categoryLabels[category], href: `/${category}/` },
+  { text: title, href: '#', 'aria-current': 'page' as const }
+];
+---
+
+<BaseLayout title={`${title} | Bambini-Fussball`} description={description}>
+  <main class="flex-1 container mx-auto px-4 py-8">
+    <nav class="mb-6" aria-label="Breadcrumb">
+      <Breadcrumbs
+        crumbs={crumbs}
+        indexText="Startseite"
+        schemaJsonScript={true}
+      />
+    </nav>
+
+    <article class="prose prose-lg max-w-3xl mx-auto">
+      <header class="mb-8 not-prose">
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">{title}</h1>
+        <div class="flex items-center gap-4 text-sm text-gray-600">
+          <span>Von {author}</span>
+          <span aria-hidden="true">|</span>
+          <time datetime={pubDate.toISOString()}>
+            {pubDate.toLocaleDateString('de-DE', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })}
+          </time>
+        </div>
+      </header>
+
+      <div class="article-content">
+        <slot />
+      </div>
+    </article>
+  </main>
+</BaseLayout>
+
+<style is:global>
+  /* Breadcrumb styling to match site design */
+  .c-breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.875rem;
+  }
+
+  .c-breadcrumbs__crumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .c-breadcrumbs__link {
+    color: #4b5563;
+    text-decoration: none;
+  }
+
+  .c-breadcrumbs__link:hover {
+    color: #15803d;
+    text-decoration: underline;
+  }
+
+  .c-breadcrumbs__link--current {
+    color: #6b7280;
+    pointer-events: none;
+  }
+
+  .c-breadcrumbs__separator {
+    color: #9ca3af;
+  }
+
+  /* Article prose styling */
+  .article-content h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+  }
+
+  .article-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+  }
+
+  .article-content p {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    color: #374151;
+  }
+
+  .article-content ul, .article-content ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .article-content li {
+    margin-bottom: 0.5rem;
+  }
+</style>
