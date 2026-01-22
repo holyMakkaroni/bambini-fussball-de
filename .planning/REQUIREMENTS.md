@@ -24,9 +24,9 @@ Requirements für den initialen Launch. Jedes Requirement wird einer Roadmap-Pha
 
 ### Content-Struktur
 
-- [ ] **CONT-01**: Pillar-Cluster-Struktur mit 3 Säulen (Trainer, Eltern, Vereine)
-- [ ] **CONT-02**: Kategorie-Übersichtsseiten für jede Zielgruppe
-- [ ] **CONT-03**: Breadcrumb-Navigation auf allen Artikelseiten
+- [x] **CONT-01**: Pillar-Cluster-Struktur mit 3 Säulen (Trainer, Eltern, Vereine)
+- [x] **CONT-02**: Kategorie-Übersichtsseiten für jede Zielgruppe
+- [x] **CONT-03**: Breadcrumb-Navigation auf allen Artikelseiten
 - [ ] **CONT-04**: Verwandte Artikel-Sektion am Ende jedes Artikels (3-4 Links)
 - [ ] **CONT-05**: 20-30 Ratgeber-Artikel verteilt auf alle Kategorien
 
@@ -87,9 +87,9 @@ Explizit ausgeschlossen. Dokumentiert um Scope Creep zu verhindern.
 | LEGAL-01 | Phase 3 | Complete |
 | LEGAL-02 | Phase 3 | Complete |
 | LEGAL-03 | Phase 3 | Complete |
-| CONT-01 | Phase 4 | Pending |
-| CONT-02 | Phase 4 | Pending |
-| CONT-03 | Phase 4 | Pending |
+| CONT-01 | Phase 4 | Complete |
+| CONT-02 | Phase 4 | Complete |
+| CONT-03 | Phase 4 | Complete |
 | CONT-04 | Phase 9 | Pending |
 | CONT-05 | Phase 6, 7, 8 | Pending |
 | SEO-01 | Phase 5 | Pending |
@@ -109,4 +109,4 @@ Explizit ausgeschlossen. Dokumentiert um Scope Creep zu verhindern.
 
 ---
 *Requirements defined: 2025-01-19*
-*Last updated: 2026-01-22 after Phase 3 completion*
+*Last updated: 2026-01-22 after Phase 4 completion*

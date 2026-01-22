@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Foundation** - Astro project setup with Tailwind, clean URLs, and dev environment
 - [x] **Phase 2: Technical Infrastructure** - Mobile responsiveness and Core Web Vitals baseline
 - [x] **Phase 3: Legal Compliance** - Impressum, Datenschutz, and Cookie consent (DSGVO)
-- [ ] **Phase 4: Content Architecture** - Pillar-cluster structure with category pages and navigation
+- [x] **Phase 4: Content Architecture** - Pillar-cluster structure with category pages and navigation
 - [ ] **Phase 5: SEO Infrastructure** - Meta tags, JSON-LD schemas, and author/about pages
 - [ ] **Phase 6: Content Creation - Trainer** - 8-10 articles targeting trainers/coaches
 - [ ] **Phase 7: Content Creation - Eltern** - 8-10 articles targeting parents
@@ -85,9 +85,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — Content config migration and Header navigation component
-- [ ] 04-02-PLAN.md — Pillar category pages and ArticleCard component
-- [ ] 04-03-PLAN.md — ArticleLayout with breadcrumbs and dynamic article routes
+- [x] 04-01-PLAN.md — Content config migration and Header navigation component
+- [x] 04-02-PLAN.md — Pillar category pages and ArticleCard component
+- [x] 04-03-PLAN.md — ArticleLayout with breadcrumbs and dynamic article routes
 
 ### Phase 5: SEO Infrastructure
 **Goal**: Every page has unique meta tags, articles have JSON-LD schema markup, and author/about pages establish E-E-A-T
@@ -214,7 +214,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> ... -> 11
 | 1. Foundation | 2/2 | Complete | 2026-01-22 |
 | 2. Technical Infrastructure | 2/2 | Complete | 2026-01-22 |
 | 3. Legal Compliance | 2/2 | Complete | 2026-01-22 |
-| 4. Content Architecture | 0/3 | Planned | - |
+| 4. Content Architecture | 3/3 | Complete | 2026-01-22 |
 | 5. SEO Infrastructure | 0/3 | Not started | - |
 | 6. Content - Trainer | 0/3 | Not started | - |
 | 7. Content - Eltern | 0/3 | Not started | - |
