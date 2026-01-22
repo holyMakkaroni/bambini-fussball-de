@@ -117,12 +117,12 @@ Plans:
   3. Each article includes Article schema markup
   4. Articles cover diverse Trainer topics (Ubungen, Spielformen, Trainingsplanung)
   5. Articles are accessible from Trainer category overview page
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 06-01: Trainer content planning and outline creation
-- [ ] 06-02: Trainer articles batch 1 (4-5 articles)
-- [ ] 06-03: Trainer articles batch 2 (4-5 articles)
+- [ ] 06-01-PLAN.md — Core methodology articles (beginner guide, DFB formats, session structure)
+- [ ] 06-02-PLAN.md — Practical training activities (chase games, dribbling, shooting)
+- [ ] 06-03-PLAN.md — Trainer development (common mistakes, communication, rituals)
 
 ### Phase 7: Content Creation - Eltern
 **Goal**: 8-10 high-quality articles published for the Eltern target audience covering parent topics
@@ -217,7 +217,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> ... -> 11
 | 3. Legal Compliance | 2/2 | Complete | 2026-01-22 |
 | 4. Content Architecture | 3/3 | Complete | 2026-01-22 |
 | 5. SEO Infrastructure | 4/4 | Complete | 2026-01-22 |
-| 6. Content - Trainer | 0/3 | Not started | - |
+| 6. Content - Trainer | 0/3 | Planned | - |
 | 7. Content - Eltern | 0/3 | Not started | - |
 | 8. Content - Vereine | 0/3 | Not started | - |
 | 9. Related Content | 0/2 | Not started | - |
