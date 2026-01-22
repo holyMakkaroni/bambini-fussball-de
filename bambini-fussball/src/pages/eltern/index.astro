@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+
+const articles = await getCollection('eltern');
+const sortedArticles = articles.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout
+  title="Eltern-Ratgeber | Bambini-Fussball"
+  description="Alles was Eltern uber Bambini-Fussball wissen mussen - von der Ausrustung bis zur Forderung"
+>
+  <main class="flex-1 container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-blue-700 mb-6">Fur Eltern</h1>
+    <p class="text-lg text-gray-600 mb-8 max-w-3xl">
+      Grundlagen zum Kinderfussball, haufige Fragen und Tipps zur Forderung Ihres Kindes im Bambini-Alter.
+    </p>
+
+    {sortedArticles.length > 0 ? (
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {sortedArticles.map((article) => (
+          <ArticleCard article={article} basePath="/eltern/" />
+        ))}
+      </div>
+    ) : (
+      <p class="text-gray-500 italic">Artikel folgen in Kurze.</p>
+    )}
+  </main>
+</BaseLayout>

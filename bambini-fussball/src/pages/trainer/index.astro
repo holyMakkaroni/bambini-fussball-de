@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+
+const articles = await getCollection('trainer');
+const sortedArticles = articles.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout
+  title="Trainer-Ratgeber | Bambini-Fussball"
+  description="Trainingstipps, Ubungen und Methodik fur die Arbeit mit 4-6-jahrigen Fussballern"
+>
+  <main class="flex-1 container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-green-700 mb-6">Fur Trainer</h1>
+    <p class="text-lg text-gray-600 mb-8 max-w-3xl">
+      Trainingstipps, Ubungen und Methodik fur die Arbeit mit 4-6-jahrigen Fussballern.
+      Alles was Sie fur ein erfolgreiches Bambini-Training brauchen.
+    </p>
+
+    {sortedArticles.length > 0 ? (
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {sortedArticles.map((article) => (
+          <ArticleCard article={article} basePath="/trainer/" />
+        ))}
+      </div>
+    ) : (
+      <p class="text-gray-500 italic">Artikel folgen in Kurze.</p>
+    )}
+  </main>
+</BaseLayout>

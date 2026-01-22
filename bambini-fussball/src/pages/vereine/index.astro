@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+
+const articles = await getCollection('vereine');
+const sortedArticles = articles.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout
+  title="Vereine-Ratgeber | Bambini-Fussball"
+  description="Organisation und Aufbau einer Bambini-Abteilung - Best Practices fur Vereine"
+>
+  <main class="flex-1 container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-amber-700 mb-6">Fur Vereine</h1>
+    <p class="text-lg text-gray-600 mb-8 max-w-3xl">
+      Organisation und Aufbau einer erfolgreichen Bambini-Abteilung. Best Practices und Organisationstipps fur Vereine.
+    </p>
+
+    {sortedArticles.length > 0 ? (
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {sortedArticles.map((article) => (
+          <ArticleCard article={article} basePath="/vereine/" />
+        ))}
+      </div>
+    ) : (
+      <p class="text-gray-500 italic">Artikel folgen in Kurze.</p>
+    )}
+  </main>
+</BaseLayout>
