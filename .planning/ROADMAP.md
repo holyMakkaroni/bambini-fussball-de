@@ -17,7 +17,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 3: Legal Compliance** - Impressum, Datenschutz, and Cookie consent (DSGVO)
 - [x] **Phase 4: Content Architecture** - Pillar-cluster structure with category pages and navigation
 - [x] **Phase 5: SEO Infrastructure** - Meta tags, JSON-LD schemas, and author/about pages
-- [ ] **Phase 6: Content Creation - Trainer** - 8-10 articles targeting trainers/coaches
+- [x] **Phase 6: Content Creation - Trainer** - 8-10 articles targeting trainers/coaches
 - [ ] **Phase 7: Content Creation - Eltern** - 8-10 articles targeting parents
 - [ ] **Phase 8: Content Creation - Vereine** - 6-8 articles targeting clubs/associations
 - [ ] **Phase 9: Related Content System** - Related articles feature with cross-linking
@@ -120,9 +120,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 06-01-PLAN.md — Core methodology articles (beginner guide, DFB formats, session structure)
-- [ ] 06-02-PLAN.md — Practical training activities (chase games, dribbling, shooting)
-- [ ] 06-03-PLAN.md — Trainer development (common mistakes, communication, rituals)
+- [x] 06-01-PLAN.md — Core methodology articles (beginner guide, DFB formats, session structure)
+- [x] 06-02-PLAN.md — Practical training activities (chase games, dribbling, shooting)
+- [x] 06-03-PLAN.md — Trainer development (common mistakes, communication, rituals)
 
 ### Phase 7: Content Creation - Eltern
 **Goal**: 8-10 high-quality articles published for the Eltern target audience covering parent topics
@@ -217,7 +217,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> ... -> 11
 | 3. Legal Compliance | 2/2 | Complete | 2026-01-22 |
 | 4. Content Architecture | 3/3 | Complete | 2026-01-22 |
 | 5. SEO Infrastructure | 4/4 | Complete | 2026-01-22 |
-| 6. Content - Trainer | 0/3 | Planned | - |
+| 6. Content - Trainer | 3/3 | Complete | 2026-01-22 |
 | 7. Content - Eltern | 0/3 | Not started | - |
 | 8. Content - Vereine | 0/3 | Not started | - |
 | 9. Related Content | 0/2 | Not started | - |
