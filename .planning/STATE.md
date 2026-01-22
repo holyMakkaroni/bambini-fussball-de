@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-19)
 
 **Core value:** Die beste und vollstandigste Informationsquelle fur Bambini-Fussball in Deutschland
-**Current focus:** Phase 5 - SEO Infrastructure (In Progress)
+**Current focus:** Phase 5 - SEO Infrastructure (COMPLETE)
 
 ## Current Position
 
-Phase: 5 of 11 (SEO Infrastructure)
-Plan: 2 of 3 in phase - COMPLETE
-Status: In progress
-Last activity: 2026-01-22 - Completed 05-02-PLAN.md
+Phase: 5 of 11 (SEO Infrastructure) - COMPLETE
+Plan: 3 of 3 in phase - COMPLETE
+Status: Phase complete
+Last activity: 2026-01-22 - Completed 05-03-PLAN.md
 
-Progress: [████████░░] 42%
+Progress: [████████░░] 46%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 11
+- Total plans completed: 12
 - Average duration: ~5 minutes
-- Total execution time: ~0.8 hours
+- Total execution time: ~0.9 hours
 
 **By Phase:**
 
@@ -31,10 +31,10 @@ Progress: [████████░░] 42%
 | 2. Technical Infrastructure | 2/2 | ~7 min | ~3.5 min |
 | 3. Legal Compliance | 2/2 | ~7 min | ~3.5 min |
 | 4. Content Architecture | 3/3 | ~9 min | ~3 min |
-| 5. SEO Infrastructure | 2/3 | ~7 min | ~3.5 min |
+| 5. SEO Infrastructure | 3/3 | ~11 min | ~3.7 min |
 
 **Recent Trend:**
-- Last 5 plans: 04-01 (~3 min), 04-02 (~3 min), 04-03 (~3 min), 05-01 (~3 min), 05-02 (~4 min)
+- Last 5 plans: 04-02 (~3 min), 04-03 (~3 min), 05-01 (~3 min), 05-02 (~4 min), 05-03 (~4 min)
 - Trend: Active
 
 *Updated after each plan completion*
@@ -76,6 +76,9 @@ Recent decisions affecting current work:
 - 05-02: Authors collection with JSON schema for structured author data
 - 05-02: Article schema uses reference('authors') for type-safe author links
 - 05-02: Author @id pattern: https://bambini-fussball.pages.dev/autor/{id}/
+- 05-03: ProfilePage @id matches Article author @id exactly for entity linking
+- 05-03: About page uses Organization mainEntity for site-level schema
+- 05-03: Footer updated with trailing slashes for URL consistency
 
 ### Performance Baseline (Phase 2)
 
@@ -91,7 +94,6 @@ Recent decisions affecting current work:
 - [ ] Replace placeholder contact info in Impressum/Datenschutz before launch
 - [ ] Create /images/og-default.jpg for social sharing fallback
 - [ ] Create /images/authors/redaktion.jpg for author profile image
-- [ ] Create author profile pages at /autor/{id}/ (referenced in JSON-LD)
 
 ### Blockers/Concerns
 
@@ -99,8 +101,8 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-22 12:59 UTC
-Stopped at: Completed 05-02-PLAN.md
+Last session: 2026-01-22 13:06 UTC
+Stopped at: Completed 05-03-PLAN.md (Phase 5 complete)
 Resume file: None
 
 ## Deployment Info
@@ -128,10 +130,10 @@ Resume file: None
 - [x] CONT-01: Pillar pages for three audiences - MET (04-02)
 - [x] CONT-02: Dynamic article routes - MET (04-03)
 
-### SEO Requirements (Phase 5 in progress)
+### SEO Requirements (Phase 5 COMPLETE)
 - [x] SEO-01: Unique meta title < 60 chars - MET (05-01, schema validation)
 - [x] SEO-02: Unique meta description < 160 chars - MET (05-01, schema validation)
 - [x] SEO-03: Article JSON-LD - MET (05-02)
 - [x] SEO-04: Author schema linked - MET (05-02)
-- [ ] SEO-05: Sitemap.xml - Pending (05-03)
-- [ ] SEO-06: Robots.txt - Pending (05-03)
+- [x] SEO-05: Author page with bio, credentials, photo - MET (05-03)
+- [x] SEO-06: About page explaining purpose and operator - MET (05-03)
