@@ -1,6 +1,7 @@
 ---
 // src/components/ArticleCard.astro
 import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 
 interface Props {
   article: CollectionEntry<'trainer'> | CollectionEntry<'eltern'> | CollectionEntry<'vereine'>;
@@ -8,24 +9,35 @@ interface Props {
 }
 
 const { article, basePath } = Astro.props;
-const { title, description, pubDate } = article.data;
+const { title, description, pubDate, image, imageAlt } = article.data;
 ---
 
-<article class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
-  <h2 class="text-xl font-semibold text-gray-900 mb-2">
-    <a href={`${basePath}${article.id}/`} class="hover:text-green-700">
-      {title}
-    </a>
-  </h2>
-  <p class="text-gray-600 mb-4">{description}</p>
-  <time
-    datetime={pubDate.toISOString()}
-    class="text-sm text-gray-500"
-  >
-    {pubDate.toLocaleDateString('de-DE', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    })}
-  </time>
+<article class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+  {image && (
+    <Image
+      src={image}
+      alt={imageAlt || title}
+      width={400}
+      height={225}
+      class="w-full h-48 object-cover"
+    />
+  )}
+  <div class="p-6">
+    <h2 class="text-xl font-semibold text-gray-900 mb-2">
+      <a href={`${basePath}${article.id}/`} class="hover:text-green-700">
+        {title}
+      </a>
+    </h2>
+    <p class="text-gray-600 mb-4">{description}</p>
+    <time
+      datetime={pubDate.toISOString()}
+      class="text-sm text-gray-500"
+    >
+      {pubDate.toLocaleDateString('de-DE', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      })}
+    </time>
+  </div>
 </article>

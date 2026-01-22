@@ -2,6 +2,7 @@
 // src/components/RelatedArticles.astro
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 
 interface Props {
   category: 'trainer' | 'eltern' | 'vereine';
@@ -31,17 +32,28 @@ const relatedArticles = allArticles
 {relatedArticles.length > 0 && (
   <aside class="related-articles mt-12 pt-8 border-t border-gray-200" aria-labelledby="related-heading">
     <h2 id="related-heading" class="text-2xl font-bold text-gray-900 mb-6">
-      Weitere Artikel für {categoryLabels[category]}
+      Weitere Artikel fur {categoryLabels[category]}
     </h2>
     <div class="grid gap-4 md:grid-cols-3">
       {relatedArticles.map((article) => (
-        <article class="bg-gray-50 border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">
-            <a href={`/${category}/${article.id}/`} class="hover:text-green-700">
-              {article.data.title}
-            </a>
-          </h3>
-          <p class="text-sm text-gray-600 line-clamp-2">{article.data.description}</p>
+        <article class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+          {article.data.image && (
+            <Image
+              src={article.data.image}
+              alt={article.data.imageAlt || article.data.title}
+              width={300}
+              height={169}
+              class="w-full h-32 object-cover"
+            />
+          )}
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              <a href={`/${category}/${article.id}/`} class="hover:text-green-700">
+                {article.data.title}
+              </a>
+            </h3>
+            <p class="text-sm text-gray-600 line-clamp-2">{article.data.description}</p>
+          </div>
         </article>
       ))}
     </div>
