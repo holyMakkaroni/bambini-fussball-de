@@ -13,7 +13,7 @@ This roadmap transforms a blank Astro project into Germany's premier information
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Astro project setup with Tailwind, clean URLs, and dev environment
-- [ ] **Phase 2: Technical Infrastructure** - Mobile responsiveness and Core Web Vitals baseline
+- [x] **Phase 2: Technical Infrastructure** - Mobile responsiveness and Core Web Vitals baseline
 - [ ] **Phase 3: Legal Compliance** - Impressum, Datenschutz, and Cookie consent (DSGVO)
 - [ ] **Phase 4: Content Architecture** - Pillar-cluster structure with category pages and navigation
 - [ ] **Phase 5: SEO Infrastructure** - Meta tags, JSON-LD schemas, and author/about pages
@@ -53,8 +53,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Configure image optimization and touch-friendly interactive elements
-- [ ] 02-02-PLAN.md — Core Web Vitals baseline measurement and verification
+- [x] 02-01-PLAN.md — Configure image optimization and touch-friendly interactive elements
+- [x] 02-02-PLAN.md — Core Web Vitals baseline measurement and verification
 
 ### Phase 3: Legal Compliance
 **Goal**: Website is legally compliant for German market with Impressum, Datenschutzerklarung, and Cookie consent
@@ -212,7 +212,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> ... -> 11
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete | 2026-01-22 |
-| 2. Technical Infrastructure | 0/2 | Planned | - |
+| 2. Technical Infrastructure | 2/2 | Complete | 2026-01-22 |
 | 3. Legal Compliance | 0/2 | Not started | - |
 | 4. Content Architecture | 0/3 | Not started | - |
 | 5. SEO Infrastructure | 0/3 | Not started | - |
