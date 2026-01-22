@@ -6,6 +6,12 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   output: 'static',
   trailingSlash: 'always',
+  image: {
+    // Enable responsive image optimization with CLS prevention
+    // All <Image /> components will automatically get srcset and proper dimensions
+    layout: 'constrained',
+    responsiveStyles: true,
+  },
   vite: {
     plugins: [tailwindcss()],
   },
