@@ -115,6 +115,8 @@ Recent decisions affecting current work:
 - 10-01: Thumbnails use default lazy loading via <Image> component
 - 10-01: Author images kept as z.string() (public paths not optimizable)
 - 10-02: Full pipeline verified: schema -> pages -> layout -> Image component
+- 11-01: @astrojs/sitemap integration for auto-generated XML sitemap (36 URLs)
+- 11-01: site property required in astro.config.mjs for sitemap URL generation
 - 11-02: OG image SVG-to-JPG via sharp (consistent with 05-04 pattern)
 - 11-02: og:image:width and og:image:height meta tags for better social preview loading
 
@@ -191,3 +193,7 @@ Resume file: None
 - [x] PERF-01: Images lazy-loaded - MET (10-01, default <Image> behavior)
 - [x] PERF-02: Images served as WebP - MET (10-01, image() helper)
 - [x] PERF-03: Images in optimized sizes - MET (10-01, layout: 'constrained')
+
+### TECH Requirements - Phase 11 IN PROGRESS
+- [x] TECH-03: XML sitemap auto-generated - MET (11-01, 36 URLs)
+- [x] TECH-04: robots.txt with Allow and Sitemap directives - MET (11-01)
