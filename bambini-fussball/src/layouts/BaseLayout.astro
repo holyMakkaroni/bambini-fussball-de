@@ -6,9 +6,14 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  type?: 'website' | 'article';
 }
 
-const { title, description = 'Die beste Informationsquelle fur Bambini-Fussball in Deutschland' } = Astro.props;
+const { title, description = 'Die beste Informationsquelle fur Bambini-Fussball in Deutschland', image, type = 'website' } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, 'https://bambini-fussball.pages.dev');
+const socialImageURL = new URL(image || '/images/og-default.jpg', 'https://bambini-fussball.pages.dev');
 ---
 
 <!doctype html>
@@ -19,6 +24,16 @@ const { title, description = 'Die beste Informationsquelle fur Bambini-Fussball 
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Bambini-Fussball" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <slot name="head" />
     <title>{title}</title>
   </head>
   <body class="bg-white text-gray-900 font-sans min-h-screen flex flex-col">
