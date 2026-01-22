@@ -1,6 +1,7 @@
 import { defineCollection, z, reference } from 'astro:content';
 import { glob } from 'astro/loaders';
 
+// Authors use public path strings for images (stored in /public/images/authors/)
 const authors = defineCollection({
   loader: glob({ pattern: '**/*.json', base: './src/content/authors' }),
   schema: z.object({
@@ -12,13 +13,14 @@ const authors = defineCollection({
   })
 });
 
-const articleSchema = z.object({
+const articleSchema = ({ image }) => z.object({
   title: z.string().max(60, 'Title must be 60 characters or less'),
   description: z.string().max(160, 'Description must be 160 characters or less'),
   pubDate: z.coerce.date(),
   updatedDate: z.coerce.date().optional(),
   author: reference('authors'),
-  image: z.string().optional(),
+  image: image().optional(),
+  imageAlt: z.string().optional(),
 });
 
 const trainer = defineCollection({
