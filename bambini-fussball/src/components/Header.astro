@@ -1,0 +1,31 @@
+---
+// src/components/Header.astro
+// Site-wide navigation component with category links
+---
+
+<header class="bg-white border-b border-gray-200">
+  <nav class="container mx-auto px-4 py-4" aria-label="Hauptnavigation">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <a href="/" class="text-xl font-bold text-green-700 hover:text-green-800">
+        Bambini-Fussball
+      </a>
+      <ul class="flex flex-wrap gap-2 md:gap-6">
+        <li>
+          <a href="/trainer/" class="min-h-[44px] inline-flex items-center px-3 py-2 text-gray-700 hover:text-green-700 hover:bg-green-50 rounded-lg font-medium">
+            Trainer
+          </a>
+        </li>
+        <li>
+          <a href="/eltern/" class="min-h-[44px] inline-flex items-center px-3 py-2 text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg font-medium">
+            Eltern
+          </a>
+        </li>
+        <li>
+          <a href="/vereine/" class="min-h-[44px] inline-flex items-center px-3 py-2 text-gray-700 hover:text-amber-700 hover:bg-amber-50 rounded-lg font-medium">
+            Vereine
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
