@@ -2,9 +2,11 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import cookieconsent from '@jop-software/astro-cookieconsent';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://bambini-fussball.pages.dev',
   output: 'static',
   trailingSlash: 'always',
   image: {
@@ -74,5 +76,6 @@ export default defineConfig({
         },
       },
     }),
+    sitemap(),
   ],
 });
