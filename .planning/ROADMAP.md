@@ -50,11 +50,11 @@ Plans:
   2. Lighthouse mobile score shows LCP < 2.5s on sample page
   3. Layout shifts are minimal (CLS < 0.1) during page load
   4. Touch targets and text sizing are appropriate for mobile devices
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: Responsive layout system and mobile optimization
-- [ ] 02-02: Core Web Vitals baseline measurement and tuning
+- [ ] 02-01-PLAN.md — Configure image optimization and touch-friendly interactive elements
+- [ ] 02-02-PLAN.md — Core Web Vitals baseline measurement and verification
 
 ### Phase 3: Legal Compliance
 **Goal**: Website is legally compliant for German market with Impressum, Datenschutzerklarung, and Cookie consent
@@ -211,8 +211,8 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> ... -> 11
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 2/2 | ✓ Complete | 2026-01-22 |
-| 2. Technical Infrastructure | 0/2 | Not started | - |
+| 1. Foundation | 2/2 | Complete | 2026-01-22 |
+| 2. Technical Infrastructure | 0/2 | Planned | - |
 | 3. Legal Compliance | 0/2 | Not started | - |
 | 4. Content Architecture | 0/3 | Not started | - |
 | 5. SEO Infrastructure | 0/3 | Not started | - |
