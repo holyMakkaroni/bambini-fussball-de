@@ -2,7 +2,7 @@
 title: "Beispielartikel: Ubungen fur die ersten Trainingseinheiten"
 description: "Ein Testbeitrag um die Content-Architektur zu verifizieren. Grundlegende Ubungen fur den Einstieg ins Bambini-Training."
 pubDate: 2026-01-22
-author: "Redaktion"
+author: redaktion
 ---
 
 # Willkommen zum Bambini-Training

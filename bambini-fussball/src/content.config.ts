@@ -1,12 +1,23 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z, reference } from 'astro:content';
 import { glob } from 'astro/loaders';
+
+const authors = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/authors' }),
+  schema: z.object({
+    name: z.string(),
+    bio: z.string().max(300),
+    credentials: z.string(),
+    image: z.string(),
+    sameAs: z.array(z.string().url()).optional().default([])
+  })
+});
 
 const articleSchema = z.object({
   title: z.string().max(60, 'Title must be 60 characters or less'),
   description: z.string().max(160, 'Description must be 160 characters or less'),
   pubDate: z.coerce.date(),
   updatedDate: z.coerce.date().optional(),
-  author: z.string().default('Redaktion'),
+  author: reference('authors'),
   image: z.string().optional(),
 });
 
@@ -25,4 +36,4 @@ const vereine = defineCollection({
   schema: articleSchema,
 });
 
-export const collections = { trainer, eltern, vereine };
+export const collections = { authors, trainer, eltern, vereine };
