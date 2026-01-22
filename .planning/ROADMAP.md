@@ -19,7 +19,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 5: SEO Infrastructure** - Meta tags, JSON-LD schemas, and author/about pages
 - [x] **Phase 6: Content Creation - Trainer** - 8-10 articles targeting trainers/coaches
 - [x] **Phase 7: Content Creation - Eltern** - 8-10 articles targeting parents
-- [ ] **Phase 8: Content Creation - Vereine** - 6-8 articles targeting clubs/associations
+- [x] **Phase 8: Content Creation - Vereine** - 6-8 articles targeting clubs/associations
 - [ ] **Phase 9: Related Content System** - Related articles feature with cross-linking
 - [ ] **Phase 10: Performance Optimization** - Image optimization (WebP, lazy-load, responsive)
 - [ ] **Phase 11: Launch Preparation** - Sitemap, robots.txt, final verification
@@ -153,8 +153,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 08-01-PLAN.md — Core club articles (trainer recruitment, DFB reform implementation, Spielfest organization, parent management)
-- [ ] 08-02-PLAN.md — Supporting club articles (FairPlayLiga, DFB-Mobil, child protection, building Bambini program)
+- [x] 08-01-PLAN.md — Core club articles (trainer recruitment, DFB reform implementation, Spielfest organization, parent management)
+- [x] 08-02-PLAN.md — Supporting club articles (FairPlayLiga, DFB-Mobil, child protection, building Bambini program)
 
 ### Phase 9: Related Content System
 **Goal**: Every article displays 3-4 related article links at the end, enabling content discovery
@@ -165,11 +165,10 @@ Plans:
   2. Each article shows 3-4 contextually relevant links
   3. Related articles include title and brief description
   4. Links work and lead to actual articles
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 09-01: Related articles component and logic
-- [ ] 09-02: Cross-linking configuration for all content
+- [ ] 09-01-PLAN.md — RelatedArticles component with same-category filtering and ArticleLayout integration
 
 ### Phase 10: Performance Optimization
 **Goal**: All images are optimized with WebP format, lazy loading, and responsive sizing
@@ -217,7 +216,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> ... -> 11
 | 5. SEO Infrastructure | 4/4 | Complete | 2026-01-22 |
 | 6. Content - Trainer | 3/3 | Complete | 2026-01-22 |
 | 7. Content - Eltern | 2/2 | Complete | 2026-01-22 |
-| 8. Content - Vereine | 0/2 | Not started | - |
-| 9. Related Content | 0/2 | Not started | - |
+| 8. Content - Vereine | 2/2 | Complete | 2026-01-22 |
+| 9. Related Content | 0/1 | Not started | - |
 | 10. Performance | 0/2 | Not started | - |
 | 11. Launch Prep | 0/3 | Not started | - |
