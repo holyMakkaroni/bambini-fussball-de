@@ -4,6 +4,8 @@ import BaseLayout from './BaseLayout.astro';
 import { Breadcrumbs } from 'astro-breadcrumbs';
 import 'astro-breadcrumbs/breadcrumbs.css';
 import RelatedArticles from '../components/RelatedArticles.astro';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 
 interface Props {
   title: string;
@@ -13,11 +15,12 @@ interface Props {
   updatedDate?: Date;
   authorId: string;
   authorName: string;
-  image?: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
   articleId: string;
 }
 
-const { title, description, category, pubDate, updatedDate, authorId, authorName, image, articleId } = Astro.props;
+const { title, description, category, pubDate, updatedDate, authorId, authorName, image, imageAlt, articleId } = Astro.props;
 
 // Category labels in German
 const categoryLabels = {
@@ -34,13 +37,14 @@ const crumbs = [
 ];
 
 // Article JSON-LD schema for SEO
+// ImageMetadata.src provides the processed image URL
 const siteUrl = 'https://bambini-fussball.pages.dev';
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": title,
   "description": description,
-  "image": image ? `${siteUrl}${image}` : `${siteUrl}/images/og-default.jpg`,
+  "image": image?.src ? `${siteUrl}${image.src}` : `${siteUrl}/images/og-default.jpg`,
   "datePublished": pubDate.toISOString(),
   "dateModified": (updatedDate || pubDate).toISOString(),
   "author": {
@@ -55,9 +59,12 @@ const articleSchema = {
     "url": siteUrl
   }
 };
+
+// Get image path for og:image meta tag (string path for BaseLayout)
+const ogImagePath = image?.src || '/images/og-default.jpg';
 ---
 
-<BaseLayout title={`${title} | Bambini-Fussball`} description={description} type="article" image={image}>
+<BaseLayout title={`${title} | Bambini-Fussball`} description={description} type="article" image={ogImagePath}>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <main class="flex-1 container mx-auto px-4 py-8">
     <nav class="mb-6" aria-label="Breadcrumb">
@@ -83,6 +90,20 @@ const articleSchema = {
           </time>
         </div>
       </header>
+
+      {image && (
+        <div class="mb-8 not-prose">
+          <Image
+            src={image}
+            alt={imageAlt || title}
+            width={1200}
+            height={630}
+            loading="eager"
+            decoding="sync"
+            class="w-full rounded-lg"
+          />
+        </div>
+      )}
 
       <div class="article-content">
         <slot />
