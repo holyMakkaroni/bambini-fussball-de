@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Technical Infrastructure** - Mobile responsiveness and Core Web Vitals baseline
 - [x] **Phase 3: Legal Compliance** - Impressum, Datenschutz, and Cookie consent (DSGVO)
 - [x] **Phase 4: Content Architecture** - Pillar-cluster structure with category pages and navigation
-- [ ] **Phase 5: SEO Infrastructure** - Meta tags, JSON-LD schemas, and author/about pages
+- [x] **Phase 5: SEO Infrastructure** - Meta tags, JSON-LD schemas, and author/about pages
 - [ ] **Phase 6: Content Creation - Trainer** - 8-10 articles targeting trainers/coaches
 - [ ] **Phase 7: Content Creation - Eltern** - 8-10 articles targeting parents
 - [ ] **Phase 8: Content Creation - Vereine** - 6-8 articles targeting clubs/associations
@@ -105,7 +105,7 @@ Plans:
 - [x] 05-01-PLAN.md — Meta tag system with canonical URL and Open Graph tags
 - [x] 05-02-PLAN.md — Author collection with reference() and Article JSON-LD
 - [x] 05-03-PLAN.md — Author profile page and About page with structured data
-- [ ] 05-04-PLAN.md — Gap closure: Add missing author photo image (from verification)
+- [x] 05-04-PLAN.md — Gap closure: Add missing author photo image (from verification)
 
 ### Phase 6: Content Creation - Trainer
 **Goal**: 8-10 high-quality articles published for the Trainer target audience covering coaching topics
@@ -216,7 +216,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> ... -> 11
 | 2. Technical Infrastructure | 2/2 | Complete | 2026-01-22 |
 | 3. Legal Compliance | 2/2 | Complete | 2026-01-22 |
 | 4. Content Architecture | 3/3 | Complete | 2026-01-22 |
-| 5. SEO Infrastructure | 3/4 | Gap closure pending | - |
+| 5. SEO Infrastructure | 4/4 | Complete | 2026-01-22 |
 | 6. Content - Trainer | 0/3 | Not started | - |
 | 7. Content - Eltern | 0/3 | Not started | - |
 | 8. Content - Vereine | 0/3 | Not started | - |

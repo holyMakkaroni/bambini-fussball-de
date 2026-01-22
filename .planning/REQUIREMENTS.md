@@ -32,12 +32,12 @@ Requirements für den initialen Launch. Jedes Requirement wird einer Roadmap-Pha
 
 ### SEO & E-E-A-T
 
-- [ ] **SEO-01**: Jede Seite hat einzigartigen Meta-Title (< 60 Zeichen)
-- [ ] **SEO-02**: Jede Seite hat einzigartige Meta-Description (< 160 Zeichen)
-- [ ] **SEO-03**: Article Schema (JSON-LD) auf allen Artikelseiten
-- [ ] **SEO-04**: Author Schema (JSON-LD) verknüpft mit Artikeln
-- [ ] **SEO-05**: Autor-Seite mit Bio, Credentials und Foto
-- [ ] **SEO-06**: About-Seite erklärt Zweck und Betreiber der Website
+- [x] **SEO-01**: Jede Seite hat einzigartigen Meta-Title (< 60 Zeichen)
+- [x] **SEO-02**: Jede Seite hat einzigartige Meta-Description (< 160 Zeichen)
+- [x] **SEO-03**: Article Schema (JSON-LD) auf allen Artikelseiten
+- [x] **SEO-04**: Author Schema (JSON-LD) verknüpft mit Artikeln
+- [x] **SEO-05**: Autor-Seite mit Bio, Credentials und Foto
+- [x] **SEO-06**: About-Seite erklärt Zweck und Betreiber der Website
 
 ### Performance
 
@@ -92,12 +92,12 @@ Explizit ausgeschlossen. Dokumentiert um Scope Creep zu verhindern.
 | CONT-03 | Phase 4 | Complete |
 | CONT-04 | Phase 9 | Pending |
 | CONT-05 | Phase 6, 7, 8 | Pending |
-| SEO-01 | Phase 5 | Pending |
-| SEO-02 | Phase 5 | Pending |
-| SEO-03 | Phase 5 | Pending |
-| SEO-04 | Phase 5 | Pending |
-| SEO-05 | Phase 5 | Pending |
-| SEO-06 | Phase 5 | Pending |
+| SEO-01 | Phase 5 | Complete |
+| SEO-02 | Phase 5 | Complete |
+| SEO-03 | Phase 5 | Complete |
+| SEO-04 | Phase 5 | Complete |
+| SEO-05 | Phase 5 | Complete |
+| SEO-06 | Phase 5 | Complete |
 | PERF-01 | Phase 10 | Pending |
 | PERF-02 | Phase 10 | Pending |
 | PERF-03 | Phase 10 | Pending |
@@ -109,4 +109,4 @@ Explizit ausgeschlossen. Dokumentiert um Scope Creep zu verhindern.
 
 ---
 *Requirements defined: 2025-01-19*
-*Last updated: 2026-01-22 after Phase 4 completion*
+*Last updated: 2026-01-22 after Phase 5 completion*
