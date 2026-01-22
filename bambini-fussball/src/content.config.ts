@@ -2,11 +2,12 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const articleSchema = z.object({
-  title: z.string(),
-  description: z.string(),
+  title: z.string().max(60, 'Title must be 60 characters or less'),
+  description: z.string().max(160, 'Description must be 160 characters or less'),
   pubDate: z.coerce.date(),
   updatedDate: z.coerce.date().optional(),
   author: z.string().default('Redaktion'),
+  image: z.string().optional(),
 });
 
 const trainer = defineCollection({
