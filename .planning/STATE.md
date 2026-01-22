@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-01-19)
 
 ## Current Position
 
-Phase: 11 of 11 (Launch Preparation) - NOT STARTED
-Plan: 0 of 3 in phase
-Status: Ready for planning
-Last activity: 2026-01-22 - Completed Phase 10 (Performance Optimization)
+Phase: 11 of 11 (Launch Preparation)
+Plan: 2 of 3 in phase
+Status: In progress
+Last activity: 2026-01-22 - Completed 11-02-PLAN.md (default OG image)
 
-Progress: [█████████░] 91%
+Progress: [█████████░] 96%
 
 ## Performance Metrics
 
@@ -39,7 +39,7 @@ Progress: [█████████░] 91%
 | 10. Performance Optimization | 2/2 | ~8 min | ~4 min |
 
 **Recent Trend:**
-- Last 5 plans: 08-01 (~10 min), 08-02 (~8 min), 09-01 (~2 min), 10-01 (~6 min), 10-02 (~2 min)
+- Last 5 plans: 09-01 (~2 min), 10-01 (~6 min), 10-02 (~2 min), 11-01 (~? min), 11-02 (~2 min)
 - Trend: Active
 
 *Updated after each plan completion*
@@ -114,7 +114,9 @@ Recent decisions affecting current work:
 - 10-01: Hero images use priority loading (loading="eager" decoding="sync")
 - 10-01: Thumbnails use default lazy loading via <Image> component
 - 10-01: Author images kept as z.string() (public paths not optimizable)
-- 10-02: Full pipeline verified: schema → pages → layout → Image component
+- 10-02: Full pipeline verified: schema -> pages -> layout -> Image component
+- 11-02: OG image SVG-to-JPG via sharp (consistent with 05-04 pattern)
+- 11-02: og:image:width and og:image:height meta tags for better social preview loading
 
 ### Performance Baseline (Phase 2)
 
@@ -128,7 +130,7 @@ Recent decisions affecting current work:
 ### Pending Todos
 
 - [ ] Replace placeholder contact info in Impressum/Datenschutz before launch
-- [ ] Create /images/og-default.jpg for social sharing fallback
+- [x] Create /images/og-default.jpg for social sharing fallback (11-02)
 
 ### Blockers/Concerns
 
@@ -137,7 +139,7 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-22
-Stopped at: Completed 10-02-PLAN.md (image prop wiring) - Phase 10 complete
+Stopped at: Completed 11-02-PLAN.md (default OG image) - Phase 11 in progress
 Resume file: None
 
 ## Deployment Info
