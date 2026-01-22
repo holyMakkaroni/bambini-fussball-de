@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-19)
 
 **Core value:** Die beste und vollstandigste Informationsquelle fur Bambini-Fussball in Deutschland
-**Current focus:** Phase 4 - Content Architecture (In Progress)
+**Current focus:** Phase 4 - Content Architecture (COMPLETE)
 
 ## Current Position
 
 Phase: 4 of 11 (Content Architecture)
-Plan: 2 of 3 in phase
-Status: In progress
-Last activity: 2026-01-22 - Completed 04-02-PLAN.md
+Plan: 3 of 3 in phase
+Status: Phase complete
+Last activity: 2026-01-22 - Completed 04-03-PLAN.md
 
-Progress: [███████░░░] 31%
+Progress: [████████░░] 35%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
+- Total plans completed: 9
 - Average duration: ~5 minutes
-- Total execution time: ~0.6 hours
+- Total execution time: ~0.7 hours
 
 **By Phase:**
 
@@ -30,10 +30,10 @@ Progress: [███████░░░] 31%
 | 1. Foundation | 2/2 | ~23 min | ~12 min |
 | 2. Technical Infrastructure | 2/2 | ~7 min | ~3.5 min |
 | 3. Legal Compliance | 2/2 | ~7 min | ~3.5 min |
-| 4. Content Architecture | 2/3 | ~6 min | ~3 min |
+| 4. Content Architecture | 3/3 | ~9 min | ~3 min |
 
 **Recent Trend:**
-- Last 5 plans: 02-02 (~5 min), 03-01 (~4 min), 03-02 (~3 min), 04-01 (~3 min), 04-02 (~3 min)
+- Last 5 plans: 03-01 (~4 min), 03-02 (~3 min), 04-01 (~3 min), 04-02 (~3 min), 04-03 (~3 min)
 - Trend: Active
 
 *Updated after each plan completion*
@@ -66,6 +66,9 @@ Recent decisions affecting current work:
 - 04-01: Header component with category navigation added to BaseLayout
 - 04-02: CollectionEntry union type for ArticleCard component
 - 04-02: article.id for URLs (Astro 5 replaced slug with id)
+- 04-03: astro-breadcrumbs for Schema.org JSON-LD support
+- 04-03: Custom crumbs array for German labels (Startseite not Home)
+- 04-03: render() as standalone import from astro:content (Astro 5 pattern)
 
 ### Performance Baseline (Phase 2)
 
@@ -86,8 +89,8 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-22 11:20 UTC
-Stopped at: Completed 04-02-PLAN.md
+Last session: 2026-01-22 11:26 UTC
+Stopped at: Completed 04-03-PLAN.md
 Resume file: None
 
 ## Deployment Info
@@ -111,6 +114,6 @@ Resume file: None
 - [x] LEGAL-02: Datenschutzerklarung accessible from every page - MET (03-01)
 - [x] LEGAL-03: Cookie consent banner - MET (03-02)
 
-### CONTENT Requirements (Phase 4 in progress)
+### CONTENT Requirements (Phase 4 COMPLETE)
 - [x] CONT-01: Pillar pages for three audiences - MET (04-02)
-- [ ] CONT-02: Dynamic article routes - Pending (04-03)
+- [x] CONT-02: Dynamic article routes - MET (04-03)
