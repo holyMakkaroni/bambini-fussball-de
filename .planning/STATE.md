@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-01-19)
 ## Current Position
 
 Phase: 6 of 11 (Content Creation - Trainer) - IN PROGRESS
-Plan: 1 of 3 in phase
+Plan: 2 of 3 in phase
 Status: In progress
-Last activity: 2026-01-22 - Completed 06-01-PLAN.md (Foundational methodology articles)
+Last activity: 2026-01-22 - Completed 06-02-PLAN.md (Practical activity articles)
 
-Progress: [██████░░░░] 54%
+Progress: [██████░░░░] 58%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 14
+- Total plans completed: 15
 - Average duration: ~5 minutes
-- Total execution time: ~1.0 hours
+- Total execution time: ~1.1 hours
 
 **By Phase:**
 
@@ -32,10 +32,10 @@ Progress: [██████░░░░] 54%
 | 3. Legal Compliance | 2/2 | ~7 min | ~3.5 min |
 | 4. Content Architecture | 3/3 | ~9 min | ~3 min |
 | 5. SEO Infrastructure | 4/4 | ~13 min | ~3.3 min |
-| 6. Content Creation - Trainer | 1/3 | ~5 min | ~5 min |
+| 6. Content Creation - Trainer | 2/3 | ~10 min | ~5 min |
 
 **Recent Trend:**
-- Last 5 plans: 05-01 (~3 min), 05-02 (~4 min), 05-03 (~4 min), 05-04 (~2 min), 06-01 (~5 min)
+- Last 5 plans: 05-02 (~4 min), 05-03 (~4 min), 05-04 (~2 min), 06-01 (~5 min), 06-02 (~5 min)
 - Trend: Active
 
 *Updated after each plan completion*
@@ -85,6 +85,9 @@ Recent decisions affecting current work:
 - 06-01: Methodology focus - articles explain "why" not just "what" (differentiator)
 - 06-01: DFB terminology: Spielstunde, Spielformen, Kinderspielformen
 - 06-01: Article pattern: Hook + principle sections + practical application + Fazit
+- 06-02: Fantasy themes (Haifisch, Drachen, Monster) integrated into all games
+- 06-02: No goalkeeper for shooting games - maximizes success moments
+- 06-02: Game article structure: Name + Description + Setup + Variation + When to use
 
 ### Performance Baseline (Phase 2)
 
@@ -106,8 +109,8 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-22 16:04 UTC
-Stopped at: Completed 06-01-PLAN.md (Foundational methodology articles)
+Last session: 2026-01-22 15:11 UTC
+Stopped at: Completed 06-02-PLAN.md (Practical activity articles)
 Resume file: None
 
 ## Deployment Info
