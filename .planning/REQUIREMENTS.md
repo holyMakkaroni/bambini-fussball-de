@@ -13,8 +13,8 @@ Requirements für den initialen Launch. Jedes Requirement wird einer Roadmap-Pha
 - [ ] **TECH-02**: Core Web Vitals erfüllt (LCP < 2.5s, INP < 200ms, CLS < 0.1)
 - [ ] **TECH-03**: XML Sitemap wird automatisch generiert
 - [ ] **TECH-04**: robots.txt ist konfiguriert
-- [ ] **TECH-05**: URLs sind sauber und lesbar (/trainer/ballbeherrschung/)
-- [ ] **TECH-06**: HTTPS ist aktiviert
+- [x] **TECH-05**: URLs sind sauber und lesbar (/trainer/ballbeherrschung/)
+- [x] **TECH-06**: HTTPS ist aktiviert
 
 ### Rechtliche Anforderungen
 
@@ -82,8 +82,8 @@ Explizit ausgeschlossen. Dokumentiert um Scope Creep zu verhindern.
 | TECH-02 | Phase 2 | Pending |
 | TECH-03 | Phase 11 | Pending |
 | TECH-04 | Phase 11 | Pending |
-| TECH-05 | Phase 1 | Pending |
-| TECH-06 | Phase 1 | Pending |
+| TECH-05 | Phase 1 | Complete |
+| TECH-06 | Phase 1 | Complete |
 | LEGAL-01 | Phase 3 | Pending |
 | LEGAL-02 | Phase 3 | Pending |
 | LEGAL-03 | Phase 3 | Pending |
@@ -109,4 +109,4 @@ Explizit ausgeschlossen. Dokumentiert um Scope Creep zu verhindern.
 
 ---
 *Requirements defined: 2025-01-19*
-*Last updated: 2025-01-19 after roadmap creation*
+*Last updated: 2026-01-22 after Phase 1 completion*
