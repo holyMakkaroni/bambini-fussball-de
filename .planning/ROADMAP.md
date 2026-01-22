@@ -82,12 +82,12 @@ Plans:
   3. Breadcrumb navigation appears on all article pages (Home > Category > Article)
   4. Navigation menu provides access to all three target audience categories
   5. Markdown content files render correctly as article pages
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: Pillar page templates and category structure
-- [ ] 04-02: Breadcrumb navigation component
-- [ ] 04-03: Article layout template with Markdown support
+- [ ] 04-01-PLAN.md — Content config migration and Header navigation component
+- [ ] 04-02-PLAN.md — Pillar category pages and ArticleCard component
+- [ ] 04-03-PLAN.md — ArticleLayout with breadcrumbs and dynamic article routes
 
 ### Phase 5: SEO Infrastructure
 **Goal**: Every page has unique meta tags, articles have JSON-LD schema markup, and author/about pages establish E-E-A-T
@@ -214,7 +214,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> ... -> 11
 | 1. Foundation | 2/2 | Complete | 2026-01-22 |
 | 2. Technical Infrastructure | 2/2 | Complete | 2026-01-22 |
 | 3. Legal Compliance | 2/2 | Complete | 2026-01-22 |
-| 4. Content Architecture | 0/3 | Not started | - |
+| 4. Content Architecture | 0/3 | Planned | - |
 | 5. SEO Infrastructure | 0/3 | Not started | - |
 | 6. Content - Trainer | 0/3 | Not started | - |
 | 7. Content - Eltern | 0/3 | Not started | - |
