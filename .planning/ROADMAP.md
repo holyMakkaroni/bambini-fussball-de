@@ -18,7 +18,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 4: Content Architecture** - Pillar-cluster structure with category pages and navigation
 - [x] **Phase 5: SEO Infrastructure** - Meta tags, JSON-LD schemas, and author/about pages
 - [x] **Phase 6: Content Creation - Trainer** - 8-10 articles targeting trainers/coaches
-- [ ] **Phase 7: Content Creation - Eltern** - 8-10 articles targeting parents
+- [x] **Phase 7: Content Creation - Eltern** - 8-10 articles targeting parents
 - [ ] **Phase 8: Content Creation - Vereine** - 6-8 articles targeting clubs/associations
 - [ ] **Phase 9: Related Content System** - Related articles feature with cross-linking
 - [ ] **Phase 10: Performance Optimization** - Image optimization (WebP, lazy-load, responsive)
@@ -134,12 +134,11 @@ Plans:
   3. Each article includes Article schema markup
   4. Articles cover diverse Eltern topics (Forderung, Ausrustung, Vereinswahl)
   5. Articles are accessible from Eltern category overview page
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 07-01: Eltern content planning and outline creation
-- [ ] 07-02: Eltern articles batch 1 (4-5 articles)
-- [ ] 07-03: Eltern articles batch 2 (4-5 articles)
+- [x] 07-01-PLAN.md — Core parent articles (first day, equipment, club selection, sideline, pressure-free support)
+- [x] 07-02-PLAN.md — Supporting parent articles (motivation, DFB formats, training quality, nutrition, FAQ)
 
 ### Phase 8: Content Creation - Vereine
 **Goal**: 6-8 high-quality articles published for the Vereine target audience covering club/association topics
@@ -218,7 +217,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> ... -> 11
 | 4. Content Architecture | 3/3 | Complete | 2026-01-22 |
 | 5. SEO Infrastructure | 4/4 | Complete | 2026-01-22 |
 | 6. Content - Trainer | 3/3 | Complete | 2026-01-22 |
-| 7. Content - Eltern | 0/3 | Not started | - |
+| 7. Content - Eltern | 2/2 | Complete | 2026-01-22 |
 | 8. Content - Vereine | 0/3 | Not started | - |
 | 9. Related Content | 0/2 | Not started | - |
 | 10. Performance | 0/2 | Not started | - |
